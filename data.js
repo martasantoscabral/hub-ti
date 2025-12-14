@@ -320,11 +320,13 @@ const ITEMS = [
     {
     category: "projetos",
     course: "ftv",
-    title: "Projeto - AutoCAD",
+    title: "Projeto Final - AutoCAD",
     desc: "",
     date: "2025-11-16",
     group: "Projeto Final",
     tags: ["zip"],
+    group: "Projeto Final",
+
     file: "assets/projetos/FTV/ftv.zip",
   },
 
@@ -356,7 +358,6 @@ const ITEMS = [
     desc: "",
     date: "2025-11-16",
     tags: ["zip"],
-    group: "Projeto Final",
     file: "assets/projetos/FTV/Relatório FTV Paraview .pdf",
   },
 
@@ -364,7 +365,7 @@ const ITEMS = [
   {
     category: "projetos",
     course: "ftv",
-    title: "Projeto - ParaView",
+    title: "Projeto Final - ParaView",
     desc: "",
     date: "2025-11-16",
     tags: ["zip"],
