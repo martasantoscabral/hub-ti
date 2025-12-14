@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPlants - Catálogo de Plantas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/catalogo.css">
+
+</head>
+<body>
+
+  <div class="ecra">
+
+    <main class="content">
+      <section class="catalogo">
+        <div class="barrinha">
+          <div class="title"><span>Catálogo</span></div>
+
+        <!-- Filtros -->
+          <div class="d-flex align-items-center gap-2 flex-wrap mb-2" id="catalogoFiltros">
+            <input id="filtroNome" type="text" class="text-pesquisa form-control form-control-sm" placeholder="Pesquisar por nome" style="width:220px">
+            <label class="text-pesquisa fw-semibold me-1">Luz</label>
+            <select id="filtroLuz" class="form-select form-select-sm" style="width:140px">
+              <option value="">Todas</option>
+              <option value="baixo">Baixo</option>
+              <option value="medio">Médio</option>
+              <option value="alto">Alto</option>
+            </select>
+
+            <label class="text-pesquisa fw-semibold ms-3 me-1">Rega</label>
+            <select id="filtroRega" class="form-select form-select-sm" style="width:140px">
+              <option value="">Todas</option>
+              <option value="baixo">Baixo</option>
+              <option value="medio">Médio</option>
+              <option value="alto">Alto</option>
+            </select>
+
+            <button id="btnLimparFiltros" class="btn-limpar">Limpar</button>
+          </div>
+        </div>
+        <!-- Grelha -->
+        <div id="grid_catalogo" class="grid">
+          <div class="card itemCatalogo Suculenta"">
+            <div class="plant-img">
+              <img src="../imagens/aloe.webp" >
+            </div>
+            <div class="plant-name">Aloe vera</div>
+          </div>
+
+          <div class="card itemCatalogo Suculenta"">
+            <div class="plant-img">
+              <img src="../imagens/Echeveria.webp">
+            </div>
+            <div class="plant-name">Echeveria</div>
+          </div>
+
+          <div class="card itemCatalogo Suculenta"">
+            <div class="plant-img">
+              <img src="../imagens/Crassulaovata.webp">
+            </div>
+            <div class="plant-name">Crassula ovata</div>
+          </div>
+
+          <div class="card itemCatalogo Suculenta"">
+            <div class="plant-img">
+              <img src="../imagens/rabo-de-burro.webp" >
+            </div>
+            <div class="plant-name">Rabo burro</div>
+          </div>
+
+          <div class="card itemCatalogo Suculenta"">
+            <div class="plant-img">
+              <img src="../imagens/Haworthia.webp" >
+            </div>
+            <div class="plant-name">Haworthia</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/CActo-bola.png" >
+            </div>
+            <div class="plant-name">Cacto-bola</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/orelha-de-coelho.webp" alt="Sedum morganianum">
+            </div>
+            <div class="plant-name">Orelha coelho</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/cacto-coluna.webp" alt="Sedum morganianum">
+            </div>
+            <div class="plant-name">Cacto-coluna</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/cacto-lunar.webp" alt="Sedum morganianum">
+            </div>
+            <div class="plant-name">Cacto-lunar</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Saguaro.webp" alt="Sedum morganianum">
+            </div>
+            <div class="plant-name">Cacto Saguaro</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/rosa.webp" alt="Sedum morganianum">
+            </div>
+            <div class="plant-name">Rosa</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Margarida.webp" alt="Sedum morganianum">
+            </div>
+            <div class="plant-name">Margarida</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Girassol.webp">
+            </div>
+            <div class="plant-name">Girassol</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Orquidia.webp">
+            </div>
+            <div class="plant-name">Orquidia</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Lírio.webp">
+            </div>
+            <div class="plant-name">Lirio</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Manjericão.webp">
+            </div>
+            <div class="plant-name">Manjericão</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/ALecrim.png">
+            </div>
+            <div class="plant-name">Alecrim</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Hortelã.webp">
+            </div>
+            <div class="plant-name">Hortelã</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Tomilho.webp">
+            </div>
+            <div class="plant-name">Tomilho</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Salsa.webp">
+            </div>
+            <div class="plant-name">Salsa</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Limoneiro.webp">
+            </div>
+            <div class="plant-name">Limoneiro</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Mangueira.webp">
+            </div>
+            <div class="plant-name">Mangueira</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Cerejeira.webp">
+            </div>
+            <div class="plant-name">Cerejeira</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Amendoeiro.webp">
+            </div>
+            <div class="plant-name">Amendoeiro</div>
+          </div>
+
+          <div class="card itemCatalogo">
+            <div class="plant-img">
+              <img src="../imagens/Oliveira.webp">
+            </div>
+            <div class="plant-name">Oliveira</div>
+          </div>
+      </section>
+    </main>
+  
+
+    <!-- MENU LATERAL-->
+    <nav class="menu" aria-label="Menu lateral">
+      <div>
+        <p class="titulo">SmartPlants</p>
+      </div>
+
+      <div class="nav">
+        <a class="btn " href="index.html" aria-current="page">
+        <svg fill="#1c291a" width="40" height="40" viewBox="0 0 512 512" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" stroke="#1c291a" stroke-width="18"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title></title><path d="M431.58,32.35a5.93,5.93,0,0,0-6.53-2.24C248.25,82.58,138,157.69,97.48,253.36c-33.9,80-6.33,145.74-.61,157.86-14.52,39.23-17.47,63.67-17.54,64.32a6,6,0,0,0,5.3,6.57l.63,0a6,6,0,0,0,5.93-5.33c.07-.62,2.88-23.4,16.33-60.17,9.37.62,18.63,1.09,27.57,1.09C265.81,417.73,349,352,365.16,234.05,382,111.18,431.13,40,431.62,39.26A6,6,0,0,0,431.58,32.35ZM353.36,232.44C330.81,396.69,183.25,409.08,111.93,405.1c26.47-66.66,85.64-171,216.14-274.67a6,6,0,0,0-7.42-9.35C192.08,223.25,131.48,326.46,103.24,395a190.72,190.72,0,0,1,5.22-137C146.41,168.49,249,97.25,413.31,46.13,398,72.66,366.49,136.72,353.36,232.44Z"></path></g>
+        </svg>Minhas Plantas
+        </a>
+
+        <a class="btn active" href="catalogo.html">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#1c291a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> 
+          <path d="M12 10.4V20M12 10.4C12 8.15979 12 7.03969 11.564 6.18404C11.1805 5.43139 10.5686 4.81947 9.81596 4.43597C8.96031 4 7.84021 4 5.6 4H4.6C4.03995 4 3.75992 4 3.54601 4.10899C3.35785 4.20487 3.20487 4.35785 3.10899 4.54601C3 4.75992 3 5.03995 3 5.6V16.4C3 16.9601 3 17.2401 3.10899 17.454C3.20487 17.6422 3.35785 17.7951 3.54601 17.891C3.75992 18 4.03995 18 4.6 18H7.54668C8.08687 18 8.35696 18 8.61814 18.0466C8.84995 18.0879 9.0761 18.1563 9.29191 18.2506C9.53504 18.3567 9.75977 18.5065 10.2092 18.8062L12 20M12 10.4C12 8.15979 12 7.03969 12.436 6.18404C12.8195 5.43139 13.4314 4.81947 14.184 4.43597C15.0397 4 16.1598 4 18.4 4H19.4C19.9601 4 20.2401 4 20.454 4.10899C20.6422 4.20487 20.7951 4.35785 20.891 4.54601C21 4.75992 21 5.03995 21 5.6V16.4C21 16.9601 21 17.2401 20.891 17.454C20.7951 17.6422 20.6422 17.7951 20.454 17.891C20.2401 18 19.9601 18 19.4 18H16.4533C15.9131 18 15.643 18 15.3819 18.0466C15.15 18.0879 14.9239 18.1563 14.7081 18.2506C14.465 18.3567 14.2402 18.5065 13.7908 18.8062L12 20" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+          </svg>Catálogo de Plantas
+        </a>
+
+        <a id="btnComodos" class="btn" href="comodo.html">
+        <svg width="30" height="30" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>folder-2</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke-width="0.8640000000000001" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-360.000000, -151.000000)" fill="#ffffff"> 
+        <path fill="#1c291a" stroke="#1c291a" stroke-width="2" d="M390,161 L362,161 L362,155 C362,153.896 362.896,153 364,153 L370,153 C371.104,153 372,153.896 372,155 L372,157 L388,157 C389.104,157 390,157.896 390,159 L390,161 L390,161 Z M390,179 C390,180.104 389.104,181 388,181 L364,181 C362.896,181 362,180.104 362,179 L362,163 L390,163 L390,179 L390,179 Z M388,155 L374,155 C374,152.791 372.209,151 370,151 L364,151 C361.791,151 360,152.791 360,155 L360,179 C360,181.209 361.791,183 364,183 L388,183 C390.209,183 392,181.209 392,179 L392,159 C392,156.791 390.209,155 388,155 L388,155 Z" id="folder-2" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>      
+        </svg>Cómodos
+        </a>
+      </div>
+    </nav>
+  </div>
+
+<!-- Modal: Info da Planta -->
+<div class="modal fade" id="plantInfoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="plantInfoTitle">Planta</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 align-items-start">
+          <img id="plantInfoImg" src="" alt="" style="width:120px; height:120px; object-fit:cover; border-radius:12px;">
+          <div class="flex-grow-1">
+            <div class="mb-2">
+              <span class="badge text-bg-success" id="plantInfoCategoria"></span>
+            </div>
+            <p class="mb-1"><strong>Nome científico:</strong> <span id="plantInfoCientifico" style="font-style: italic;">—</span></p>
+            <p class="mb-1"><strong>Luz:</strong> <span id="plantInfoLuz">—</span></p>
+            <p class="mb-1"><strong>Rega:</strong> <span id="plantInfoRega">—</span></p>
+          </div>
+        </div>
+        <p id="plantInfoDescricao"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn fechar" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="../javascript/catalogo.js"></script>
+</body>
+</html>

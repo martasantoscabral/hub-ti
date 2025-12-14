@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPlants - Cómodos de Plantas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/comodo.css">
+
+</head>
+<body>
+
+
+  <div class="ecra">
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="content">
+    <section class="meus_comodos">
+      <div class="barrinha">
+        <div class="title">Cómodos</div>
+        <button id="btnAddComodo" title="Adicionar Cómodo" class="btn btn-success btn-addComodo">
+          <svg id="iconeAddPlanta" width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="20" height="20" rx="6" stroke=#2b3b28 stroke-width="2" stroke-dasharray="4 6"/>
+            <path d="M12 7v10M7 12h10" stroke=#2b3b28 stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div id="gridComodos" class="grid">
+      </div>
+    </section>
+  </main>
+  
+    <!------------------------------------------------------------>
+    <!-- MENU LATERAL-->
+    <!------------------------------------------------------------>
+    <nav class="menu" aria-label="Menu lateral">
+      <div>
+        <p class="titulo">SmartPlants</p>
+      </div>
+
+      <div class="nav">
+        <a class="btn " href="index.html" aria-current="page">
+          <svg fill="#ffffff" width="40" height="40" viewBox="0 0 512 512" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" stroke="#1c291a" stroke-width="18"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title></title><path d="M431.58,32.35a5.93,5.93,0,0,0-6.53-2.24C248.25,82.58,138,157.69,97.48,253.36c-33.9,80-6.33,145.74-.61,157.86-14.52,39.23-17.47,63.67-17.54,64.32a6,6,0,0,0,5.3,6.57l.63,0a6,6,0,0,0,5.93-5.33c.07-.62,2.88-23.4,16.33-60.17,9.37.62,18.63,1.09,27.57,1.09C265.81,417.73,349,352,365.16,234.05,382,111.18,431.13,40,431.62,39.26A6,6,0,0,0,431.58,32.35ZM353.36,232.44C330.81,396.69,183.25,409.08,111.93,405.1c26.47-66.66,85.64-171,216.14-274.67a6,6,0,0,0-7.42-9.35C192.08,223.25,131.48,326.46,103.24,395a190.72,190.72,0,0,1,5.22-137C146.41,168.49,249,97.25,413.31,46.13,398,72.66,366.49,136.72,353.36,232.44Z"></path></g>
+          </svg>Minhas Plantas
+        </a>
+
+        <a class="btn" href="catalogo.html">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#1c291a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> 
+          <path d="M12 10.4V20M12 10.4C12 8.15979 12 7.03969 11.564 6.18404C11.1805 5.43139 10.5686 4.81947 9.81596 4.43597C8.96031 4 7.84021 4 5.6 4H4.6C4.03995 4 3.75992 4 3.54601 4.10899C3.35785 4.20487 3.20487 4.35785 3.10899 4.54601C3 4.75992 3 5.03995 3 5.6V16.4C3 16.9601 3 17.2401 3.10899 17.454C3.20487 17.6422 3.35785 17.7951 3.54601 17.891C3.75992 18 4.03995 18 4.6 18H7.54668C8.08687 18 8.35696 18 8.61814 18.0466C8.84995 18.0879 9.0761 18.1563 9.29191 18.2506C9.53504 18.3567 9.75977 18.5065 10.2092 18.8062L12 20M12 10.4C12 8.15979 12 7.03969 12.436 6.18404C12.8195 5.43139 13.4314 4.81947 14.184 4.43597C15.0397 4 16.1598 4 18.4 4H19.4C19.9601 4 20.2401 4 20.454 4.10899C20.6422 4.20487 20.7951 4.35785 20.891 4.54601C21 4.75992 21 5.03995 21 5.6V16.4C21 16.9601 21 17.2401 20.891 17.454C20.7951 17.6422 20.6422 17.7951 20.454 17.891C20.2401 18 19.9601 18 19.4 18H16.4533C15.9131 18 15.643 18 15.3819 18.0466C15.15 18.0879 14.9239 18.1563 14.7081 18.2506C14.465 18.3567 14.2402 18.5065 13.7908 18.8062L12 20" stroke="#1c291a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+          </svg>Catálogo de Plantas
+        </a>
+
+        <a class="btn  active" href="">
+          <svg width="30" height="30" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>folder-2</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke-width="0.8640000000000001" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-360.000000, -151.000000)" fill="#ffffff"> 
+          <path stroke-width="2" d="M390,161 L362,161 L362,155 C362,153.896 362.896,153 364,153 L370,153 C371.104,153 372,153.896 372,155 L372,157 L388,157 C389.104,157 390,157.896 390,159 L390,161 L390,161 Z M390,179 C390,180.104 389.104,181 388,181 L364,181 C362.896,181 362,180.104 362,179 L362,163 L390,163 L390,179 L390,179 Z M388,155 L374,155 C374,152.791 372.209,151 370,151 L364,151 C361.791,151 360,152.791 360,155 L360,179 C360,181.209 361.791,183 364,183 L388,183 C390.209,183 392,181.209 392,179 L392,159 C392,156.791 390.209,155 388,155 L388,155 Z" id="folder-2" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>      
+          </svg>Cómodos
+        </a>
+      </div>
+    </nav>
+  </div>
+  
+  <!--MODAIS-->
+
+<!------------------------------------------------------------>
+<!--                             1º Modal: Adicionar Cómodo -->
+<!------------------------------------------------------------>
+<div class="modal fade" id="modalAddComodo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="formAdicionarComodo">
+        <div class="modal-header">
+          <h5 class="modal-title">Adicionar Cómodo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Nome -->
+          <div class="mb-3">
+            <label for="nomeComodo" class="form-label">Nome do Cómodo</label>
+            <input id="nomeComodo" name="nomeComodo" class="form-control" type="text" placeholder="Ex: Sala, Varanda..." maxlength="15" required>
+          </div>
+
+          <!-- Luminosidade -->
+          <div class="mb-3">
+            <label for="luminosidadeComodo" class="form-label">Nível de Luminosidade</label>
+            <select id="luminosidadeComodo" name="luminosidadeComodo" class="form-select" required>
+              <option value="">-</option>
+              <option value="baixo">Baixo</option>
+              <option value="medio">Médio</option>
+              <option value="alto">Alto</option>
+            </select>
+          </div>
+
+          <!-- Capacidade -->
+          <div class="mb-3">
+            <label for="capacidadeComodo" class="form-label">Capacidade (número máximo de plantas)</label>
+            <input id="capacidadeComodo" name="capacidadeComodo" class="form-control" type="number" min="1" value="5" required>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Adicionar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!------------------------------------------------------------>
+<!--                         MODAL CONFIRMAR REMOVER CÓMODO -->
+<!------------------------------------------------------------>
+<div class="modal fade" id="modalConfirmarRemoverComodo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Remover Cómodo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Tem a certeza que deseja remover o cómodo <b id="nomeComodoRemover"></b>?
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button class="btn btn-danger" id="btnConfirmarRemoverComodo">Remover</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--------------------------------------------------------->
+<!-- Modal: Confirmar adição de cómodo                   -->
+<!--------------------------------------------------------->
+<div class="modal fade" id="modalConfirmarAdicionarComodo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar Adição</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>Tens a certeza que queres criar este cómodo?</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btnNaoAdicionarComodo">
+          Não
+        </button>
+        <button type="button" class="btn btn-primary" id="btnSimAdicionarComodo">
+          Sim
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!------------------------------------------------------------>
+<!--                                       MODAL DE SUCESSO -->
+<!------------------------------------------------------------>
+<!-- <div class="modal fade" id="modalComodoRemovido" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cómodo Removido</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        O cómodo foi removido com sucesso!
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!------------------------------------------------------------>
+<!--               MODAL CONFIRMAR REMOVER PLANTA DO CÓMODO -->
+<!------------------------------------------------------------>
+<div class="modal fade" id="modalConfirmarRemoverPlantaComodo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Remover planta do cómodo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Tem a certeza que deseja remover a planta
+        <b id="nomePlantaRemoverComodo"></b>
+        do cómodo <b id="nomeComodoPlantaRemover"></b>?
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button class="btn btn-danger" id="btnConfirmarRemoverPlantaComodo">Remover</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------------------------------------>
+<!--               MODAL SUCESSO: PLANTA REMOVIDA DO CÓMODO -->
+<!------------------------------------------------------------>
+<!-- <div class="modal fade" id="modalPlantaRemovidaComodo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Planta removida</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        A planta foi removida do cómodo com sucesso.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+
+
+  <!--------------------------------------------------------->
+  <!--                  Modal: Escolher planta do catálogo -->
+  <!--------------------------------------------------------->
+<div class="modal fade" id="modalCatalogo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-start">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Seleciona a planta que queres adicionar</h1>
+        <button type="button" id="btn-close" class="btn-close" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Pesquisar</span>
+          <input
+            type="text"
+            id="inputPesquisaPlantas"
+            class="form-control"
+            placeholder="Escreve o nome da planta..."
+          >
+        </div>
+
+        <div id="catalogoGrid" class="row g-3"></div>
+      </div>
+        <button class="btn_fechar" id="btn_fechar" >Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--------------------------------------------------------->
+<!--                               Modal: Segundo pop-up -->
+<!--------------------------------------------------------->
+<div class="modal fade" class="" id="modalAdicionarPlanta" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="formAdicionarPlanta">   
+        <div class="modal-header">
+          <h5 class="modal-title">Adicionar Planta</h5>
+          <button type="button" class="btn-close" id="btn-closeAdd" aria-label="Fechar"></button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Nome-->
+          <div class="mb-2">
+            <label for="Nome" class="form-label">Nome</label>
+            <input id="Nome" name="nome" class="form-control" type="text" required>
+          </div>
+
+          <!-- Tipo/Categoria (só leitura) -->
+          <div class="">
+            <div class="mb-2">
+              <label class="form-label">Tipo</label>
+              <div id="txtTipo" class="form-control-plaintext border rounded px-2 py-1 campo-bloqueado">—</div>
+              <input type="hidden" id="inpTipo" name="tipo">
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Categoria</label>
+              <div id="txtCategoria" class="form-control-plaintext border rounded px-2 py-1 campo-bloqueado">—</div>
+              <input type="hidden" id="inpCategoria" name="categoria">
+            </div>
+          </div>
+
+          <!-- Níveis Sol / Água  -->
+          <div class="">
+            <div class="mb-2">
+              <label class="form-label">Nível de Sol</label>
+              <div id="txtLuz" class="form-control-plaintext border rounded px-2 py-1 campo-bloqueado">—</div>
+              <input type="hidden" id="inpLuz" name="nivel_luz">
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Nível de Água</label>
+              <div id="txtAgua" class="form-control-plaintext border rounded px-2 py-1 campo-bloqueado">—</div>
+              <input type="hidden" id="inpAgua" name="nivel_agua">
+            </div>
+          </div>
+
+          <!-- Cómodo - Sistema de Rega -->
+          <div class="">
+            <div class="mb-2">
+              <label for="selComodo" class="form-label">Cómodo</label>
+              <select id="selComodo" name="comodo" class="form-select">
+                <option value="comodo0">Sem cómodo</option>
+                <option value="sala">Sala</option>
+                <option value="cozinha">Cozinha</option>
+                <option value="quarto">Quarto</option>
+                <option value="varanda">Varanda</option>
+              </select>
+            </div>
+            <div class="mb-2">
+                <label for="selRega" class="form-label d-flex align-items-center gap-2">
+                  Sistema de Rega
+
+                  <!-- Ícone Informação -->
+                  <span id="iconInfoRega" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#modalInfoRega">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#11451a" stroke="#11451a" width="20" height="20">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <circle cx="12" cy="12" fill="none" r="10" stroke="#204f17" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                        <line fill="none" stroke="#204f17" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="12" y2="16"></line>
+                        <line fill="none" stroke="#204f17" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="8" y2="8"></line>
+                      </g>
+                    </svg>
+                  </span>
+                </label>        
+                <select id="selRega" name="tipo_rega" class="form-select">
+                <option value="manual">Manual</option>
+                <option value="automatico">Automático</option>
+              </select>
+            </div>
+          </div>
+
+          <input type="hidden" id="hiddenCatalogNome">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" id="btn_fecharAdd" aria-label="Fechar">Cancelar</button>
+          <button type="submit" class="btn add" id="confirmarAdicao">Adicionar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--------------------------------------------------------->
+<!--            Modal: Segundo pop-up Planta Customizada -->
+<!--------------------------------------------------------->
+<div class="modal fade" class="" id="modalAdicionarPlantaCustomizada" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="formAdicionarPlantaCustomizada">   
+        <div class="modal-header">
+          <h5 class="modal-title">Adicionar Planta Customizada</h5>
+          <button type="button" class="btn-close" id="btn-closeAdd" aria-label="Fechar"></button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Nome-->
+          <div class="mb-2">
+            <label for="Nome" class="form-label">Nome</label>
+            <input id="Nome" name="nome_customizada" class="form-control" type="text" required>
+          </div>
+
+          <div class="">
+            <label>Imagem da planta</label>
+            <input type="file" id="img_customizada" name="img_customizada" accept="image/*">
+          </div>
+
+          <!-- Tipo/Categoria -->
+          <div class="">
+            <div class="mb-2">
+              <label class="form-label">Tipo</label>
+              <input type="text" id="tipo_customizada" name="tipo_customizada">
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Categoria</label>
+              <input type="text" id="inpCategoria" name="categoria_customizada">
+            </div>
+          </div>
+
+          <!-- Níveis Sol / Água  -->
+          <div class="">
+            <div class="mb-2">
+              <label class="form-label">Nível de Sol</label>
+                <select id="nivel_luz_customizada" name="nivel_luz_customizada" class="form-select">
+                    <option value="baixo">Baixo</option>
+                    <option value="medio">Medio</option>
+                    <option value="alto">Alto</option>
+                </select>
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Nível de Água</label>
+                <select id="nivel_agua_customizada" name="nivel_agua_customizada" class="form-select">
+                    <option value="baixo">Baixo</option>
+                    <option value="medio">Medio</option>
+                    <option value="alto">Alto</option>
+                </select>
+            </div>
+          </div>
+
+          <!-- Cómodo - Sistema de Rega -->
+          <div class="">
+            <div class="mb-2">
+              <label for="comodo_customizada" class="form-label">Cómodo</label>
+              <select id="comodo_customizada" name="comodo_customizada" class="form-select">
+                <option value="comodo0">Sem cómodo</option>
+              </select>
+            </div>
+            <div class="mb-2">
+                <label for="rega_customizada" class="form-label d-flex align-items-center gap-2">
+                  Sistema de Rega
+
+                  <!-- Ícone Informação -->
+                  <span id="iconInfoRega" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#modalInfoRega">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#11451a" stroke="#11451a" width="20" height="20">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <circle cx="12" cy="12" fill="none" r="10" stroke="#204f17" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                        <line fill="none" stroke="#204f17" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="12" y2="16"></line>
+                        <line fill="none" stroke="#204f17" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="8" y2="8"></line>
+                      </g>
+                    </svg>
+                  </span>
+                </label>        
+                <select id="rega_customizada" name="rega_customizada" class="form-select">
+                  <option value="manual">Manual</option>
+                  <option value="automatico">Automático</option>
+                </select>
+            </div>
+          </div>
+
+          <input type="hidden" id="hiddenCatalogNome">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" id="btn_fecharAdd" aria-label="Fechar">Cancelar</button>
+          <button type="submit" class="btn add" id="confirmarAdicao">Adicionar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<!------------------------------------------------------------>
+<!--                          Modal: ALERTA LUZ INCOMPATÍVEL -->
+<!------------------------------------------------------------>
+
+<div class="modal fade" id="modalLuzAlerta" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Nível de luz incompatível</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p id="motivoLuz"></p>
+        <p>A planta pode não sobreviver se adicionada.</p>
+        <p>Deseja adicionar mesmo assim?</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" id="btnNaoAdicionarAlerta">Não</button>
+        <button type="button" class="btn btn-success" id="btnSimAdicionarAlerta">Sim</button>
+      </div>
+
+      <button type="button" class="btn btn-quiz" id="btnAbrirQuizComodo">
+        Aprender quais plantas são ideais para este cómodo ❔
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<!------------------------------------------------------------->
+<!--                MODAL: Quiz Plantas Ideais para o Cómodo -->
+<!------------------------------------------------------------->
+<div class="modal fade" id="modalQuizComodo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Descobre as plantas ideais 🌿</h5>
+        <button type="button" class="btn-close" id="btnFecharQuiz"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Barra de progresso -->
+        <div class="progress mb-3">
+          <div class="progress-bar" id="quizProgress" role="progressbar"
+               style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            1 / 4
+          </div>
+        </div>
+
+        <p id="quizFeedback" class="text-muted small mb-3">
+          Vamos começar! Escolhe uma opção 
+        </p>
+
+        <form id="formQuizComodo">
+
+          <!-- PASSO 1 -->
+          <div class="quiz-step" data-step="1">
+            <p class="pergunta"><strong>Quanta luz recebe este cómodo? </strong></p>
+
+            <div class="quiz-cards">
+              <div class="quiz-option">
+                <input type="radio" class="quiz-radio" name="luzDia" id="luz_nenhuma" value="baixo">
+                <label class="quiz-card" for="luz_nenhuma">
+                  <br>Nenhuma luz
+                </label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" class="quiz-radio" name="luzDia" id="luz_pouca" value="baixo">
+                <label class="quiz-card" for="luz_pouca">
+                  <br>Pouca luz 
+                </label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" class="quiz-radio" name="luzDia" id="luz_media" value="medio">
+                <label class="quiz-card" for="luz_media">
+                  <br>Luz moderada
+                </label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" class="quiz-radio" name="luzDia" id="luz_alta" value="alto">
+                <label class="quiz-card" for="luz_alta">
+                  <br>Muita luz
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- PASSO 2 -->
+          <div class="quiz-step d-none" data-step="2">
+            <p class="pergunta"><strong>Como é a ventilação?</strong></p>
+
+            <div class="quiz-cards">
+              <div class="quiz-option">
+                <input type="radio" class="quiz-radio" name="ventilacao" id="vent_pobre" value="baixo">
+                <label class="quiz-card" for="vent_pobre">
+                  <br>Ar parado
+                </label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" class="quiz-radio" name="ventilacao" id="vent_media" value="medio">
+                <label class="quiz-card" for="vent_media">
+                  <br>Moderada
+                </label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" class="quiz-radio" name="ventilacao" id="vent_boa" value="alto">
+                <label class="quiz-card" for="vent_boa">
+                  <br>Muito arejado
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- PASSO 3 -->
+          <div class="quiz-step d-none" data-step="3">
+            <p class="pergunta"><strong>Qual é a temperatura típica?</strong></p>
+
+            <div class="quiz-cards">
+              <div class="quiz-option">
+                <input type="radio" class="quiz-radio" name="temperatura" id="temp_frio" value="baixo">
+                <label class="quiz-card" for="temp_frio">
+                  <br>Frio (&lt; 18°C)
+                </label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" class="quiz-radio" name="temperatura" id="temp_amena" value="medio">
+                <label class="quiz-card" for="temp_amena">
+                  <br>Ameno (18–24°C)
+                </label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" class="quiz-radio" name="temperatura" id="temp_quente" value="alto">
+                <label class="quiz-card" for="temp_quente">
+                  <br>Quente (&gt; 24°C)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- PASSO 4 -->
+          <div class="quiz-step d-none" data-step="4">
+            <p class="pergunta"><strong>Este cómodo é muito movimentado?</strong></p>
+
+            <div class="quiz-cards">
+              <div class="quiz-option">
+                <input type="radio" class="quiz-radio" name="uso" id="uso_baixo" value="baixo">
+                <label class="quiz-card" for="uso_baixo">
+                  <br>Quase nenhum movimento
+                </label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" class="quiz-radio" name="uso" id="uso_medio" value="medio">
+                <label class="quiz-card" for="uso_medio">
+                  <br>Movimento moderado
+                </label>
+              </div>
+              <div class="quiz-option">
+                <input type="radio" class="quiz-radio" name="uso" id="uso_alto" value="alto">
+                <label class="quiz-card" for="uso_alto">
+                  <br>Muito utilizado
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <div class="modal-footer d-flex justify-content-between">
+        <button type="button" class="btn btn-outline-secondary" id="btnQuizAnterior">Anterior</button>
+        <button type="button" class="btn btn-success" id="btnQuizSeguinte">Seguinte</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!------------------------------------------------------------>
+<!--           MODAL: Plantas recomendadas para este cómodo -->
+<!------------------------------------------------------------>
+<div class="modal fade" id="modalPlantasRecomendadas" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Plantas recomendadas 🌱</h5>
+        <button type="button" class="btn-close" id="btnFecharRecomendadas"></button>
+      </div>
+
+      <div class="modal-body">
+        <p class="mb-3">
+          Com base nas condições deste cómodo, estas plantas podem adaptar-se melhor:
+        </p>
+
+        <div id="listaRecomendadas" class="row g-3">
+
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btnVoltarAviso">Voltar ao aviso</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!------------------------------------------------------------>
+<!--                 Modal de Confirmação Planta adicionada -->
+<!------------------------------------------------------------>
+<!-- <div class="modal fade" id="modalPlantaAdicionada" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Planta adicionada</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>A planta foi adicionada com sucesso!</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" id="btnOkPlantaAdicionada" class="btn btn-primary">
+          OK
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+ -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
+
+  <!-- Toast: Planta adicionada -->
+  <div id="toastPlantaAdicionada"
+       class="toast align-items-center text-bg-success border-0"
+       role="status"
+       aria-live="polite"
+       aria-atomic="true"
+       data-bs-delay="3000">
+    <div class="d-flex">
+      <div class="toast-body">
+        🌱 Planta adicionada com sucesso!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast" aria-label="Fechar"></button>
+    </div>
+  </div>
+
+  <!-- Toast: Planta apagada -->
+  <div id="toastPlantaApagada"
+       class="toast align-items-center text-bg-danger border-0"
+       role="status"
+       aria-live="polite"
+       aria-atomic="true"
+       data-bs-delay="3000">
+    <div class="d-flex">
+      <div class="toast-body">
+        🗑️ Planta eliminada com sucesso.
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast" aria-label="Fechar"></button>
+    </div>
+  </div>
+
+  <!-- 🔹 Toast: Planta movida -->
+  <div id="toastPlantaMovida"
+       class="toast align-items-center text-bg-primary border-0"
+       role="status"
+       aria-live="polite"
+       aria-atomic="true"
+       data-bs-delay="3000">
+    <div class="d-flex">
+      <div class="toast-body">
+        🔄 Planta movida para outro cómodo.
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast" aria-label="Fechar"></button>
+    </div>
+  </div>
+
+
+  <!-- Toast: Cômodo removido -->
+  <div id="toastComodoRemovido"
+      class="toast align-items-center text-bg-danger border-0"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      data-bs-delay="3000">
+    <div class="d-flex">
+      <div class="toast-body">
+        🗑️ Cômodo removido com sucesso.
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast" aria-label="Fechar"></button>
+    </div>
+  </div>
+
+
+  <!-- Toast: Cômodo adicionado -->
+  <div id="toastComodoAdicionado"
+      class="toast align-items-center text-bg-success border-0"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      data-bs-delay="3000">
+    <div class="d-flex">
+      <div class="toast-body">
+        🏠 Cômodo criado com sucesso!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast" aria-label="Fechar"></button>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+<!--------------------------------------------------------->
+<!--                   Modal de Confirmação Cancelamento -->
+<!--------------------------------------------------------->
+<div class="modal fade" id="modalConfirmarCancelar" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar Cancelamento</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Tens a certeza que queres cancelar a seleção?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btnNaoCancelar">Não</button>
+        <button type="button" id="btnSimCancelar" class="btn btn-primary">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------------------------------------>
+<!--                               MODAL CONFIRMAR ADICIÇÃO -->
+<!------------------------------------------------------------>
+<div class="modal fade" id="modalConfirmarAdicao" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar Adição</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Deseja realmente adicionar a planta?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary " id="naoAdicionar">Não</button>
+        <button type="button" class="btn btn-primary" id="simAdicionar">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!---------------------------------------------------------------->
+<!---          MODAL: Funcionalidade não implementada           -->
+<!---------------------------------------------------------------->
+<div class="modal fade" id="modalFuncNImplementada" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Aviso</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>Funcionalidade não implementada</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" id="btnOkFuncNImplementada" class="btn btn-primary"  data-bs-dismiss="modal">OK</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!------------------------------------------------------------>
+<!--                   MODAL: Cómodo Adicionado com Sucesso -->
+<!------------------------------------------------------------>
+<div class="modal fade" id="modalComodoAdicionado" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Cómodo Adicionado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>O cómodo foi criado com sucesso!</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!--------------------------------------------------------->
+<!-- Modal: Seleciona o cômodo para onde deseja mover a planta -->
+<!--------------------------------------------------------->
+<div class="modal fade" id="modalTrocarPlantaDeComodo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Mover planta para outro cômodo</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-3">Selecione o cômodo desejado:</p>
+        <div id="comodosDisponiveis" class="row g-3"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------------------------------------>
+<!--MODAL ALERTA ADICAO-->
+<!------------------------------------------------------------>
+<div class="modal fade" id="modalAlertaAdicao" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Não foi possível adicionar a planta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p id="motivoCancelamento"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="okAlerta">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--------------------------------------------------------->
+<!--      Modal: Informações da Planta (rega/fertilização) -->
+<!--------------------------------------------------------->
+<div class="modal fade" id="modalInfoPlanta" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="infoPlantaTitulo"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- BLOCO: INFO GERAL DA PLANTA -->
+        <div class="d-flex gap-3 align-items-start mb-3">
+          <img id="infoPlantaImg" src="" alt="" 
+              style="width:150px; height:150px; object-fit:cover; border-radius:10px; margin-left: 15px;">
+
+          <div class="flex-grow-1">
+            <p class="mb-1"><strong>Nome:</strong> <span id="infoPlantaNome">—</span></p>
+            <p class="mb-1"><strong>Tipo:</strong> <span id="infoPlantaTipo">—</span></p>
+            <p class="mb-1"><strong>Categoria:</strong> <span id="infoPlantaCategoria">—</span></p>
+            <p class="mb-1"><strong>Luz:</strong> <span id="infoPlantaLuz">—</span></p>
+            <p class="mb-1"><strong>Água:</strong> <span id="infoPlantaAgua">—</span></p>
+            <p class="mb-1"><strong>Cómodo:</strong> <span id="infoPlantaComodo">—</span></p>
+          </div>
+        </div>
+
+        <!-- BOTÕES EM BAIXO -->
+        <div class="d-flex justify-content-center gap-3 my-3">
+
+          <button class="btn btn-acao rega-btn" id="btnAbrirRega" type="button">💧 Rega</button>
+          <button class="btn btn-acao fert-btn" id="btnAbrirFert" type="button">🌱 Fertilização</button>
+
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-eli btn-danger" id="btnEliminarPlantaInfo">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 3h6m-9 4h12M8 7v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V7" 
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M10 11v6M14 11v6" 
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Eliminar
+         </button>
+
+        <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--------------------------------------------------------->
+<!--                                  MODAL PARA REGA    -->
+<!--------------------------------------------------------->
+<div class="modal fade" id="modalRega" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">💧 Configurar Rega</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <label class="form-label"><strong>Sistema de rega</strong></label>
+        <select id="infoSelRega" class="form-select mb-3">
+          <option value="manual">Manual</option>
+          <option value="automatico">Automático</option>
+        </select>
+
+        <label class="form-label"><strong>Frequência</strong></label>
+        <div class="input-group mb-3">
+          <input type="number" id="infoDiasRega" class="form-control" min="1" max="60">
+          <span class="input-group-text">dia(s)</span>
+        </div>
+
+        <p class="small text-muted">
+          <strong>Última rega:</strong> <span id="infoRegaUltima">—</span><br>
+          <strong>Próxima rega:</strong> <span id="infoRegaProxima">—</span>
+        </p>
+
+      </div>
+
+      <div class="modal-footer d-flex justify-content-between">
+
+        <!-- BOTÃO VOLTAR -->
+        <button class="btn btn-secondary" id="btnVoltarRega">← Voltar</button>
+
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-success" id="btnRegaHoje" type="button">Regar hoje</button>
+          <button class="btn btn-primary" id="btnGuardarRega" disabled>Guardar</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--------------------------------------------------------->
+<!--                           MODAL PARA FERTILIZAÇÃO   -->
+<!--------------------------------------------------------->
+<div class="modal fade" id="modalFert" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">🌱 Configurar Fertilização</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <label class="form-label"><strong>Plano de fertilização</strong></label>
+        <select id="infoSelFertTipo" class="form-select mb-3">
+          <option value="nenhum">Sem fertilização</option>
+          <option value="semanal">Semanal</option>
+          <option value="mensal">Mensal</option>
+          <option value="trimestral">Trimestral</option>
+        </select>
+
+        <p class="small text-muted">
+          <strong>Última fertilização:</strong> <span id="infoFertUltima">—</span><br>
+          <strong>Próxima fertilização:</strong> <span id="infoFertProxima">—</span>
+        </p>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <!-- BOTÃO VOLTAR -->
+        <button class="btn btn-secondary" id="btnVoltarFert" type="button">← Voltar</button>
+
+        <div class="d-flex gap-2">
+          <button class="btn btn-primary" id="btnFertHoje">Fertilizar hoje</button>
+          <button class="btn btn-primary" id="btnGuardarFert">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!------------------------------------------------------------>
+<!--                         Modal: Confirmar apagar planta -->
+<!------------------------------------------------------------>
+<div class="modal fade" id="modalConfirmarApagarPlanta" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar eliminação</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>
+          Tens a certeza que queres eliminar a planta 
+          <strong id="nomePlantaConfirmar"></strong>?
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btnNaoApagarPlanta">Não</button>
+        <button type="button" class="btn btn-danger" id="btnSimApagarPlanta">Sim, eliminar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="../javascript/script.js"></script>
+<script src="../javascript/quiz.js"></script> 
+
+</body>
+</html>

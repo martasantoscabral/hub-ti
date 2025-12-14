@@ -1,0 +1,171 @@
+.ecra {
+  background: #2e8b35; /* verde do ecrã */
+}
+
+.tituloCatalogo{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  text-decoration:none;
+  font-weight: 720;
+  font-size: 28px;
+  background:#61bf50;
+  color:#1c291a;
+  padding:25px 14px;
+  border-radius:14px;
+
+}
+/* grelha */
+#grid_catalogo.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px 10px;
+}
+
+.btn-limpar{
+  background-color: #2c6522;
+  color: #ffffff;
+  width: 70px;
+  height: 40px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+
+.form-select, .text-pesquisa{
+  margin-top: 10px;
+}
+
+.form-select{
+  width: 90px !important; 
+}
+#catalogoFiltros input.form-control{
+  margin-right: 10px;
+  width: 150px !important; 
+
+}
+
+
+/* -------------------------------------------------------------- */
+/* -------------------CARTAS DAS PLANTAS------------------------- */
+/* -------------------------------------------------------------- */
+
+/* CARD base */
+.itemCatalogo {
+  width: 135px;
+  justify-self: center;
+  background: #7ac45f;
+  border-radius: 18px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: 125px 48px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.itemCatalogo .plant-img {
+  background: linear-gradient(180deg, #fefff3 90%, #7ac45f 10%);
+  display: flex;
+  justify-content: center;
+  margin-top: -35px;
+}
+
+/* imagem da planta */
+.itemCatalogo .plant-img img {
+  margin-top: 6px;
+  max-width: 75%;
+  max-height: 75%;
+  border-radius: 10px;
+}
+
+/* faixa do nome (verde claro) */
+.itemCatalogo .plant-name {
+  color: #1c2a1d;
+  font-weight: 700;
+
+  margin-top: -65px;
+  font-size: 1.09rem;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* animação hover */
+.itemCatalogo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 3px rgb(137, 255, 1);
+  
+}
+
+
+/* -------------------------------------------------------------- */
+/* -------------------MODAL CATÁLOGO INFO------------------------ */
+/* -------------------------------------------------------------- */
+.modal-dialog {
+  margin-left: 12%;   
+  margin-right: auto; 
+}
+
+
+.modal-content{
+  border: 2px solid #3a963d; /* verde principal */
+  border-radius: 25px;
+
+}
+
+/* botão de adicionar */
+.fechar {
+  background-color: #c6f9c2;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#grid_plantas .card_add:hover {
+  transform: scale(1.05);
+}
+
+.fechar{
+  background-color: #3a963d;
+  color: #ffffff;
+}
+
+/* -------------------------------------------------------------- */
+/* ------------------- Título da categoria------------------------ */
+/* -------------------------------------------------------------- */
+
+
+/* Título da categoria */
+.categoriaTitulo {
+  grid-column: 1 / -1;   /* ocupa todas as colunas da .grid */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 5px 0 6px;
+}
+
+/* Barrinha à esquerda */
+.categoriaTitulo::before {
+  content: "";
+  width: 6px;
+  height: 20px;
+  border-radius: 999px;
+  background: #083016;
+}
+
+/* Texto do título */
+.categoriaTitulo h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #083016;
+}
+
+
+
+
+

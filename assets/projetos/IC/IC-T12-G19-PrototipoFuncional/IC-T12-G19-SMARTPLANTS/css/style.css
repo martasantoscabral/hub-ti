@@ -1,0 +1,1373 @@
+html, body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  background:#fff;                 
+}
+
+
+body{
+  color:#2a0e0e;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font: 15px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.ecra{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 720px;
+  background: #c7d872; /* cor de fundo interna */
+  display: grid;
+  grid-template-columns: 1fr 400px; /* conteúdo | menu lateral */
+  overflow: hidden;
+  border-radius: 0 12px 12px 0;
+  border:5px solid #2b4426;
+  box-shadow: 0 0 30px rgba(0,0,0,.2);
+}
+
+.content{ 
+  padding:24px 50px 90px; 
+  position:relative; 
+  height:100%; 
+  overflow:auto; 
+}
+.menu{ 
+  background:#319125; 
+  padding:28px 22px; 
+  display:flex; 
+  flex-direction:column; 
+  gap:20px; height:100%; 
+  overflow:auto; 
+  border:none; 
+}
+
+/* Menu direito */
+.menu{
+  background: #319125;
+  padding:28px 22px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  border: none;
+}
+
+    /*titulo*/
+.titulo{
+  font-weight:700;
+  letter-spacing:.2px;
+  font-size:55px;
+  color:#ffffff;
+  margin:0 0 6px 0;
+}
+
+
+/*menu*/
+.menu .nav{
+  margin-top:18px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+    
+.menu a.btn{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  text-decoration:none;
+  font-weight: 720;
+  font-size: 27px;
+  background:#61bf50;
+  color:#1c291a;
+  padding:25px 14px;
+  border-radius:14px;
+  transition:.2s ease;
+}
+
+    
+.menu a.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 4px 14px -6px rgba(31,122,82,.35);
+}
+
+    
+.menu a.btn.active{
+  border: none;
+  background:#2c6522 100%;
+  color:#fff;
+  box-shadow:0 10px 22px -10px rgba(31,122,82,.35);
+}
+
+    /* Área principal */
+.content{
+  padding:24px 50px 90px;
+  background-color: #b6ee84;
+  position: relative;
+}
+
+
+    /*caixa grande minhas plantas*/
+.minhas_plantas, .catalogo, .meus_comodos{
+  background:#319125;
+  border-radius:20px;
+  padding:18px;
+  box-shadow:0 20px 50px -30px rgba(113, 214, 180, 0.18);
+}
+
+
+    /*linha onde está o titulo de minhas plantas*/
+.barrinha{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:14px;
+  background-color: #61bf50;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/*titulo minhas plantas*/
+.title{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  font-size:30px;
+  font-weight:700;
+  color: #0b3d2e;
+}
+
+
+.btn{
+  border-radius:14px;
+  padding:15px 20px;
+  align-items:center;
+  gap:.55rem;
+  font-weight:600;
+  color:#2a0e0e;
+  text-decoration:none;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.btn svg{display:block}
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px -12px rgba(31,122,82,.35);
+}
+    
+/*----------------------------------------*/
+/*       Grelha de cartões (placeholders) */
+/*----------------------------------------*/
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(140px,1fr));
+  gap:9px;
+}
+
+.card{
+  aspect-ratio: 1 / 1;
+  border:1px solid #2b3b28;
+  border-radius:18px;
+  background:rgba(108, 192, 146, 0.767);
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+/* QUANDO PASSA POR CIMA DAS PLANTAS*/
+.card.itemCatalogo.plant {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card.itemCatalogo.plant:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 0 3px rgb(137, 255, 1);
+}
+
+
+.card.add{
+  background:#b0f5a5;
+  border-style:dashed;
+}
+
+
+/*PLANTA ADICIONADA ANIMACAO*/
+.card.just-added {
+  animation: popIn 2s ease-out, glow 3s ease-out;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0 0 rgb(137, 255, 1);
+  }
+  100% {
+    box-shadow: 0 0 0 5px rgb(137, 255, 1);
+  }
+}
+
+
+svg, .card.add{
+  cursor: pointer;
+}
+
+.card .hint{
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  font-size:12px;
+  color:#5a6b64;
+}
+
+
+/* botão fixo encostado ao lado esquerdo do menu (menu = 320px) */
+.delete {
+  /* tirar o absoluto! */
+  position: static;
+  bottom: auto;
+  right: auto;
+
+  /* faz o botão ocupar uma linha inteira no fim da flexbox */
+  flex: 0 0 100%;
+  align-self: center;
+  margin-top: 32px;
+
+  width: 150px;
+  height: 50px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  gap: 8px;
+  border-radius: 14px;
+  background-color: #eb1414;
+  color: white;
+  box-shadow: 0 10px 22px -12px rgba(178, 59, 59, .25);
+  cursor: pointer;
+}
+
+
+
+.delete:hover {
+  transform: translateY(-2px);
+  background-color: #690707;
+  color: white;
+  box-shadow: 0 14px 30px -12px rgba(178, 59, 59, .32);
+}
+
+
+.card .itemCatalogo{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.itemCatalogo p{
+  font-weight:400;
+  padding: 6px;
+  margin-top: -110px;
+  width: 100%;
+  color: #0b3d2e;
+  font-size: 11px !important;
+  text-align: center;
+  background-color: #61bf50;
+  border-bottom: 1px solid #2b3b28;
+}
+.espacoPlantas{ 
+  background: black;
+}
+#selecaoPlantas{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.imgPlanta{
+  width: 140px;
+  height: 145px;
+  cursor: pointer;
+
+}
+
+/*----------------------------------------*/
+/*        Cartões das plantas(selecionar) */
+/*----------------------------------------*/
+
+#catalogoGrid .planta-card .card {
+  width: 150px;             
+  text-align: center;
+  border: 2px solid #319125;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+  color: #1b461b;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px;
+}
+
+#catalogoGrid .planta-card .card:hover {
+  transform: scale(1.04);
+  background-color: #c4efc4;
+  border-color: #5fb45f;
+  box-shadow: 0 4px 10px rgba(0, 100, 0, 0.2);
+}
+
+
+.planta-card {
+  cursor: pointer;
+  padding: 0px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.planta-card .plant-img {
+  width: 155px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 6px;
+}
+
+.planta-card .plant-name {
+  font-size: 17px;
+  font-weight: 650;
+  color: #081f01; /* verde escuro, ou o que quiserem */
+  text-align: center;
+  margin-top: -4px;
+}
+
+
+/*----------------------------------------*/
+/*                         Botão "Fechar" */
+/*----------------------------------------*/
+
+.btn_fechar, .btn_fecharApagar {
+  color: #ffffff;
+  border-color: #2e6e2f;
+  border: none;
+  font-weight: 500;
+  border-radius: 10px;
+  height: 40px;
+  margin-left: 800px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  background-color: #319125;
+}
+
+/* --- GRELHA DE PLANTAS: 4 POR LINHA --- */
+#grid_plantas {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;                             
+  justify-items: center;                 
+  align-items: start;
+  padding: 10px;
+}
+
+
+
+/*-------------------------------------------*/
+/* modalCatalogo - MODAL CATÁLOGO DE PLANTAS */
+/*-------------------------------------------*/
+
+#modalCatalogo .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+  
+}
+
+#modalCatalogo .modal-title {
+  font-weight: 700;
+}
+
+#modalCatalogo .modal-dialog {
+  max-width: 900px;       
+  max-height: 500px;
+  margin-left: 190px;        
+  margin-top: 120px;
+}
+
+
+#catalogoGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  justify-items: center;                  
+  align-items: start;
+  padding: 10px 20px;
+  gap: 10px;
+}
+.mb-2 {
+  margin-bottom: -1px!important;
+}
+/*--------------------------------------------------*/
+/* modalAdicionarPlanta - MODAL CATÁLOGO DE PLANTAS */
+/*--------------------------------------------------*/
+#modalAdicionarPlanta .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalAdicionarPlanta .modal-dialog { 
+  max-width: 600PX;
+  margin-left: 220px;        
+  margin-top: 10px;
+}
+
+#modalAdicionarPlanta .modal-title{
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#modalAdicionarPlanta .modal-footer { 
+  height: 65px;
+}
+
+#modalAdicionarPlanta button { 
+  margin-top: -9px;
+}
+
+/*------------------------------------------------------*/
+/* modalInfoPlanta  -  MODAL VER INFO DE MINHAS PLANTAS */
+/*------------------------------------------------------*/
+#modalInfoPlanta .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+  
+}
+
+#modalInfoPlanta .modal-dialog { 
+  max-width: 500px;       
+  max-height: 500px;
+  margin-left: 220px;        
+  margin-top: 30px;
+}
+
+
+.btn-rega, .btn-success {
+  background-color: #3a963d;   
+  border-color: #3a963d;
+  color: white;
+}
+
+.btn-rega:hover {
+  background-color: #255827;    
+  border-color: #255827;
+  color: white;
+}
+
+.btn-rega:disabled {
+  background-color: #969594;   
+  border-color: #444344;
+}
+
+
+.btn-eli{
+  display: inline-flex;       
+  align-items: center;         /* centra verticalmente */
+  justify-content: center;     /* opcional */
+  gap: 0.4rem;                 /* espaço entre ícone e texto */
+  flex-direction: row;
+
+  margin-right: 230px;
+}
+/*-------------------------------------------------*/
+/* modalPlantasAdicionadas  - MODAL APAGAR PLANTAS */
+/*-------------------------------------------------*/
+#modalPlantasAdicionadas .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalPlantasAdicionadas .modal-dialog{
+  margin-left: 210px;    
+  margin-top: 120px;
+  max-width: 750px;       
+  max-height: 500px;
+
+}
+
+#modalPlantasAdicionadas .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+  
+}
+
+#plantasAdicionadasGrid .planta-card .plant-img {
+  width: 155px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 6px;
+
+}
+
+#plantasAdicionadasGrid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  justify-items: center;                  
+  align-items: start;
+  padding: 10px 20px;
+  gap: 10px;
+}
+
+/*-------------------------------------------------------*/
+/* modalConfirmarCancelar - MODAL CONFIRMAR CANCELAMENTO */
+/*-------------------------------------------------------*/
+
+#modalConfirmarCancelar .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalConfirmarCancelar .modal-dialog{
+  margin-left: 230px;    
+  margin-top: 120px;
+}
+
+
+/*-------------------------------------------------------*/
+/* modalPlantaApagada */
+/*-------------------------------------------------------*/
+
+#modalPlantaApagada .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalPlantaApagada .modal-dialog{
+  margin-left: 260px;    
+}
+
+/*----------------------------------------------*/
+/* modalPlantaAdicionada  -  MODAL CONFIRMAR ADD */
+/*----------------------------------------------*/
+
+#modalPlantaAdicionada .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d !important; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalPlantaAdicionada .modal-dialog{
+  margin-left: 290px;
+  max-width: 500px;    
+}
+
+
+/*----------------------------------------------*/
+/* modalConfirmarAdicao  -  MODAL CONFI ADD */
+/*----------------------------------------------*/
+
+#modalConfirmarAdicao .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d !important; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalConfirmarAdicao .modal-dialog{
+  margin-left: 290px;
+  max-width: 500px;    
+}
+#modalAlertaAdicao .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d !important; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalAlertaAdicao .modal-dialog{
+  margin-left: 290px;
+  max-width: 500px;    
+}
+
+
+
+/*----------------------------------------------*/
+/*                          modal EXPLICAR REGA */
+/*----------------------------------------------*/
+#modalInfoRega .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d !important; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalInfoRega .modal-dialog{
+  margin-left: 290px;
+  max-width: 500px;    
+}
+
+
+
+/*----------------------------------------------*/
+/* modalConfirmarApagarPlanta  -  MODAL CONFIRMAR ELI */
+/*----------------------------------------------*/
+
+
+#modalConfirmarApagarPlanta .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalConfirmarApagarPlanta .modal-dialog{
+  margin-left: 300px;    
+  margin-top: 20px;
+}
+
+.btn-danger {
+  background-color: #eb1414;
+  color: white;
+  box-shadow: 0 10px 22px -12px rgba(178, 59, 59, .25);
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  background-color: #690707;
+  color: white;
+  box-shadow: 0 14px 30px -12px rgba(178, 59, 59, .32);
+}
+
+
+/*----------------------------------------------*/
+/* modalPlantasRecomendadas */
+/*----------------------------------------------*/
+#modalPlantasRecomendadas .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalPlantasRecomendadas .modal-dialog{
+  margin-left: 150px;    
+  margin-top: 20px;
+  max-width: 700px;
+}
+
+
+/*----------------------------------------------*/
+/*                              modalQuizComodo */
+/*----------------------------------------------*/
+#modalQuizComodo .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalQuizComodo .modal-dialog{
+  margin-left: 150px;    
+  margin-top: 20px;
+  max-width: 700px;
+}
+
+
+/*----------------------------------------------*/
+/* modalLuzAlerta */
+/*----------------------------------------------*/
+#modalLuzAlerta .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalLuzAlerta .modal-dialog{
+  margin-left: 260px;    
+  margin-top: 20px;
+  max-width: 550px;
+}
+
+
+/*----------------------------------------------*/
+/* modalConfirmarGuardarRega */
+/*----------------------------------------------*/
+#modalConfirmarGuardarRega .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalConfirmarGuardarRega .modal-dialog{
+  margin-left: 300px;    
+  margin-top: 20px;
+}
+
+
+/*----------------------------------------------*/
+/* modalRegaGuardada */
+/*----------------------------------------------*/
+#modalRegaGuardada .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalRegaGuardada .modal-dialog{
+  margin-left: 300px;    
+  margin-top: 20px;
+}
+
+/*-------------------------------------------------------*/
+/*                                             modalRega */
+/*                                             modalFert */
+/*-------------------------------------------------------*/
+#modalRega .modal-content, #modalFert .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalRega .modal-dialog, #modalFert .modal-dialog{
+  margin-left: 230px;    
+}
+
+
+
+
+/*-------------------------------------------------------*/
+/*                              modalConfirmarGuardarFert*/
+/*                                      modalFertGuardada*/
+/*-------------------------------------------------------*/
+#modalConfirmarGuardarFert .modal-content, #modalFertGuardada .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalConfirmarGuardarFert .modal-dialog, #modalFertGuardada .modal-dialog{
+  margin-left: 230px;    
+}
+
+
+/*-------------------------------------------------------*/
+/*                                modalConfirmarRegaHoje */
+/*                                modalRegaHojeRegistada */
+/*-------------------------------------------------------*/
+#modalConfirmarRegaHoje .modal-content, #modalRegaHojeRegistada .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalConfirmarRegaHoje .modal-dialog, #modalRegaHojeRegistada .modal-dialog{
+  margin-left: 230px;    
+}
+
+
+
+/*-------------------------------------------------------*/
+/*                               modalConfirmarFertHoje  */
+/*                               modalFertHojeRegistada  */
+/*-------------------------------------------------------*/
+#modalConfirmarFertHoje .modal-content,#modalFertHojeRegistada .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalConfirmarFertHoje .modal-dialog, #modalFertHojeRegistada .modal-dialog{
+  margin-left: 230px;    
+}
+
+
+
+/*----------------------------------------*/
+/*                    cartões das plantas */
+/*----------------------------------------*/
+#grid_plantas .card,
+#grid_plantas .card_add {
+  width: 150px;
+  height: 150px;
+  border-radius: 18px;
+  background: rgba(143, 197, 143, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* botão de adicionar */
+#grid_plantas .card_add {
+  background-color: #c6f9c2;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#grid_plantas .card_add:hover {
+  transform: scale(1.05);
+}
+
+.add{
+  background-color: #3a963d;
+  color: #ffffff;
+}
+
+/*----------------------------------------*/
+/*         imagens de cartões das plantas */
+/*----------------------------------------*/
+
+
+.card.itemCatalogo.plant {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  border-radius: 16px;
+  overflow: hidden;           /* garante que a imagem não saia do card */
+}
+
+.card.itemCatalogo.plant .plant-img {
+  width: 100%;
+  height: 120px;              
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.card.itemCatalogo.plant .meta {
+  display: grid;
+}
+
+.card.itemCatalogo.plant .name {
+  font-weight: 650;
+  margin-bottom: 7px;
+  color: #081f01;
+
+}
+
+/*----------------------------------------*/
+/*         imagens de cartões das plantas */
+/*----------------------------------------*/
+#modalConfirmarCancelar .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalConfirmarCancelar .modal-dialog { 
+  max-width: 500px;       
+  max-height: 500px;
+  margin-left: 300px;        
+  margin-top: 20px;
+}
+
+/*----------------------------------------*/
+/*         Modal de funcionalidade nao implementada para mover comodos. */
+/*----------------------------------------*/
+#modalFuncNImplementada.modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; 
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalFuncNImplementada .modal-dialog { 
+  max-width: 500px;       
+  max-height: 500px;
+  margin-left: 300px;        
+  margin-top: 20px;
+}
+
+/* --- GRELHA DE PLANTAS: 3 POR LINHA --- */
+#grid_plantas {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;                             
+  justify-items: center;                 
+  align-items: start;
+  padding: 10px;
+}
+
+
+.btn-primary{
+  background: white;  
+  border-color: #4c4d4c;
+  border-color: #319125 !important;
+}
+
+.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+    background-color: #3a963d9a;
+    border-color: #4c4d4c;
+    color: rgba(0, 0, 0, 0.781);
+}
+
+.btn-primary:hover{
+  background-color: #319125;
+}
+
+.btn-secondary, .btn-outline-secondary{
+  background-color: #999999;
+  color: #020202;
+  border-color: #319125;
+  border: none;
+  font-weight: 500;
+  border-radius: 15px; 
+}
+
+
+/* Campos de info da planta – apenas visual, não editáveis */
+.campo-bloqueado {
+  background-color: #e9ecef;  
+  color: #6c757d;              
+  cursor: not-allowed;
+}
+
+
+
+
+
+/*----------------------------------------------------------------------*/
+/*---------------------       QUIZZZ     -------------------------------*/
+/*----------------------------------------------------------------------*/
+
+.btn-quiz {
+  background-color: #319125;
+  color: white;
+  border-radius: 15px;
+  padding: 13px 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-quiz:hover {
+  background-color: #54c945;
+  box-shadow: 0 8px 22px -12px rgba(31, 122, 82, .35);
+    transform:translateY(0px);
+
+}
+.quiz-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  gap: 10px;
+}
+
+.quiz-option {
+  position: relative;
+}
+
+.quiz-radio {
+  display: none;  
+}
+
+.quiz-card {
+  background: #f8f8f8;
+  padding: 18px;
+  border-radius: 14px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.05rem;
+  border: 2px solid transparent;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  user-select: none;
+}
+
+/* hover */
+.quiz-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.quiz-radio:checked + .quiz-card {
+  border-color: #319125;
+  box-shadow: 0 0 12px rgba(40, 167, 69, 0.6);
+  background: #acff92;
+  transform: translateY(-2px) scale(1.02);
+}
+
+.pergunta {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #319125;
+}
+
+.progress-bar {
+    background-color: #319125;
+}
+
+#modalPlantasRecomendadas .itemCatalogo {
+  width: 100%;
+  border-radius: 12px;
+  background: rgba(97, 185, 97, 0.8);
+  overflow: hidden;
+  border: 2px solid #e0e0e0;
+  transition: transform .2s ease, box-shadow .2s ease;
+  color: #ffffff;
+}
+
+#modalPlantasRecomendadas .itemCatalogo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* imagem em cima */
+#modalPlantasRecomendadas .itemCatalogo .plant-img img {
+  width: 100%;
+  height: 80px;
+  object-fit: contain;
+  background: #f7f7f7;
+  padding-top: 10px;
+}
+
+
+#modalPlantasRecomendadas .itemCatalogo .plant-name {
+  background: #319125;
+  padding: 5px 0;
+  text-align: center;
+  font-weight: 500;
+  border-top: 1px solid #d8d8d8;
+}
+
+small{
+  color: #000;
+  font-weight: 500;
+}
+
+.cardRecomendada .plant-extra {
+  text-align: left !important;
+  padding-left: 5px;  
+}
+
+/* info extra em baixo */
+#modalPlantasRecomendadas .itemCatalogo .plant-extra {
+  padding: 8px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+
+
+.input-group-text{
+  background-color: #3a963d9a ;
+  border: 2px solid #3a963d;
+  color: #081f01;
+  font-weight: 500;
+}
+
+
+
+.form-control{
+  border: 2px solid #3a963d;
+}
+
+.form-control:focus {
+  border-color: rgb(137, 255, 1);
+  box-shadow: 0 0 .25rem rgb(101, 185, 4);
+}
+
+
+
+
+/*--------------------------------------------------*/
+/* modalAdicionarPlantaCustomizada */
+/*--------------------------------------------------*/
+#modalAdicionarPlantaCustomizada .modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #3a963d; /* verde principal */
+  box-shadow: 0 0 20px rgba(0, 100, 0, 0.15);
+}
+
+#modalAdicionarPlantaCustomizada .modal-dialog { 
+  max-width: 550PX;
+  margin-left: 220px;        
+  margin-top: 10px;
+}
+
+#modalAdicionarPlantaCustomizada .modal-title{
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#modalAdicionarPlantaCustomizada .modal-footer { 
+  height: 65px;
+}
+
+#modalAdicionarPlantaCustomizada button { 
+  margin-top: -9px;
+}
+
+
+
+/* ===================================================== */
+/*      MINHAS PLANTAS – grelha reduzida (155px)         */
+/* ===================================================== */
+
+.minhas_plantas #grid_plantas {
+  display: grid !important;
+  grid-template-columns: repeat(4, 155px); /* 4 colunas */
+  gap: 25px;
+  padding: 18px 10px 70px;
+  justify-items: flex-start;
+}
+
+/* ---------- BASE DOS CARTÕES (inclui plantas e '+') ---------- */
+.minhas_plantas #grid_plantas .card {
+  width: 170px;
+  height: 170px;
+  border-radius: 20px;
+  background: #98dd71;
+  border: 2px solid #2b3b28;
+  box-shadow: 0 10px 20px -16px rgba(0,0,0,.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---------- CARTÕES DE PLANTA ---------- */
+.minhas_plantas #grid_plantas .card.itemCatalogo.plant {
+  cursor: pointer;
+  background: linear-gradient(180deg, #fefff3 55%, #7ac45f 55%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* imagem */
+.minhas_plantas #grid_plantas .card.itemCatalogo.plant .plant-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-top: 4px;
+  box-shadow: 0 14px 30px -17px rgba(0, 0, 0, 0.493);
+}
+
+/* zona do texto */
+.minhas_plantas #grid_plantas .card.itemCatalogo.plant .meta {
+  width: 100%;
+  margin-top: -20px;
+}
+
+/* nome */
+.minhas_plantas #grid_plantas .card.itemCatalogo.plant .name {
+  font-weight: 650;
+  font-size: 13.4px;
+  margin-top: 10px;
+  text-align: left;
+  padding-left: 4px;
+  color: #082b12;
+}
+
+/* badges */
+.minhas_plantas #grid_plantas .card.itemCatalogo.plant .plant-badges {
+  display: flex;
+  
+  gap: 3px;
+  flex-wrap: wrap;
+  padding-left: 4px;
+}
+
+/* ---------- CARTÃO "+" (adicionar planta) ---------- */
+.minhas_plantas #grid_plantas .card.add {
+  background: #cdf8c0;
+  border-style: dashed;
+  border-width: 2px;
+  border-color: #2b3b28;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.minhas_plantas #grid_plantas .card.add svg {
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+}
+
+
+/* animação da última planta adicionada */
+.minhas_plantas #grid_plantas .card.just-added {
+  animation: popIn .7s ease-out;
+}
+
+.minhas_plantas #grid_plantas .plant-badges .badge {
+  margin-right: 4px;      /* opcional: espaço entre badges */
+  display: inline-flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+
+.mt-1 {
+  margin-top: -6px!important;
+}
+
+/* BOTÕES PRINCIPAIS DO MODAL INFO */
+.btn-acao {
+  width: 150px;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Rega = azul-água */
+.rega-btn {
+  background:  #3b78ff;
+  width: 110px;
+}
+
+.rega-btn:hover {
+  background:  #1c63ff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 80, 212, 0.35);
+  color: #ffffff;
+
+}
+
+/* Fertilização = verde-natureza */
+.fert-btn {
+  background: #25a94b;
+  margin-right: -160px;
+
+}
+
+.fert-btn:hover {
+  background:  #138336;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(19, 131, 54, 0.35);
+
+  color: #ffffff;
+}
+
+/* ligeiro brilho no icon */
+.btn-acao .icon {
+  font-size: 18px;
+  filter: drop-shadow(0 0 2px rgba(255,255,255,0.4));
+}
+
+.bg-warning {
+  background-color: #d6261a !important;
+  
+}
+
+/*-------------------------------------------------------------------------*/
+
+
+.toast-container {
+  position: fixed;
+  top: -2px;   
+  left: 480px;    
+  margin: 0;      
+  z-index: 1080;  
+}
+
+
+
+
+
+/* grelha das plantas */
+#grid_plantas {
+  display: grid;
+  grid-template-columns: repeat(4, 170px);
+  gap: 25px;
+}
+
+/* wrapper do botão em baixo */
+#delete-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* botão eliminar */
+.delete {
+
+  max-width: 140px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 14px;
+  background-color: #eb1414;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+
+  border: none;
+  box-shadow: 0 10px 22px -12px rgba(178, 59, 59, .25);
+
+  margin-left: 550px;
+  margin-top: -100px;
+}
+
+
+
+/* container das plantas + botão eliminar */
+#grid_plantas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+/* cards das plantas e card_add, só para garantir que ocupam um “bloco” */
+#grid_plantas .card,
+#grid_plantas .card_add {
+  width: 200px;         /* ajusta se precisares */
+}
