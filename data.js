@@ -42,9 +42,19 @@ const ITEMS = [
     desc: "Definição e funções do SO, estruturas (monolítico/camadas/microkernel), system calls, processos/threads e algoritmos de escalonamento (FCFS, SJF, SRTF, RR).",
     date: "2025-03-15",
     tags: ["processos", "threads", "escalonamento", "system calls"],
-    file: "pdfs/SO-resumo-1 (1).pdf",
+    file: "assets/resumos/SO-resumo-1 (1).pdf",
  },
 
+ //----PCO
+  {
+    category: "resumos",
+    course: "pco",
+    title: "Programação Centrada em Objetos",
+    desc: "Resumo feito pela Professora : Isabel Nunes, 2019",
+    date: "2025-03-15",
+    tags: ["Resumo","Professora", "matéria"],
+    file: "assets/resumos/PCOimpresso.pdf",
+ },
 
 
   // PROJETOS
@@ -271,7 +281,7 @@ const ITEMS = [
     title: "Ficheiros dado pela Professora",
     desc: "",
     date: "2025-11-16",
-    tags: ["Código"],
+    tags: ["Código", "java"],
     file: "assets/projetos/PCO/ProjetoAlunos (4).zip",
   },
     {
@@ -280,7 +290,7 @@ const ITEMS = [
     title: "Projeto final",
     desc: "Ficheiros que eram para fazer de acordo com o enunciado (feito grupo de 2)",
     date: "2025-11-16",
-    tags: ["Código"],
+    tags: ["Código","java"],
     group: "Projeto Final",
     file: "assets/projetos/PCO/PCO018.zip",
   },
