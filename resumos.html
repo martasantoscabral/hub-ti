@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resumos — Hub TI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="topbar">
+  <h1>Resumos</h1>
+  <p>Conteúdo só de leitura (abrir/download).</p>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h3>Páginas</h3>
+    <a class="navlink" href="index.html">Home</a>
+    <a class="navlink active" href="resumos.html">Resumos</a>
+    <a class="navlink" href="projetos.html">Projetos</a>
+    <a class="navlink" href="exercicios.html">Exercícios</a>
+    <hr />
+    <h3>Cadeiras</h3>
+    <div class="muted">SO • IC • PCO • FTV • BD</div>
+
+  </aside>
+
+  <main class="content" data-category="resumos">
+    <section class="card">
+      <div class="filters">
+        <label>
+          Cadeira
+          <select id="courseFilter"></select>
+        </label>
+        <label style="flex:1">
+          Pesquisa
+          <input id="search" type="search" placeholder="Ex.: threads, normalização, heurísticas..." />
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <div id="items" class="grid"></div>
+      <div id="empty" class="muted">Sem itens para mostrar.</div>
+    </section>
+  </main>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
