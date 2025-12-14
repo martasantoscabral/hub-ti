@@ -53,6 +53,19 @@ const ITEMS = [
   {
     category: "projetos",
     course: "ic",
+    title: "Enunciado - SmartPlants",
+    desc: "Enunciado do Projeto de IC 25/26",
+    date: "2025-09-19",
+    tags: ["relatorio"],
+    group: "Projeto Final",
+
+    file: "assets/projetos/IC/IC25-26-Enunciado-projeto.pdf",
+  },
+
+
+  {
+    category: "projetos",
+    course: "ic",
     title: "Relatório da Avaliação Informal dos projetos",
     desc: "",
     date: "2025-09-19",
