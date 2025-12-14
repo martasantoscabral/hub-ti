@@ -379,10 +379,10 @@ const ITEMS = [
   {
     category: "exercicios",
     course: "ic",
-    title: "Exercícios V ou F - 2º teste",
+    title: "Exercícios - 2º teste",
     desc: "Avaliação com Utilizadores, Princípios de design, Desenho de páginas Web, Avaliação Heurística, Desenho de Ecrãs",
     date: "2025-02-25",
-    tags: ["Exame","Exercicios","V ou F"],
-    file: "assets/EXEC/exec-IC-2teste.pdf",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/exec-IC-2teste (1).pdf",
   },
 ];
