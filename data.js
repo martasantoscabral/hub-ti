@@ -115,12 +115,6 @@ const ITEMS = [
     },
 
 
-
-
-
-
-
-
   {
     category: "projetos",
     course: "ic",
@@ -259,6 +253,37 @@ const ITEMS = [
     file: "assets/projetos/IC/IC-T12-G19-RelatorioConsolidadoAvaliacoes (1).pdf",
   },
 
+  //-----PCO
+  {
+    category: "projetos",
+    course: "pco",
+    title: "Enunciado do Projeto de PCO 25/26",
+    desc: "",
+    date: "2025-11-16",
+    tags: ["relatorio"],
+    group: "Projeto Final",
+    file: "assets/projetos/PCO/TrabPCO-Corrigido-13Nov.pdf",
+  },
+
+  {
+    category: "projetos",
+    course: "pco",
+    title: "Ficheiros dado pela Professora",
+    desc: "",
+    date: "2025-11-16",
+    tags: ["Código"],
+    file: "assets/projetos/PCO/ProjetoAlunos (4).zip",
+  },
+    {
+    category: "projetos",
+    course: "pco",
+    title: "Projeto final",
+    desc: "Ficheiros que eram para fazer de acordo com o enunciado (feito grupo de 2)",
+    date: "2025-11-16",
+    tags: ["Código"],
+    group: "Projeto Final",
+    file: "assets/projetos/PCO/PCO018.zip",
+  },
 
   // EXERCÍCIOS
   {
