@@ -106,3 +106,21 @@ input[type="search"]{min-width:280px}
 }
 
 
+
+
+/* grids dentro de secções de disciplina */
+.card .grid{ margin-top:12px; }
+
+/* ===== Subtítulos de projetos (Projeto Final, etc.) ===== */
+.project-group{
+  margin-bottom: 18px;
+}
+
+.project-group-title{
+  margin: 6px 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  padding-left: 8px;
+  border-left: 4px solid #1e293b;
+}
