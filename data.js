@@ -295,6 +295,85 @@ const ITEMS = [
     file: "assets/projetos/PCO/PCO018.zip",
   },
 
+
+  //---FTV
+  {
+    category: "projetos",
+    course: "ftv",
+    title: "Enunciado - AutoCAD",
+    desc: "",
+    date: "2025-11-16",
+    tags: ["relatório"],
+    file: "assets/projetos/FTV/proj_AutoCAD2526.pdf",
+  },
+
+  {
+    category: "projetos",
+    course: "ftv",
+    title: "Projeto - AutoCAD",
+    desc: "",
+    date: "2025-11-16",
+    tags: ["relatório"],
+    file: "assets/projetos/FTV/RELATORIO-FTV-GRUPO19.pdf",
+  },
+
+    {
+    category: "projetos",
+    course: "ftv",
+    title: "Projeto - AutoCAD",
+    desc: "",
+    date: "2025-11-16",
+    group: "Projeto Final",
+    tags: ["zip"],
+    file: "assets/projetos/FTV/ftv.zip",
+  },
+
+  {
+    category: "projetos",
+    course: "ftv",
+    title: "Enunciado - ParaView",
+    desc: "",
+    date: "2025-11-16",
+    tags: ["relatório"],
+    file: "assets/projetos/FTV/proj_Paraview2526-v2.pdf",
+  },
+
+  {
+    category: "projetos",
+    course: "ftv",
+    title: "Ficheiro de Dados - ParaView",
+    desc: "",
+    date: "2025-11-16",
+    tags: ["dados","vtk"],
+    file: "assets/projetos/FTV/ReflorAltitude.vtk",
+  },
+
+
+    {
+    category: "projetos",
+    course: "ftv",
+    title: "Relatório - ParaView",
+    desc: "",
+    date: "2025-11-16",
+    tags: ["zip"],
+    group: "Projeto Final",
+    file: "assets/projetos/FTV/Relatório FTV Paraview .pdf",
+  },
+
+
+  {
+    category: "projetos",
+    course: "ftv",
+    title: "Projeto - ParaView",
+    desc: "",
+    date: "2025-11-16",
+    tags: ["zip"],
+    group: "Projeto Final",
+    file: "assets/projetos/FTV/FTV19.zip",
+  },
+
+
+
   // EXERCÍCIOS
   {
     category: "exercicios",
