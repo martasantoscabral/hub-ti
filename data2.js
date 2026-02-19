@@ -5,6 +5,13 @@ const COURSES = [
   { id: "pco", name: "Programação Centrada a Objetos" },
   { id: "ftv", name: "Fund. e Técnicas de Visualização" },
   { id: "bd",  name: "Bases de Dados" },
+  
+  { id: "adas",  name: "Análise e Desenho de Aplicações e Serviços" },
+  { id: "si",  name: "Sistemas Inteligentes" },
+  { id: "asw",  name: "Aplicações e Serviços na Web" },
+  { id: "ads",  name: "Análise e Desenho de Software" },
+  { id: "ad",  name: "Aplicações Distribuídas" },
+
 ];
 
 // Cada item: category, course, title, desc(opcional), date(opcional), tags(opcional), file (link)

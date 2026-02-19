@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hub TI — 1º Ano</title>
+  <link rel="stylesheet" href="style.css?v=2">
+
+</head>
+<body>
+<header class="topbar">
+  <h1>📚 Hub Académico — 1º Ano (TI)</h1>
+  <p>Resumos, Projetos e Exercícios organizados por cadeira.</p>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h3>Disciplinas</h3>
+    <a class="navlink1" href="home1.html">Home</a>
+    <a class="navlink1">1 Semestre</a>
+    <a class="navlink" href="disciplina1.html?course=cc">Controvérsias Científicas (CC)</a>
+    <a class="navlink" href="disciplina1.html?course=em1">Elementos de Matemática I (EMI)</a>
+    <a class="navlink" href="disciplina1.html?course=prog1">Programação (PROGI)</a>
+    <a class="navlink" href="disciplina1.html?course=ac">Arquiteturas de Computadores (AC)</a>
+    
+    <a class="navlink1">2 Semestre</a>
+    <a class="navlink" href="disciplina1.html?course=ipe"> Introdução às Probabilidades e Estatística (IPE)</a>
+    <a class="navlink" href="disciplina1.html?course=em2">Elementos de Matemática II (EMII)</a>
+    <a class="navlink" href="disciplina1.html?course=prog2">Programação (PROGII)</a>
+    <a class="navlink" href="disciplina1.html?course=rc">Redes de Computadores (RC)</a>
+    <a class="navlink" href="disciplina1.html?course=itw">Introdução às Tecnologias Web (ITW)</a>
+  </aside>
+
+  <main class="content">
+    <section class="card hero">
+    <div class="hero-left">
+        <h2>Sobre este site</h2>
+        <p class="muted">
+        Este site funciona como um <strong>hub académico pessoal</strong>, criado para organizar e
+        apresentar <strong>resumos, projetos e exercícios</strong> do
+        <strong>2.º ano da Licenciatura em Tecnologias de Informação</strong>.
+        </p>
+        <p class="muted">
+        O objetivo é centralizar o material de estudo e trabalhos práticos num único local,
+        facilitando a consulta e partilha. Todo o conteúdo é apenas de leitura (abrir ou descarregar).
+        </p>
+
+
+    </div>
+
+    <div class="hero-right">
+        <div class="badge">🎓 1.º Ano • TI</div>
+
+        <div class="mini-card">
+        <h3>Disciplinas</h3>
+        <ul class="disc-list">
+            <a class="sub">1 Semestre</a>
+            <li><span class="dot cc"></span>Controvérsias Científicas (CC)</li>
+            <li><span class="dot em1"></span>Elementos de Matemática I (EMI)</li>
+            <li><span class="dot prog1"></span>Programação (PROGI)</li>
+            <li><span class="dot ac"></span>Arquiteturas de Computadores (AC)</li>
+            
+            <a class="sub">2 Semestre</a>
+            <li><span class="dot ipe"></span> Introdução às Probabilidades e Estatística (IPE)</li>
+            <li><span class="dot em2"></span>Elementos de Matemática II (EMII)</li>
+            <li><span class="dot prog2"></span>Programação (PROGII)</li>
+            <li><span class="dot rc"></span>Redes de Computadores (RC)</li>
+            <li><span class="dot itw"></span>Introdução às Tecnologias Web (ITW)</li>
+
+        </ul>
+        </div>
+
+    </div>
+    </section>
+
+    <section class="card">
+    <h3>Descrição breve das disciplinas</h3>
+    <ul class="muted" style="line-height:1.8">    
+      <li><strong>Controvérsias Científicas (CC)</strong></li>
+      <li><strong>Elementos de Matemática I (EMI)</strong></li>
+      <li><strong>Programação (PROGI)</strong></li>
+      <li><strong>Arquiteturas de Computadores (AC)</strong></li>
+            
+      <li><strong>Introdução às Probabilidades e Estatística (IPE)</strong></li>
+      <li><strong>Elementos de Matemática II (EMII)</strong></li>
+      <li><strong>Programação (PROGII)</strong></li>
+      <li><strong>Redes de Computadores (RC)</strong></li>
+      <li><strong>Introdução às Tecnologias Web (ITW)</strong></li>
+    </ul>
+    </section>
+
+  </main>
+</div>
+
+<script src="data1.js"></script>
+<script>
+  const counts = { resumos:0, projetos:0, exercicios:0 };
+  (window.ITEMS || []).forEach(it => { if(counts[it.category] != null) counts[it.category]++; });
+
+  document.querySelectorAll("[data-count]").forEach(el => {
+    const k = el.getAttribute("data-count");
+    el.textContent = counts[k] ?? 0;
+  });
+</script>
+
+
+
+</body>
+</html>

@@ -3,92 +3,108 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Hub TI — 2º Ano</title>
-  <link rel="stylesheet" href="style.css?v=2">
+  <title>Escolher Ano</title>
+  <style>
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:#f7f1fb;
+      color:#111;
+    }
+    header{
+      background:#1f2622;
+      color:#fff;
+      padding:18px 22px;
+    }
+    header h1{ margin:0; font-size:20px; }
+    header p{ margin:6px 0 0; opacity:.85; font-size:14px; }
 
+    main{
+      max-width:900px;
+      margin:40px auto;
+      padding:0 18px;
+    }
+
+    .card{
+      background:#fff;
+      border-radius:16px;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      padding:22px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap:14px;
+      margin-top:16px;
+    }
+
+    .year-btn{
+      display:block;
+      text-decoration:none;
+      background:#ffb3bf;
+      color:#231942;
+      padding:18px 16px;
+      border-radius:14px;
+      font-weight:700;
+      border:2px solid rgba(0,0,0,.08);
+      transition:.15s transform, .15s filter;
+    }
+    .year-btn small{
+      display:block;
+      font-weight:600;
+      margin-top:6px;
+      opacity:.75;
+    }
+    .year-btn:hover{
+      transform: translateY(-2px);
+      filter: brightness(.98);
+    }
+
+    footer{
+      max-width:900px;
+      margin:16px auto 30px;
+      padding:0 18px;
+      font-size:13px;
+      opacity:.7;
+    }
+  </style>
 </head>
 <body>
-<header class="topbar">
-  <h1>📚 Hub Académico — 2º Ano (TI)</h1>
-  <p>Resumos, Projetos e Exercícios organizados por cadeira.</p>
-</header>
 
-<div class="layout">
-  <aside class="sidebar">
-    <h3>Disciplinas</h3>
-    <a class="navlink" href="index.html">Home</a>
-    <a class="navlink" href="disciplina.html?course=so">Sistema Operativo (SO)</a>
-    <a class="navlink" href="disciplina.html?course=ic">Interação com Computadores (IC)</a>
-    <a class="navlink" href="disciplina.html?course=pco">Programação Centrada a Objetos (PCO)</a>
-    <a class="navlink" href="disciplina.html?course=ftv">Fund. e Técnicas de Visualização (FTV)</a>
-    <a class="navlink" href="disciplina.html?course=bd">Bases de Dados (BD)</a>
+  <header>
+    <h1>Hub Académico</h1>
+    <p>Escolhe o ano para veres as disciplinas, resumos e projetos.</p>
+  </header>
 
-    <hr />
-    <div class="muted">Marta Cabral</div>
-  </aside>
+  <main>
+    <div class="card">
+      <h2 style="margin:0 0 6px;">Seleciona o teu ano</h2>
+      <p style="margin:0;opacity:.8;">Clica numa opção para entrar.</p>
 
-  <main class="content">
-    <section class="card hero">
-    <div class="hero-left">
-        <h2>Sobre este site</h2>
-        <p class="muted">
-        Este site funciona como um <strong>hub académico pessoal</strong>, criado para organizar e
-        apresentar <strong>resumos, projetos e exercícios</strong> do
-        <strong>2.º ano da Licenciatura em Tecnologias de Informação</strong>.
-        </p>
-        <p class="muted">
-        O objetivo é centralizar o material de estudo e trabalhos práticos num único local,
-        facilitando a consulta e partilha. Todo o conteúdo é apenas de leitura (abrir ou descarregar).
-        </p>
+      <div class="grid">
+        <!-- Troca os href para os teus caminhos reais -->
+        <a class="year-btn" href="home1.html">
+          1º Ano
+          <small>Conteúdos do 1º ano</small>
+        </a>
 
+        <a class="year-btn" href="home2.html">
+          2º Ano
+          <small>Conteúdos do 2º ano</small>
+        </a>
 
+        <a class="year-btn" href="3ano/index.html">
+          3º Ano
+          <small>Conteúdos do 3º ano</small>
+        </a>
+      </div>
     </div>
-
-    <div class="hero-right">
-        <div class="badge">🎓 2.º Ano • TI</div>
-
-
-        <div class="mini-card">
-        <h3>Disciplinas</h3>
-        <ul class="disc-list">
-            <li><span class="dot so"></span> Sistema Operativo (SO)</li>
-            <li><span class="dot ic"></span> Interação com Computadores (IC)</li>
-            <li><span class="dot pco"></span> Programação Centrada a Objetos (PCO)</li>
-            <li><span class="dot ftv"></span> Fund. e Técnicas de Visualização (FTV)</li>
-            <li><span class="dot bd"></span> Bases de Dados (BD)</li>
-        </ul>
-        </div>
-
-    </div>
-    </section>
-
-    <section class="card">
-    <h3>Descrição breve das disciplinas</h3>
-    <ul class="muted" style="line-height:1.8">
-        <li><strong>Sistema Operativo (SO)</strong> — processos, threads, escalonamento e gestão de recursos.</li>
-        <li><strong>Interação com Computadores (IC)</strong> — UX, usabilidade, prototipagem e avaliação.</li>
-        <li><strong>Programação Centrada a Objetos (PCO)</strong> — OOP, modelação e boas práticas.</li>
-        <li><strong>Fundamentos e Técnicas de Visualização (FTV)</strong> — visualização e princípios de design.</li>
-        <li><strong>Bases de Dados (BD)</strong> — modelação, normalização e SQL.</li>
-    </ul>
-    </section>
-
   </main>
-</div>
 
-<script src="data.js"></script>
-<script>
-  // conta items por categoria e mete nos números da home
-  const counts = { resumos:0, projetos:0, exercicios:0 };
-  (window.ITEMS || []).forEach(it => { if(counts[it.category] != null) counts[it.category]++; });
-
-  document.querySelectorAll("[data-count]").forEach(el => {
-    const k = el.getAttribute("data-count");
-    el.textContent = counts[k] ?? 0;
-  });
-</script>
-
-
+  <footer>
+    Dica: podes criar as pastas <b>1ano</b>, <b>2ano</b>, <b>3ano</b> e dentro de cada uma ter o teu <b>index.html</b>.
+  </footer>
 
 </body>
 </html>

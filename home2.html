@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hub TI — 2º Ano</title>
+  <link rel="stylesheet" href="style.css?v=2">
+
+</head>
+<body>
+<header class="topbar">
+  <h1>📚 Hub Académico — 2º Ano (TI)</h1>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h3>Disciplinas</h3>
+    <a class="navlink1" href="home2.html">Home</a>
+    <a class="navlink1">1 Semestre</a>
+    <a class="navlink" href="disciplina2.html?course=so">Sistema Operativo (SO)</a>
+    <a class="navlink" href="disciplina2.html?course=ic">Interação Computadores (IC)</a>
+    <a class="navlink" href="disciplina2.html?course=pco">Programação Centrada a Objetos (PCO)</a>
+    <a class="navlink" href="disciplina2.html?course=ftv">Fund. e Técnicas de Visualização (FTV)</a>
+    <a class="navlink" href="disciplina2.html?course=bd">Bases de Dados (BD)</a>
+   
+    <a class="navlink1">2 Semestre</a>
+    <a class="navlink" href="disciplina2.html?course=adas">Análise e Desenho de Aplicações e Serviços (ADAS)</a>
+    <a class="navlink" href="disciplina2.html?course=si">Sistemas Inteligentes (SI)</a>
+    <a class="navlink" href="disciplina2.html?course=asw">Aplicações e Serviços na Web (ASW)</a>
+    <a class="navlink" href="disciplina2.html?course=ads">Análise e Desenho de Software (ADS)</a>
+    <a class="navlink" href="disciplina2.html?course=ad">Aplicações Distribuídas (AD)</a>
+   
+  </aside>
+
+  <main class="content">
+    <section class="card hero">
+    <div class="hero-left">
+        <h2>Sobre este site</h2>
+        <p class="muted">
+        Este site funciona como um <strong>hub académico pessoal</strong>, criado para organizar e
+        apresentar <strong>resumos, projetos e exercícios</strong> do
+        <strong>2.º ano da Licenciatura em Tecnologias de Informação</strong>.
+        </p>
+        <p class="muted">
+        O objetivo é centralizar o material de estudo e trabalhos práticos num único local,
+        facilitando a consulta e partilha. Todo o conteúdo é apenas de leitura (abrir ou descarregar).
+        </p>
+
+
+    </div>
+
+    <div class="hero-right">
+        <div class="badge">🎓 2.º Ano • TI</div>
+
+
+        <div class="mini-card">
+        <h3>Disciplinas</h3>
+        <ul class="disc-list">
+            <a class="sub">1 Semestre</a>
+            <li><span class="dot so"></span> Sistema Operativo (SO)</li>
+            <li><span class="dot ic"></span> Interação com Computadores (IC)</li>
+            <li><span class="dot pco"></span> Programação Centrada a Objetos (PCO)</li>
+            <li><span class="dot ftv"></span> Fund. e Técnicas de Visualização (FTV)</li>
+            <li><span class="dot bd"></span> Bases de Dados (BD)</li>
+
+            <a class="sub">2 Semestre</a>
+            <li><span class="dot adas"></span> Análise e Desenho de Aplicações e Serviços (ADAS)</li>
+            <li><span class="dot si"></span> Sistemas Inteligentes (SI)</li>
+            <li><span class="dot asw"></span> Aplicações e Serviços na Web (ASW)</li>
+            <li><span class="dot ads"></span> Análise e Desenho de Software (ADS)</li>
+            <li><span class="dot ad"></span> Aplicações Distribuídas (AD)</li>
+
+
+        </ul>
+        </div>
+
+    </div>
+    </section>
+
+    <section class="card">
+    <h3>Descrição breve das disciplinas</h3>
+    <ul class="muted" style="line-height:1.8">
+        <li><strong>Sistema Operativo (SO)</strong> — processos, threads, escalonamento e gestão de recursos.</li>
+        <li><strong>Interação com Computadores (IC)</strong> — UX, usabilidade, prototipagem e avaliação.</li>
+        <li><strong>Programação Centrada a Objetos (PCO)</strong> — OOP, modelação e boas práticas.</li>
+        <li><strong>Fundamentos e Técnicas de Visualização (FTV)</strong> — visualização e princípios de design.</li>
+        <li><strong>Bases de Dados (BD)</strong> — modelação, normalização e SQL.</li>
+
+
+        <li><strong>Análise e Desenho de Aplicações e Serviços (ADAS)</strong> — análise de requisitos, modelação e desenho de aplicações e serviços.</li>
+        <li><strong>Sistemas Inteligentes (SI)</strong> — inteligência artificial, machine learning e sistemas adaptativos.</li>
+        <li><strong>Aplicações e Serviços na Web (ASW)</strong> — desenvolvimento web, APIs e serviços distribuídos.</li>
+        <li><strong>Análise e Desenho de Software (ADS)</strong> — modelação de software, padrões de projeto e arquitetura.</li>
+        <li><strong>Aplicações Distribuídas (AD)</strong> — sistemas distribuídos, comunicação entre processos e sincronização.</li>
+    </ul>
+    </section>
+
+  </main>
+</div>
+
+<script src="data2.js"></script>
+<script>
+  // conta items por categoria e mete nos números da home
+  const counts = { resumos:0, projetos:0, exercicios:0 };
+  (window.ITEMS || []).forEach(it => { if(counts[it.category] != null) counts[it.category]++; });
+
+  document.querySelectorAll("[data-count]").forEach(el => {
+    const k = el.getAttribute("data-count");
+    el.textContent = counts[k] ?? 0;
+  });
+</script>
+
+
+
+</body>
+</html>

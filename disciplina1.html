@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Disciplina — Hub TI</title>
+  <link rel="stylesheet" href="style.css?v=2" />
+</head>
+<body>
+
+<header class="topbar">
+  <h1>📚 Hub Académico — 2º Ano (TI)</h1>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h3>Disciplinas</h3>
+    <a class="navlink1" href="home1.html">Home</a>
+    <a class="navlink1">1 Semestre</a>
+    <a class="navlink" href="disciplina1.html?course=cc">Controvérsias Científicas (CC)</a>
+    <a class="navlink" href="disciplina1.html?course=em1">Elementos de Matemática I (EMI)</a>
+    <a class="navlink" href="disciplina1.html?course=prog1">Programação I (PROGI)</a>
+    <a class="navlink" href="disciplina1.html?course=ac">Arquiteturas de Computadores (AC)</a>
+    
+    <a class="navlink1">2 Semestre</a>
+    <a class="navlink" href="disciplina1.html?course=ipe"> Introdução às Probabilidades e Estatística (IPE)</a>
+    <a class="navlink" href="disciplina1.html?course=em2">Elementos de Matemática II (EMII)</a>
+    <a class="navlink" href="disciplina1.html?course=prog2">Programação II (PROGII)</a>
+    <a class="navlink" href="disciplina1.html?course=rc">Redes de Computadores (RC)</a>
+    <a class="navlink" href="disciplina1.html?course=itw">Introdução às Tecnologias Web (ITW)</a>
+  </aside>
+
+  <main class="content">
+    <section class="card">
+      <h2 id="courseTitle">Disciplina</h2>
+    </section>
+
+    <section class="card">
+      <h3>📘 Resumos</h3>
+      <div id="resumos" class="grid"></div>
+      <div id="resumosEmpty" class="muted" style="display:none;margin-top:10px;">Sem resumos ainda.</div>
+    </section>
+
+    <section class="card">
+      <h3>💻 Projetos</h3>
+      <div id="projetos"></div>
+      <div id="projetosEmpty" class="muted" style="display:none;margin-top:10px;">Sem projetos ainda.</div>
+    </section>
+
+    <section class="card">
+      <h3>✏️ Exercícios</h3>
+      <div id="exercicios" class="grid"></div>
+      <div id="exerciciosEmpty" class="muted" style="display:none;margin-top:10px;">Sem exercícios ainda.</div>
+    </section>
+  </main>
+</div>
+
+<script src="data1.js"></script>
+<script src="course1.js"></script>
+</body>
+</html>

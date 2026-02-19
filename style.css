@@ -9,7 +9,7 @@ body{
 .topbar{
   background:#1B211A;
   color:#fff;
-  padding:18px 22px
+  padding:16px 22px
 }
 
 .topbar h1{
@@ -28,7 +28,7 @@ body{
 }
 
 .sidebar{
-  width:270px;
+  width:280px;
   background:#fff4fd;
   color:#EB4C4C;
   padding:18px;
@@ -52,7 +52,7 @@ body{
   margin:10px 0
 }
 
-.navlink{
+.navlink,.navlink1{
   display:block;
   padding:10px 12px;
   border-radius:10px;
@@ -60,6 +60,10 @@ body{
   color:#540863;
   font-weight: 600;
   background:#FFA6A6;
+}
+
+.navlink1{
+  background:#fc7979;
 }
 .navlink:hover{
   background:#EB4C4C;

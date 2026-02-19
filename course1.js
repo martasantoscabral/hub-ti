@@ -104,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const courseId = params.get("course") || "ic";
 
   document.getElementById("courseTitle").textContent = courseName(courseId);
-  document.getElementById("subtitle").textContent = `Materiais de ${courseName(courseId)}.`;
 
   setActiveSidebar(courseId);
 
