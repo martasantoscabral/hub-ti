@@ -27,6 +27,32 @@ body{
   min-height:calc(100vh - 86px)
 }
 
+
+.topbar-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+}
+
+.home-btn{
+  text-decoration:none;
+  background:#FFA6A6;
+  color:#1f2937;
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:13px;
+  transition:.15s transform, .15s background;
+}
+
+.home-btn:hover{
+  background:#F26076;
+  transform: translateY(-1px);
+  color:#fff;
+}
+
+
 .sidebar{
   width:280px;
   background:#fff4fd;

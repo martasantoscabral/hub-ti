@@ -4,84 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Escolher Ano</title>
-  <style>
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:#f7f1fb;
-      color:#111;
-    }
-    header{
-      background:#1f2622;
-      color:#fff;
-      padding:18px 22px;
-    }
-    header h1{ margin:0; font-size:20px; }
-    header p{ margin:6px 0 0; opacity:.85; font-size:14px; }
+  
+    <link rel="stylesheet" href="style-index.css?v=2">
 
-    main{
-      max-width:900px;
-      margin:40px auto;
-      padding:0 18px;
-    }
-
-    .card{
-      background:#fff;
-      border-radius:16px;
-      box-shadow:0 10px 25px rgba(0,0,0,.08);
-      padding:22px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap:14px;
-      margin-top:16px;
-    }
-
-    .year-btn{
-      display:block;
-      text-decoration:none;
-      background:#ffb3bf;
-      color:#231942;
-      padding:18px 16px;
-      border-radius:14px;
-      font-weight:700;
-      border:2px solid rgba(0,0,0,.08);
-      transition:.15s transform, .15s filter;
-    }
-    .year-btn small{
-      display:block;
-      font-weight:600;
-      margin-top:6px;
-      opacity:.75;
-    }
-    .year-btn:hover{
-      transform: translateY(-2px);
-      filter: brightness(.98);
-    }
-
-    footer{
-      max-width:900px;
-      margin:16px auto 30px;
-      padding:0 18px;
-      font-size:13px;
-      opacity:.7;
-    }
-  </style>
 </head>
 <body>
 
   <header>
-    <h1>Hub Académico</h1>
-    <p>Escolhe o ano para veres as disciplinas, resumos e projetos.</p>
+    <h1>📚 Hub Académico (TI)</h1>
   </header>
 
   <main>
     <div class="card">
-      <h2 style="margin:0 0 6px;">Seleciona o teu ano</h2>
-      <p style="margin:0;opacity:.8;">Clica numa opção para entrar.</p>
-
+      <h2>Seleciona o teu ano</h2>
+      <p class="subtitle">Clica numa opção para entrar.</p>
       <div class="grid">
         <!-- Troca os href para os teus caminhos reais -->
         <a class="year-btn" href="home1.html">
@@ -94,7 +30,7 @@
           <small>Conteúdos do 2º ano</small>
         </a>
 
-        <a class="year-btn" href="3ano/index.html">
+        <a class="year-btn disabled">
           3º Ano
           <small>Conteúdos do 3º ano</small>
         </a>
@@ -103,7 +39,7 @@
   </main>
 
   <footer>
-    Dica: podes criar as pastas <b>1ano</b>, <b>2ano</b>, <b>3ano</b> e dentro de cada uma ter o teu <b>index.html</b>.
+    Marta Cabral
   </footer>
 
 </body>

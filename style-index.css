@@ -1,0 +1,180 @@
+:root{
+  --bg: #f7f1fb;
+  --header: #1f2622;
+
+  /* cores atuais */
+  --btn: #ffb3bf;
+  --btnText: #231942;
+
+  --card: #ffffff;
+  --muted: rgba(17,17,17,.65);
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:#111;
+}
+
+header{
+  background:var(--header);
+  color:#fff;
+  padding:18px 22px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.12);
+}
+
+header h1{
+  margin:0;
+  font-size:22px;
+  letter-spacing:.2px;
+}
+
+main{
+  min-height: calc(100vh - 76px); /* altura total menos header */
+  display: flex;
+  align-items: center;            /* centra verticalmente */
+  justify-content: center;        /* centra horizontalmente */
+  padding: 0 18px;
+}
+
+
+.card{
+  background:#fff;
+  border-radius:22px;
+  padding:32px;
+  width:1200px;
+  height:520px;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.12),
+    0 8px 18px rgba(0,0,0,.08);
+
+  border:1px solid rgba(0,0,0,.06);
+  position: relative;
+}
+.card h2{
+  font-size:34px;
+  margin:60 0 6px;
+  letter-spacing:.2px;
+}
+
+.subtitle{
+  margin:0 0 18px;
+  font-size:18px;
+  opacity:.75;
+}
+
+
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:6px;
+  border-radius:22px 22px 0 0;
+  background: linear-gradient(
+    90deg,
+    #ffb3bf,
+    #ffb3bf,
+    #ffb3bf
+  );
+}
+
+
+/* GRID mais equilibrado */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:14px;
+  margin-top:18px;
+
+  justify-content: center; /* ⭐ CENTRA OS CARDS */
+}
+
+/* Botões: mantém cores, melhora aspeto */
+.year-btn{
+  margin-top: 60px;
+  position:relative;
+  display:block;
+  text-decoration:none;
+  background:var(--btn);
+  color:var(--btnText);
+  padding:48px 36px;
+  border-radius:16px;
+  font-weight:800;
+  border:1px solid rgba(0,0,0,.10);
+  box-shadow: 0 10px 18px rgba(0,0,0,.08);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  outline: none;
+
+  font-size:24px;
+}
+
+.year-btn small{
+  display:block;
+  font-weight:650;
+  margin-top:6px;
+  opacity:.80;
+}
+
+.year-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(0,0,0,.12);
+  filter: brightness(.99);
+}
+
+.year-btn:active{
+  transform: translateY(0px);
+  box-shadow: 0 10px 18px rgba(0,0,0,.09);
+}
+
+/* Focus (teclado) sem mudar cores */
+.year-btn:focus-visible{
+  outline: 3px solid rgba(35,25,66,.25);
+  outline-offset: 3px;
+}
+
+/* DISABLED: mantém o teu estilo + cadeado */
+.year-btn.disabled{
+  pointer-events:none;         /* impede clique */
+  opacity: 0.55;
+  cursor: not-allowed;
+  background: #e5e7eb;
+  color: #6b7280;
+  border-style: dashed;
+  box-shadow: none;
+}
+
+/* Cadeado no canto */
+.year-btn.disabled::after{
+  content:"🔒";
+  position:absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 18px;
+  opacity: .9;
+}
+
+/* Rodapé mais alinhado */
+footer{
+  max-width:900px;
+  margin:16px auto 30px;
+  padding:0 18px;
+  font-size:13px;
+  opacity:.7;
+}
+
+@media (max-width:900px){
+  .grid{
+    grid-template-columns: repeat(2, 280px);
+  }
+}
+
+@media (max-width:600px){
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
