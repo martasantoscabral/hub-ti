@@ -2,7 +2,7 @@
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background:#f4f6f8;
+  background:#fff4fd;
   color:#0f172a
 }
 
@@ -29,7 +29,7 @@ body{
 
 .sidebar{
   width:270px;
-  background:#FFEDC7;
+  background:#fff4fd;
   color:#EB4C4C;
   padding:18px;
   display:flex;
