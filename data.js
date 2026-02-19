@@ -9,7 +9,19 @@ const COURSES = [
 
 // Cada item: category, course, title, desc(opcional), date(opcional), tags(opcional), file (link)
 const ITEMS = [
-  // RESUMOS
+  // ----------------------------------------------RESUMOS -------------------------------------------------
+  
+  //---BD
+   {
+    category: "resumos",
+    course: "bd",
+    title: "Resumo 1",
+    desc: "fundamentos, modelo relacional, SQL básico e avançado, modelação entidade-associação, armazenamento, indexação, processamento e otimização de queries, transações, bases de dados NoSQL, distribuídas e na cloud, data warehousing, business intelligence, big data e analytics.",
+    date: "2026-01-3",
+    tags: ["SQL", "Modelo Relacional", "Atributos","VIEWS", "Otimização", "JSON"],
+    file: "assets/resumos/BD - Resumo.pdf",
+  },
+
 
   //---IC
    {
@@ -31,19 +43,29 @@ const ITEMS = [
     tags: ["usabilidade", "avaliação", "testes"],
     file: "assets/resumos/Resumo IC -2 (1).pdf",
   },
-    
 
 
   //------SO
   {
     category: "resumos",
     course: "so",
-    title: "Introdução a SO + Processos + Escalonamento",
+    title: "Primeira Parte - Introdução ate Escalonamento",
     desc: "Definição e funções do SO, estruturas (monolítico/camadas/microkernel), system calls, processos/threads e algoritmos de escalonamento (FCFS, SJF, SRTF, RR).",
     date: "2025-03-15",
     tags: ["processos", "threads", "escalonamento", "system calls"],
     file: "assets/resumos/SO-resumo-1 (1).pdf",
  },
+
+   {
+    category: "resumos",
+    course: "so",
+    title: "Segunda Parte - Sincronização ate Máquinas Virtuais",
+    desc: "Sincronização + Gestão de Memória + Memória Virtual + Interface/Implementação de Sistema de Ficheiros + Armazenamento + Entradas e Saídas + Proteção + Segurança + Máquinas Virtuais",
+    date: "2026-01-3",
+    tags: ["Locks", "Semáforos","Memória","Paginação","E/S"],
+    file: "assets/resumos/SO - Resumo(2).pdf", 
+ },
+
 
  //----PCO
   {
@@ -56,8 +78,40 @@ const ITEMS = [
     file: "assets/resumos/PCOimpresso.pdf",
  },
 
+  //---FTV
+   {
+    category: "resumos",
+    course: "ftv",
+    title: "Resumo 1",
+    desc: "Fundamentos de computação gráfica e visualização de dados, abrangendo transformações, projeções, iluminação, modelos de cor, tipos de dados e técnicas de interação.",
+    date: "2026-01-3",
+    tags: ["design", "ux", "usabilidade"],
+    file: "assets/resumos/FTV-Resumo1.pdf",
+  },
 
-  // PROJETOS
+  {
+    category: "resumos",
+    course: "ftv",
+    title: "Complemento do Resumo 1",
+    desc: " Grelhas, Dados Escalares,Isolinha e Isosuperfície",
+    date: "2026-01-3",
+    tags: [" Grelhas", " Dados Escalares", "Isolinha", "Isosuperfície"],
+    file: "assets/resumos/FTV-Resumo2.pdf",
+  },
+
+
+  //-------------------------------------- PROJETOS----------------------------------
+  //------BD
+  {
+    category: "projetos",
+    course: "bd",
+    title: "Enunciado",
+    desc: "Enunciado do Projeto de BD 25/26.",
+    date: "2025-09-19",
+    tags: ["docs"],
+    file: "assets/projetos/BD/bd-enunciado projeto.pdf",
+  },
+
 
   //------IC
   {
@@ -375,7 +429,29 @@ const ITEMS = [
 
 
 
-  // EXERCÍCIOS
+  // --------------------------EXERCÍCIOS-------------------------------------
+  //------BD
+  {
+    category: "exercicios",
+    course: "bd",
+    title: "Exame Modelo 2025/2026",
+    desc: "Enunciado dos Exercícios do Exame Modelo 2025/2026. O exame exato foi muito semelhante ao do modelo, mas com algumas pequenas alterações.",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/Exame_Modelo_BD.pdf",
+  },
+
+  {
+    category: "exercicios",
+    course: "bd",
+    title: "Resolução Exame Modelo",
+    desc: "Resolução dos Exercícios do Exame Modelo 2025/2026",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/Exame_Modelo_BD_Solucoes.pdf",
+  },
+
+  //------IC
   {
     category: "exercicios",
     course: "ic",
@@ -385,4 +461,138 @@ const ITEMS = [
     tags: ["Exame","Exercicios"],
     file: "assets/EXEC/exec-IC-2teste (1).pdf",
   },
+
+
+
+  //------FTV
+  {
+    category: "exercicios",
+    course: "ftv",
+    title: "Enunciado dos Exercícios de Exame",
+    desc: "Enunciado dos Exercícios de Exame / sem respodas",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/ftv-docs.pdf",
+  },
+
+  {
+    category: "exercicios",
+    course: "ftv",
+    title: "Exercícios de Exame",
+    desc: "Resolução dos Exercícios de Exame (do enunciado/docs)",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/ftv-exec-docs.pdf",
+  },
+
+  {
+    category: "exercicios",
+    course: "ftv",
+    title: "Exercícios de Exame (F/V)",
+    desc: "Resolução dos Exercícios de Exame (F/V) com explicação",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/ftv-F ou V.pdf",
+  },
+
+ //------SO
+  {
+    category: "exercicios",
+    course: "so",
+    title: "Resolução dos Exercícios Moodle",
+    desc: "Resolução dos Exercícios Moodle anos anteriores",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/SO-2teste-moodle.pdf",
+  },
+
+ //------PCO
+  {
+    category: "exercicios",
+    course: "pco",
+    title: "Resolução dos Exercícios de Exame 1 fase 2019/2020",
+    desc: "Resolução dos Exercícios de Exame 1 fase 2019/2020",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/PCO-exame (1) 2019_2020.pdf",
+  },
+
+  {
+    category: "exercicios",
+    course: "pco",
+    title: "Resolução dos Exercícios de Exame 2 fase 2019/2020",
+    desc: "Resolução dos Exercícios de Exame 2 fase 2019/2020",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/PCO-exame (2) 2019_2020.pdf",
+  },
+
+  {
+    category: "exercicios",
+    course: "pco",
+    title: "Resolução dos Exercícios de Exame 1 fase 2020/2021",
+    desc: "Resolução dos Exercícios de Exame 1 fase 2020/2021",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/PCO-exame (1) 2020_2021.pdf",
+  },
+  {
+    category: "exercicios",
+    course: "pco",
+    title: "Resolução dos Exercícios de Exame 2 fase 2020/2021",
+    desc: "Resolução dos Exercícios de Exame 2 fase 2020/2021",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/PCO-exame (2) 2020_2021.pdf",
+  },
+
+  {
+    category: "exercicios",
+    course: "pco",
+    title: "Resolução dos Exercícios de Exame 1 fase 2021/2022",
+    desc: "Resolução dos Exercícios de Exame 1 fase 2021/2022",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/PCO-exame (1) 2021_2022 (1).pdf",
+  },
+
+  {
+    category: "exercicios",
+    course: "pco",
+    title: "Resolução dos Exercícios de Exame 2 fase 2021/2022",
+    desc: "Resolução dos Exercícios de Exame 2 fase 2021/2022",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/PCO-exame (2) 2021_2022.pdf",
+  },
+  {
+    category: "exercicios",
+    course: "pco",
+    title: "Resolução dos Exercícios de Exame 1 fase 2022/2023",
+    desc: "Resolução dos Exercícios de Exame 1 fase 2022/2023",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/PCO-exame (1) 2022_2023.pdf",
+  },
+
+  {
+    category: "exercicios",
+    course: "pco",
+    title: "Resolução dos Exercícios de Exame 2 fase 2022/2023",
+    desc: "Resolução dos Exercícios de Exame 2 fase 2022/2023",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/PCO-exame (2) 2022_2023.pdf",
+  },
+
+  {
+    category: "exercicios",
+    course: "pco",
+    title: "Resolução dos Exercícios de Exame 1 fase 2025/2026 Igual ao 2022/2023",
+    desc: "Resolução dos Exercícios de Exame 1 fase 2025/2026 Igual ao 2022/2023",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    file: "assets/EXEC/PCO-exame (1) 2022_2023.pdf",
+  },
+
 ];
