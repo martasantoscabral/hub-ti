@@ -55,8 +55,8 @@ function render(){
 
     const tags = (it.tags||[]).map(t => `<span class="tag">${t}</span>`).join("");
 
-    const openUrl = it.open || it.file;
-    const downloadUrl = it.download || it.file;
+    const openUrl = it.open || it.fileOpen || it.file;
+    const downloadUrl = it.download || it.fileDownload || it.file;
 
     // só esconder download se for exatamente o mesmo html
     const hideDownload =
