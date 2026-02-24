@@ -99,14 +99,15 @@ const ITEMS = [
     file: "assets/exercicios/EM1-Enunciado.pdf",
   },
 
-   {
+  {
     category: "exercicios",
     course: "em1",
     title: "Resolução Exercícios",
     desc: "Resolução dos exercícios do primeiro semestre de Elementos de Matemática I",
-    date: "2024-01-3",
-    tags: ["", ""],
-    file: "assets/exercicios/EM1-Exercicios.pdf",
+    date: "2024-01-03",
+    tags: ["resolução", "exercícios"],
+    fileOpen: "https://drive.google.com/file/d/1kv1QF4dNWMDE487tjocsSpGW1gNhYOcd/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1kv1QF4dNWMDE487tjocsSpGW1gNhYOcd",
   },
 
   //---PROG1
