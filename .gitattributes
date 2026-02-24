@@ -1,2 +1,0 @@
-*.pdf filter=lfs diff=lfs merge=lfs -text
-assets/EXEC/EM1-resolucao.pdf filter=lfs diff=lfs merge=lfs -text
