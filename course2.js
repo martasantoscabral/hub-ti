@@ -12,8 +12,8 @@ function formatDate(iso){
 function renderCard(it){
   const tags = (it.tags||[]).map(t => `<span class="tag">${t}</span>`).join("");
 
-  const openUrl = it.open || it.file;
-  const downloadUrl = it.download || it.file;
+  const openUrl = it.open || it.fileOpen || it.file;
+  const downloadUrl = it.download || it.fileDownload || it.file;
 
   const hideDownload =
     openUrl && downloadUrl &&
