@@ -40,13 +40,16 @@ main{
   padding: 0 18px;
 }
 
-
 .card{
   background:#fff;
   border-radius:22px;
   padding:32px;
-  width:1200px;
-  height:520px;
+
+  width: min(92vw, 1200px);   /* ✅ adapta ao telemóvel */
+  max-width: 1200px;
+  height: auto;               /* ✅ deixa crescer */
+  min-height: 520px;          /* ✅ mantém “altura bonita” no PC */
+
   box-shadow:
     0 30px 60px rgba(0,0,0,.12),
     0 8px 18px rgba(0,0,0,.08);
@@ -54,6 +57,8 @@ main{
   border:1px solid rgba(0,0,0,.06);
   position: relative;
 }
+
+
 .card h2{
   font-size:34px;
   margin:60 0 6px;
@@ -178,3 +183,13 @@ footer{
     grid-template-columns: 1fr;
   }
 }
+
+
+
+/* --- FIX: grelha dos anos (1º/2º/3º) centrada e sem cortes --- */
+
+/* Se o teu wrapper da página tiver overflow hidden, isto evita cortar o 3º card */
+.section, .panel, .card-wrap, .hero, .content-box {
+  overflow: visible;
+}
+
