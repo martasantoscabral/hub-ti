@@ -264,6 +264,67 @@ html, body {
 
 
 
+
+/* --- FIX MOBILE: cards dos anos centrados --- */
+
+/* evita scroll horizontal por larguras fixas */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* em mobile, força layout simples e centrado */
+@media (max-width: 600px) {
+
+  /* container principal ocupa a largura certa */
+  main, .content, .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0 auto;
+  }
+
+  /* wrapper dos cards: 1 coluna */
+  .grid, .years, .year-grid, .cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+    align-items: center !important;
+  }
+
+  /* o próprio card: largura responsiva + centrado */
+  .item, .card, .year-card, a.year-card {
+    width: 100% !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    display: block !important;
+
+    /* anula coisas que empurram no mobile */
+    transform: none !important;
+    left: auto !important;
+    right: auto !important;
+    position: relative !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* grids dentro de secções de disciplina */
 .card .grid{ margin-top:12px; }
 
