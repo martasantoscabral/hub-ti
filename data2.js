@@ -608,7 +608,7 @@ const ITEMS = [
     category: "exercicios",
     course: "si",
     title: "Resolução dos Exercícios Paradigma do Espaço de Estados ",
-    desc: "Resolução dos Exercícios Paradigma do Espaço de Estados",
+    desc: "Resolução dos Exercícios - CADI (FCUL)",
     date: "2025-02-25",
     tags: ["Exame","Exercicios"],
     fileOpen: "https://drive.google.com/file/d/1B5_Jvv_QF2DdEtlpaD_-3ATX9qZ559e0/view",
