@@ -106,6 +106,18 @@ const ITEMS = [
     file: "assets/resumos/FTV-Resumo2.pdf",
   },
 
+  //------SI
+  {
+    category: "resumos",
+    course: "si",
+    title: "Resumo 1 Paradigma do Espaço de Estados ",
+    desc: "Paradigma do Espaço de Estados",
+    date: "2025-02-25",
+    tags: ["Resumo","Espaço de estados ","Agentes","Estado inicial","Ações"],
+    fileOpen: "https://drive.google.com/file/d/12CFFwJbcpZbRLeLmI_L1aDdkPG0XTl1k/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=12CFFwJbcpZbRLeLmI_L1aDdkPG0XTl1k",
+
+  },
 
   //-------------------------------------- PROJETOS----------------------------------
   //------BD
