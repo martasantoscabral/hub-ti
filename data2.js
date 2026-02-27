@@ -628,4 +628,18 @@ const ITEMS = [
 
   },
 
+   //------AD
+
+  {
+    category: "exercicios",
+    course: "ad",
+    title: "Resolução Guiao da PL1",
+    desc: "",
+    date: "2025-02-25",
+    tags: ["Exame","Exercicios"],
+    fileOpen: "https://drive.google.com/file/d/1v2qtLW5_zMkIYLYOoROQRQQY3Nminc52/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1v2qtLW5_zMkIYLYOoROQRQQY3Nminc52",
+
+  },
+
 ];
