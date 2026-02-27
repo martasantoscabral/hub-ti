@@ -648,7 +648,7 @@ const ITEMS = [
     course: "ad",
     title: "Guiao da PL1-Sockets TCP",
     desc: "",
-    date: "2025-02-25",
+    date: "2025-02-27",
     tags: ["Exame","Exercicios"],
     fileOpen: "  https://drive.google.com/file/d/1y4kE-D0skdHLRuxAU2gKefHNleb0Kfj0/view",
     fileDownload: "https://drive.google.com/uc?export=download&id=1y4kE-D0skdHLRuxAU2gKefHNleb0Kfj0",
