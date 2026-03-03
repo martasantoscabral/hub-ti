@@ -653,4 +653,28 @@ const ITEMS = [
     fileDownload: "https://drive.google.com/uc?export=download&id=1y4kE-D0skdHLRuxAU2gKefHNleb0Kfj0",
   },
 
+
+  //------ASW
+
+  {
+    category: "exercicios",
+    course: "asw",
+    title: "Resolução Guiao da TP2",
+    desc: "Iniciação ao Desenvolvimento em Node.js e TypeScript",
+    date: "2025-02-25",
+    tags: ["Exercicios"],
+    fileOpen: "https://drive.google.com/file/d/16xJSnmpEKdW6uoyrp36N-sguo6rJkn66/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=16xJSnmpEKdW6uoyrp36N-sguo6rJkn66",
+  },
+
+  {
+    category: "exercicios",
+    course: "asw",
+    title: "Guiao da TP2",
+    desc: "Iniciação ao Desenvolvimento em Node.js e TypeScript",
+    date: "2025-02-25",
+    tags: ["Guiao","Exercicios"],
+    fileOpen: "https://drive.google.com/file/d/1kmHALFGFG6IAQrSoQkrhyUpMQ1NhGtoA/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1kmHALFGFG6IAQrSoQkrhyUpMQ1NhGtoA",
+  },
 ];
