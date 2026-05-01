@@ -3,65 +3,129 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Disciplina — Hub TI</title>
-  <link rel="stylesheet" href="style.css?v=2" />
+  <title>Disciplina — Hub TI 1º Ano</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .course-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 13px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Nunito', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .empty-state {
+      color: var(--ink-3);
+      font-size: 13px;
+      padding: 20px 0;
+      text-align: center;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
 
 <header class="topbar">
   <div class="topbar-inner">
-    <div>
-      <h1>📚 Hub Académico — 1º Ano (TI)</h1>
-    </div>
-    <a href="index.html" class="home-btn">🏠 Início</a>
+    <h1>📚 Hub Académico — 1.º Ano · TI</h1>
+    <a href="index.html" class="home-btn">↩ Início</a>
   </div>
 </header>
-
 
 <div class="layout">
   <aside class="sidebar">
     <h3>Disciplinas</h3>
-    <a class="navlink1" href="home1.html">Home</a>
-    <a class="navlink1">1 Semestre</a>
-    <a class="navlink" href="disciplina1.html?course=cc">Controvérsias Científicas (CC)</a>
-    <a class="navlink" href="disciplina1.html?course=em1">Elementos de Matemática I (EMI)</a>
-    <a class="navlink" href="disciplina1.html?course=prog1">Programação I (PROGI)</a>
-    <a class="navlink" href="disciplina1.html?course=ac">Arquiteturas de Computadores (AC)</a>
-    
-    <a class="navlink1">2 Semestre</a>
-    <a class="navlink" href="disciplina1.html?course=ipe"> Introdução às Probabilidades e Estatística (IPE)</a>
-    <a class="navlink" href="disciplina1.html?course=em2">Elementos de Matemática II (EMII)</a>
-    <a class="navlink" href="disciplina1.html?course=prog2">Programação II (PROGII)</a>
-    <a class="navlink" href="disciplina1.html?course=rc">Redes de Computadores (RC)</a>
-    <a class="navlink" href="disciplina1.html?course=itw">Introdução às Tecnologias Web (ITW)</a>
+    <a class="navlink" href="home1.html">🏠 Visão Geral</a>
+
+    <span class="navlink1">1.º Semestre</span>
+    <a class="navlink" href="disciplina1.html?course=cc">Controvérsias Científicas</a>
+    <a class="navlink" href="disciplina1.html?course=em1">Elementos de Matemática I</a>
+    <a class="navlink" href="disciplina1.html?course=prog1">Programação I</a>
+    <a class="navlink" href="disciplina1.html?course=ac">Arquiteturas de Computadores</a>
+
+    <span class="navlink1">2.º Semestre</span>
+    <a class="navlink" href="disciplina1.html?course=ipe">Probabilidades e Estatística</a>
+    <a class="navlink" href="disciplina1.html?course=em2">Elementos de Matemática II</a>
+    <a class="navlink" href="disciplina1.html?course=prog2">Programação II</a>
+    <a class="navlink" href="disciplina1.html?course=rc">Redes de Computadores</a>
+    <a class="navlink" href="disciplina1.html?course=itw">Tecnologias Web</a>
   </aside>
 
-  <main class="content">
-    <section class="card">
-      <h2 id="courseTitle">Disciplina</h2>
-    </section>
+  <main class="content" id="main-content">
 
-    <section class="card">
-      <h3>📘 Resumos</h3>
-      <div id="resumos" class="grid"></div>
-      <div id="resumosEmpty" class="muted" style="display:none;margin-top:10px;">Sem resumos ainda.</div>
-    </section>
+    <!-- Course header – colorido pelo script abaixo -->
+    <div class="course-header" id="course-header">
+      <div class="course-pill" id="course-pill"></div>
+      <h2 id="courseTitle">Carregando…</h2>
+      <p id="course-desc"></p>
+    </div>
 
-    <section class="card">
-      <h3>💻 Projetos</h3>
+    <!-- Resumos -->
+    <div class="card" id="sec-resumos">
+      <h3><span style="font-size:18px">📄</span> Resumos</h3>
+      <div class="grid" id="resumos"></div>
+      <div id="resumosEmpty" class="empty-state" style="display:none">Sem resumos ainda.</div>
+    </div>
+
+    <!-- Projetos -->
+    <div class="card" id="sec-projetos">
+      <h3><span style="font-size:18px">💻</span> Projetos</h3>
       <div id="projetos"></div>
-      <div id="projetosEmpty" class="muted" style="display:none;margin-top:10px;">Sem projetos ainda.</div>
-    </section>
+      <div id="projetosEmpty" class="empty-state" style="display:none">Sem projetos ainda.</div>
+    </div>
 
-    <section class="card">
-      <h3>✏️ Exercícios</h3>
-      <div id="exercicios" class="grid"></div>
-      <div id="exerciciosEmpty" class="muted" style="display:none;margin-top:10px;">Sem exercícios ainda.</div>
-    </section>
+    <!-- Exercícios -->
+    <div class="card" id="sec-exercicios">
+      <h3><span style="font-size:18px">✏️</span> Exercícios</h3>
+      <div class="grid" id="exercicios"></div>
+      <div id="exerciciosEmpty" class="empty-state" style="display:none">Sem exercícios ainda.</div>
+    </div>
+
   </main>
 </div>
 
+<!-- data1.js define COURSES e ITEMS -->
 <script src="data1.js"></script>
+
+<!-- course1.js define courseName, renderCard, fillSection, setActiveSidebar -->
 <script src="course1.js"></script>
+
+<!-- Aplica apenas o tema de cor – não interfere com os dados -->
+<script>
+  const COURSE_THEME = {
+    cc:    { abbr:'CC',     desc:'Análise crítica de debates científicos e metodologia de argumentação.', cls:'course-cc',    color:'#7C3AED' },
+    em1:   { abbr:'EMI',   desc:'Fundamentos de álgebra, funções e cálculo diferencial.',                cls:'course-em1',   color:'#D97706' },
+    prog1: { abbr:'PROGI', desc:'Introdução à programação imperativa, algoritmos e estruturas de controlo.', cls:'course-prog1', color:'#0D9488' },
+    ac:    { abbr:'AC',    desc:'Organização do hardware, representação binária e assembly.',            cls:'course-ac',    color:'#2563EB' },
+    ipe:   { abbr:'IPE',   desc:'Teoria da probabilidade, distribuições e inferência estatística.',      cls:'course-ipe',   color:'#16A34A' },
+    em2:   { abbr:'EMII',  desc:'Álgebra linear, matrizes e equações diferenciais.',                    cls:'course-em2',   color:'#EC4899' },
+    prog2: { abbr:'PROGII',desc:'Estruturas de dados, recursividade e orientação a objetos.',            cls:'course-prog2', color:'#EA580C' },
+    rc:    { abbr:'RC',    desc:'Modelos OSI/TCP-IP, protocolos e configuração de redes.',              cls:'course-rc',    color:'#DC2626' },
+    itw:   { abbr:'ITW',   desc:'HTML, CSS, JavaScript e fundamentos do desenvolvimento web.',          cls:'course-itw',   color:'#0284C7' },
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const key = new URLSearchParams(location.search).get("course") || "cc";
+    const theme = COURSE_THEME[key];
+    if (!theme) return;
+
+    const header = document.getElementById("course-header");
+    header.classList.add(theme.cls);
+
+    const pill = document.getElementById("course-pill");
+    pill.textContent = theme.abbr;
+    pill.style.background = theme.color;
+
+    document.getElementById("course-desc").textContent = theme.desc;
+    document.getElementById("main-content").style.setProperty("--course-color", theme.color);
+  });
+</script>
+
 </body>
 </html>

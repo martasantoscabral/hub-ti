@@ -26,9 +26,12 @@ const ITEMS = [
     desc: "Aborda as controvérsias científicas como debates que estruturam o desenvolvimento da ciência, desde a filosofia clássica até a contemporaneidade.Mostra como o logos, o diálogo e o conflito de ideias são essenciais para a produção do conhecimento científico.",
     date: "2024-01-3",
     tags: ["Natureza", "Logos","Diálogo","Aristóteles", "Newton"],
-    file: "assets/resumos/Controvérsias Científicas.pdf",
+    fileOpen: "https://drive.google.com/file/d/13RULwvtmfH0Mg5rB7ht-jx1GkmIKLAKH/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=13RULwvtmfH0Mg5rB7ht-jx1GkmIKLAKH",
+
   },
 
+  //---EM1
   {
     category: "resumos",
     course: "em1",
@@ -36,7 +39,10 @@ const ITEMS = [
     desc: "Resumo do primeiro semestre de Elementos de Matemática I",
     date: "2024-01-3",
     tags: ["matriz", "Espaço Vectoriais"],
-    file: "assets/resumos/EM1-Resumo1.pdf",
+    fileOpen: "https://drive.google.com/file/d/1rXmI81oLsIO9fSUe6LUm1UKnvgQcbke-/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1rXmI81oLsIO9fSUe6LUm1UKnvgQcbke-",
+
+
   },
 
   {
@@ -46,7 +52,9 @@ const ITEMS = [
     desc: "Outro Resumo do primeiro semestre de Elementos de Matemática I",
     date: "2024-01-3",
     tags: ["matriz", "Espaço Vectoriais"],
-    file: "assets/resumos/EM1-Resumo2.pdf",
+    fileOpen: "https://drive.google.com/file/d/1xKCt6VHrHwpf6goS7CsNRIx4txXwpRWC/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1xKCt6VHrHwpf6goS7CsNRIx4txXwpRWC",
+
   },
 
 
@@ -58,7 +66,9 @@ const ITEMS = [
     desc: "Resumo da disciplina de Programação I",
     date: "2024-01-3",
     tags: ["", ""],
-    file: "assets/resumos/PROG1-Resumo_incompleto.pdf",
+    fileOpen: "https://drive.google.com/file/d/1pAci2B8OiXdiwYv0LbcC-uP-cnLK_1hD/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1pAci2B8OiXdiwYv0LbcC-uP-cnLK_1hD",
+    
   },
 
 
@@ -72,7 +82,9 @@ const ITEMS = [
     desc: "Resolução Projeto de Programação I",
     date: "2024-01-3",
     tags: ["", ""],
-    file: "assets/projetos/PROG1/Prog1-Projecto.pdf",
+    fileOpen: "https://drive.google.com/file/d/1fxy2xdyoTn-3qNAPR5pZJI4N9JSpnkS0/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1fxy2xdyoTn-3qNAPR5pZJI4N9JSpnkS0",
+    
   },
 
 
@@ -96,7 +108,9 @@ const ITEMS = [
     desc: "Enunciado dos exercícios do primeiro semestre de Elementos de Matemática I",
     date: "2024-01-3",
     tags: ["", ""],
-    file: "assets/exercicios/EM1-Enunciado.pdf",
+    fileOpen: "https://drive.google.com/file/d/1mC-89MSwYUT5ceA-NdJy2SxOOh9KxDF-/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1mC-89MSwYUT5ceA-NdJy2SxOOh9KxDF-",
+
   },
 
   {
@@ -107,8 +121,10 @@ const ITEMS = [
     date: "2024-01-03",
     tags: ["resolução", "exercícios"],
     fileOpen: "https://drive.google.com/file/d/1kv1QF4dNWMDE487tjocsSpGW1gNhYOcd/view",
-    fileDownload: "https://drive.google.com/uc?export=download&id=1kv1QF4dNWMDE487tjocsSpGW1gNhYOcd",
+
   },
+
+
 
   //---PROG1
   {
@@ -118,7 +134,8 @@ const ITEMS = [
     desc: "Alguns exercícios de programação I",
     date: "2024-01-3",
     tags: ["", ""],
-    file: "assets/EXEC/PROG1-EXEC.pdf",
+    fileOpen: "https://drive.google.com/file/d/1DRnQpblLvRkmhwMLvos42kaqiaBRf8Q4/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1DRnQpblLvRkmhwMLvos42kaqiaBRf8Q4",
   },
 
 

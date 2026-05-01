@@ -3,44 +3,83 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tecnologias de Informação - FCUL</title>
-  
-    <link rel="stylesheet" href="style-index.css?v=2">
-
+  <title>Hub Académico — TI · FCUL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="./css/style-index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <h1>📚 Hub Académico (TI)</h1>
-  </header>
+<!-- Floating dots -->
+<div class="deco deco-1"></div>
+<div class="deco deco-2"></div>
+<div class="deco deco-3"></div>
+<div class="deco deco-4"></div>
+<div class="deco deco-5"></div>
 
-  <main>
-    <div class="card">
-      <h2>Seleciona o teu ano</h2>
-      <p class="subtitle">Clica numa opção para entrar.</p>
-      <div class="grid">
-        <!-- Troca os href para os teus caminhos reais -->
-        <a class="year-btn" href="home1.html">
-          1º Ano
-          <small>Conteúdos do 1º ano</small>
-        </a>
+<header>
+  <div class="header-logo">
+    <div class="logo-mark">📚</div>
+    <h1>Hub Académico · TI</h1>
+  </div>
+  <div class="header-pills">
+    <span class="pill pill-violet">FCUL</span>
+    <span class="pill pill-pink">TI</span>
+  </div>
+</header>
 
-        <a class="year-btn" href="home2.html">
-          2º Ano
-          <small>Conteúdos do 2º ano</small>
-        </a>
+<main>
+  <div class="container">
 
-        <a class="year-btn disabled">
-          3º Ano
-          <small>Conteúdos do 3º ano</small>
-        </a>
-      </div>
+    <div class="hero">
+      <div class="hero-badge">✦ Licenciatura em Tecnologias de Informação</div>
+      <h2>Escolhe o <br><span class="word-colorido">ano lectivo</span></h2>
+      <p>Resumos, projetos e exercícios por disciplina — tudo organizado num único lugar 🎉</p>
     </div>
-  </main>
 
-  <footer>
-    Marta Cabral
-  </footer>
+    <div class="years-grid">
+
+      <a class="year-card card-1" href="home1.html">
+        <div class="card-emoji">🎓</div>
+        <div class="card-label">1.º Ano</div>
+        <div class="card-sub">9 disciplinas · 2 semestres</div>
+        <div class="card-tags">
+          <span class="chip">Matemática</span>
+          <span class="chip">Programação</span>
+          <span class="chip">Redes</span>
+        </div>
+        <div class="card-cta">→</div>
+      </a>
+
+      <a class="year-card card-2" href="home2.html">
+        <div class="card-emoji">🚀</div>
+        <div class="card-label">2.º Ano</div>
+        <div class="card-sub">10 disciplinas · 2 semestres</div>
+        <div class="card-tags">
+          <span class="chip">Bases de Dados</span>
+          <span class="chip">SO</span>
+          <span class="chip">IA</span>
+        </div>
+        <div class="card-cta">→</div>
+      </a>
+
+      <div class="year-card card-3">
+        <div class="lock-badge">🔒 Em breve</div>
+        <div class="card-emoji">🔭</div>
+        <div class="card-label">3.º Ano</div>
+        <div class="card-sub">A caminho...</div>
+        <div class="card-tags">
+          <span class="chip">???</span>
+          <span class="chip">???</span>
+        </div>
+        <div class="card-cta">🔒</div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>Feito por <span>Marta Cabral</span></footer>
 
 </body>
 </html>

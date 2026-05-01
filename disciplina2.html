@@ -3,66 +3,131 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Disciplina — Hub TI</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Disciplina — Hub TI 2º Ano</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .course-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 13px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Nunito', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .empty-state {
+      color: var(--ink-3);
+      font-size: 13px;
+      padding: 20px 0;
+      text-align: center;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
 
 <header class="topbar">
   <div class="topbar-inner">
-    <div>
-      <h1>📚 Hub Académico — 2º Ano (TI)</h1>
-    </div>
-    <a href="index.html" class="home-btn">🏠 Início</a>
+    <h1>📚 Hub Académico — 2.º Ano · TI</h1>
+    <a href="index.html" class="home-btn">↩ Início</a>
   </div>
 </header>
 
 <div class="layout">
   <aside class="sidebar">
     <h3>Disciplinas</h3>
-    <a class="navlink1" href="home2.html">Home</a>
-    <a class="navlink1">1 Semestre</a>
-    <a class="navlink" href="disciplina2.html?course=so">Sistema Operativo (SO)</a>
-    <a class="navlink" href="disciplina2.html?course=ic">Interação Computadores (IC)</a>
-    <a class="navlink" href="disciplina2.html?course=pco">Programação Centrada a Objetos (PCO)</a>
-    <a class="navlink" href="disciplina2.html?course=ftv">Fund. e Técnicas de Visualização (FTV)</a>
-    <a class="navlink" href="disciplina2.html?course=bd">Bases de Dados (BD)</a>
-   
-    <a class="navlink1">2 Semestre</a>
-    <a class="navlink" href="disciplina2.html?course=adas">Análise e Desenho de Aplicações e Serviços (ADAS)</a>
-    <a class="navlink" href="disciplina2.html?course=si">Sistemas Inteligentes (SI)</a>
-    <a class="navlink" href="disciplina2.html?course=asw">Aplicações e Serviços na Web (ASW)</a>
-    <a class="navlink" href="disciplina2.html?course=ads">Análise e Desenho de Software (ADS)</a>
-    <a class="navlink" href="disciplina2.html?course=ad">Aplicações Distribuídas (AD)</a>
-   
+    <a class="navlink" href="home2.html">🏠 Visão Geral</a>
+
+    <span class="navlink1">1.º Semestre</span>
+    <a class="navlink" href="disciplina2.html?course=so">Sistema Operativo</a>
+    <a class="navlink" href="disciplina2.html?course=ic">Interação com Computadores</a>
+    <a class="navlink" href="disciplina2.html?course=pco">Prog. Centrada a Objetos</a>
+    <a class="navlink" href="disciplina2.html?course=ftv">Fund. e Técnicas de Visualização</a>
+    <a class="navlink" href="disciplina2.html?course=bd">Bases de Dados</a>
+
+    <span class="navlink1">2.º Semestre</span>
+    <a class="navlink" href="disciplina2.html?course=adas">Análise e Desenho (ADAS)</a>
+    <a class="navlink" href="disciplina2.html?course=si">Sistemas Inteligentes</a>
+    <a class="navlink" href="disciplina2.html?course=asw">Aplicações e Serviços Web</a>
+    <a class="navlink" href="disciplina2.html?course=ads">Análise e Desenho de Software</a>
+    <a class="navlink" href="disciplina2.html?course=ad">Aplicações Distribuídas</a>
   </aside>
 
-  <main class="content">
-    <section class="card">
-      <h2 id="courseTitle">Disciplina</h2>
-    </section>
+  <main class="content" id="main-content">
 
-    <section class="card">
-      <h3>📘 Resumos</h3>
-      <div id="resumos" class="grid"></div>
-      <div id="resumosEmpty" class="muted" style="display:none;margin-top:10px;">Sem resumos ainda.</div>
-    </section>
+    <!-- Course header – colorido pelo script abaixo -->
+    <div class="course-header" id="course-header">
+      <div class="course-pill" id="course-pill"></div>
+      <h2 id="courseTitle">Carregando…</h2>
+      <p id="course-desc"></p>
+    </div>
 
-    <section class="card">
-      <h3>💻 Projetos</h3>
+    <!-- Resumos -->
+    <div class="card" id="sec-resumos">
+      <h3><span style="font-size:18px">📄</span> Resumos</h3>
+      <div class="grid" id="resumos"></div>
+      <div id="resumosEmpty" class="empty-state" style="display:none">Sem resumos ainda.</div>
+    </div>
+
+    <!-- Projetos -->
+    <div class="card" id="sec-projetos">
+      <h3><span style="font-size:18px">💻</span> Projetos</h3>
       <div id="projetos"></div>
-      <div id="projetosEmpty" class="muted" style="display:none;margin-top:10px;">Sem projetos ainda.</div>
-    </section>
+      <div id="projetosEmpty" class="empty-state" style="display:none">Sem projetos ainda.</div>
+    </div>
 
-    <section class="card">
-      <h3>✏️ Exercícios</h3>
-      <div id="exercicios" class="grid"></div>
-      <div id="exerciciosEmpty" class="muted" style="display:none;margin-top:10px;">Sem exercícios ainda.</div>
-    </section>
+    <!-- Exercícios -->
+    <div class="card" id="sec-exercicios">
+      <h3><span style="font-size:18px">✏️</span> Exercícios</h3>
+      <div class="grid" id="exercicios"></div>
+      <div id="exerciciosEmpty" class="empty-state" style="display:none">Sem exercícios ainda.</div>
+    </div>
+
   </main>
 </div>
 
+<!-- data2.js define COURSES e ITEMS -->
 <script src="data2.js"></script>
+
+<!-- course2.js define courseName, renderCard, fillSection, setActiveSidebar -->
 <script src="course2.js"></script>
+
+<!-- Aplica apenas o tema de cor – não interfere com os dados -->
+<script>
+  const COURSE_THEME = {
+    so:   { abbr:'SO',   desc:'Processos, threads, escalonamento e gestão de recursos.',              cls:'course-so',   color:'#7C3AED' },
+    ic:   { abbr:'IC',   desc:'UX, usabilidade, prototipagem e avaliação heurística.',                cls:'course-ic',   color:'#16A34A' },
+    pco:  { abbr:'PCO',  desc:'OOP, modelação, padrões e boas práticas.',                             cls:'course-pco',  color:'#DC2626' },
+    ftv:  { abbr:'FTV',  desc:'Princípios de visualização e design de informação.',                   cls:'course-ftv',  color:'#2563EB' },
+    bd:   { abbr:'BD',   desc:'Modelação relacional, normalização e SQL.',                            cls:'course-bd',   color:'#D97706' },
+    adas: { abbr:'ADAS', desc:'Análise de requisitos, modelação e desenho de sistemas.',              cls:'course-adas', color:'#0D9488' },
+    si:   { abbr:'SI',   desc:'IA, machine learning e sistemas adaptativos.',                         cls:'course-si',   color:'#EC4899' },
+    asw:  { abbr:'ASW',  desc:'Desenvolvimento web, APIs e serviços distribuídos.',                   cls:'course-asw',  color:'#16A34A' },
+    ads:  { abbr:'ADS',  desc:'Padrões de projeto, arquitetura e qualidade de software.',             cls:'course-ads',  color:'#EA580C' },
+    ad:   { abbr:'AD',   desc:'Sistemas distribuídos, comunicação e sincronização.',                  cls:'course-ad',   color:'#0284C7' },
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const key = new URLSearchParams(location.search).get("course") || "so";
+    const theme = COURSE_THEME[key];
+    if (!theme) return;
+
+    const header = document.getElementById("course-header");
+    header.classList.add(theme.cls);
+
+    const pill = document.getElementById("course-pill");
+    pill.textContent = theme.abbr;
+    pill.style.background = theme.color;
+
+    document.getElementById("course-desc").textContent = theme.desc;
+    document.getElementById("main-content").style.setProperty("--course-color", theme.color);
+  });
+</script>
+
 </body>
 </html>

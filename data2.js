@@ -26,7 +26,9 @@ const ITEMS = [
     desc: "fundamentos, modelo relacional, SQL básico e avançado, modelação entidade-associação, armazenamento, indexação, processamento e otimização de queries, transações, bases de dados NoSQL, distribuídas e na cloud, data warehousing, business intelligence, big data e analytics.",
     date: "2026-01-3",
     tags: ["SQL", "Modelo Relacional", "Atributos","VIEWS", "Otimização", "JSON"],
-    file: "assets/resumos/BD - Resumo.pdf",
+    fileOpen: "https://drive.google.com/file/d/11DIk7lasZzvDvySZ1J15Q0KOI_mGsE-H/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=11DIk7lasZzvDvySZ1J15Q0KOI_mGsE-H",
+    
   },
 
 
@@ -38,7 +40,9 @@ const ITEMS = [
     desc: "Princípios de usabilidade, ciclo iterativo de design, análise de utilizadores e tarefas.",
     date: "2025-03-15",
     tags: ["design", "ux", "usabilidade"],
-    file: "assets/resumos/IC-Resumo (2).pdf",
+    fileOpen: "https://drive.google.com/file/d/1nYGO_XqXByFtaJ47n9DwWnr-9zh_HWZ_/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1nYGO_XqXByFtaJ47n9DwWnr-9zh_HWZ_",
+    
   },
 
   {
@@ -48,7 +52,9 @@ const ITEMS = [
     desc: "Testes de usabilidade, SUS, SEQ, ASQ, avaliação formativa e sumativa.",
     date: "2025-03-15",
     tags: ["usabilidade", "avaliação", "testes"],
-    file: "assets/resumos/Resumo IC -2 (1).pdf",
+    fileOpen: "https://drive.google.com/file/d/1K12lD15FE83oZqU2BVTQSy8dJvhWHn9J/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1K12lD15FE83oZqU2BVTQSy8dJvhWHn9J",
+    
   },
 
 
@@ -60,7 +66,9 @@ const ITEMS = [
     desc: "Definição e funções do SO, estruturas (monolítico/camadas/microkernel), system calls, processos/threads e algoritmos de escalonamento (FCFS, SJF, SRTF, RR).",
     date: "2025-03-15",
     tags: ["processos", "threads", "escalonamento", "system calls"],
-    file: "assets/resumos/SO-resumo-1 (1).pdf",
+    fileOpen: "https://drive.google.com/file/d/1-Q7CajaMQvYHF7IzBeuUQbazZt0Sf9xz/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1-Q7CajaMQvYHF7IzBeuUQbazZt0Sf9xz", 
+    
  },
 
    {
@@ -70,7 +78,9 @@ const ITEMS = [
     desc: "Sincronização + Gestão de Memória + Memória Virtual + Interface/Implementação de Sistema de Ficheiros + Armazenamento + Entradas e Saídas + Proteção + Segurança + Máquinas Virtuais",
     date: "2026-01-3",
     tags: ["Locks", "Semáforos","Memória","Paginação","E/S"],
-    file: "assets/resumos/SO - Resumo(2).pdf", 
+    fileOpen: "https://drive.google.com/file/d/1apgky28nrQoO07NnLHnUh_OO0LkUt7hy/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1apgky28nrQoO07NnLHnUh_OO0LkUt7hy",
+    
  },
 
 
@@ -82,7 +92,9 @@ const ITEMS = [
     desc: "Resumo feito pela Professora : Isabel Nunes, 2019",
     date: "2025-03-15",
     tags: ["Resumo","Professora", "matéria"],
-    file: "assets/resumos/PCOimpresso.pdf",
+    fileOpen: "https://drive.google.com/file/d/1l2pH4-4cujbx1BLxrTflKUJy6vb1sKC5/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1l2pH4-4cujbx1BLxrTflKUJy6vb1sKC5",
+    
  },
 
   //---FTV
@@ -93,7 +105,9 @@ const ITEMS = [
     desc: "Fundamentos de computação gráfica e visualização de dados, abrangendo transformações, projeções, iluminação, modelos de cor, tipos de dados e técnicas de interação.",
     date: "2026-01-3",
     tags: ["design", "ux", "usabilidade"],
-    file: "assets/resumos/FTV-Resumo1.pdf",
+    fileOpen: "https://drive.google.com/file/d/1jAkjTToNdyRVl8vHlJFi26Fw-Eeqfg6T/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1jAkjTToNdyRVl8vHlJFi26Fw-Eeqfg6T",
+    
   },
 
   {
@@ -103,8 +117,10 @@ const ITEMS = [
     desc: " Grelhas, Dados Escalares,Isolinha e Isosuperfície",
     date: "2026-01-3",
     tags: [" Grelhas", " Dados Escalares", "Isolinha", "Isosuperfície"],
-    file: "assets/resumos/FTV-Resumo2.pdf",
+    fileOpen: "https://drive.google.com/file/d/1lROaAdO3MFFfbx4VCRpEoOBOBWetFSNC/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1lROaAdO3MFFfbx4VCRpEoOBOBWetFSNC",
   },
+
 
   //------SI
   {
@@ -119,6 +135,20 @@ const ITEMS = [
 
   },
 
+  //------AD
+  {
+    category: "resumos",
+    course: "ad",
+    title: "resumos de Aplicações Distribuídas",
+    desc: "resume imcopleto da matéria de Aplicações Distribuídas",
+    date: "2025-02-25",
+    tags: ["Resumo"," "],
+    fileOpen: "https://drive.google.com/file/d/10JJ0JTfVUrBMVSIHSfZa1jHB37OXGuXN/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=10JJ0JTfVUrBMVSIHSfZa1jHB37OXGuXN",
+  },
+
+
+
   //-------------------------------------- PROJETOS----------------------------------
   //------BD
   {
@@ -128,245 +158,246 @@ const ITEMS = [
     desc: "Enunciado do Projeto de BD 25/26.",
     date: "2025-09-19",
     tags: ["docs"],
-    file: "assets/projetos/BD/bd-enunciado projeto.pdf",
+    fileOpen: "https://drive.google.com/file/d/1GeNF2JFAp1STh57mQMMsF64gfkKDxThi/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1GeNF2JFAp1STh57mQMMsF64gfkKDxThi",
   },
 
 
   //------IC
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Enunciado - SmartPlants",
-    desc: "Enunciado do Projeto de IC 25/26",
-    date: "2025-09-19",
-    tags: ["relatorio"],
-    group: "Projeto Final",
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Enunciado - SmartPlants",
+  //   desc: "Enunciado do Projeto de IC 25/26",
+  //   date: "2025-09-19",
+  //   tags: ["relatorio"],
+  //   group: "Projeto Final",
 
-    file: "assets/projetos/IC/IC25-26-Enunciado-projeto.pdf",
-  },
-
-
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Relatório da Avaliação Informal dos projetos",
-    desc: "",
-    date: "2025-09-19",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-AvalProjs.pdf",
-  },
+  //   file: "assets/projetos/IC/IC25-26-Enunciado-projeto.pdf",
+  // },
 
 
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Primeira versão do Questionário Levantamento Requisitos",
-    desc: "",
-    date: "2025-09-26",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-QuestionarioInicial.pdf",
-  },
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Relatório da Avaliação Informal dos projetos",
+  //   desc: "",
+  //   date: "2025-09-19",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-AvalProjs.pdf",
+  // },
+
+
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Primeira versão do Questionário Levantamento Requisitos",
+  //   desc: "",
+  //   date: "2025-09-26",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-QuestionarioInicial.pdf",
+  // },
 
 
 
-    {
-    category: "projetos",
-    course: "ic",
-    title: "Entrevista — Levantamento de Requisitos (Grupo)",
-    desc: "",
-    date: "2025-10-03",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-Entrevista.pdf",
-    },
-    {
-    category: "projetos",
-    course: "ic",
-    title: "Questionário Final — Levantamento de Requisitos (Grupo)",
-    desc: "",
-    date: "2025-10-03",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-QuestionarioFinal.pdf",
-    },
-    {
-    category: "projetos",
-    course: "ic",
-    title: "Respostas — Questionário Final (Grupo)",
-    desc: "",
-    date: "2025-10-03",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-QuestionarioFinalRespostas.pdf",
-    },
+  //   {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Entrevista — Levantamento de Requisitos (Grupo)",
+  //   desc: "",
+  //   date: "2025-10-03",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-Entrevista.pdf",
+  //   },
+  //   {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Questionário Final — Levantamento de Requisitos (Grupo)",
+  //   desc: "",
+  //   date: "2025-10-03",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-QuestionarioFinal.pdf",
+  //   },
+  //   {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Respostas — Questionário Final (Grupo)",
+  //   desc: "",
+  //   date: "2025-10-03",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-QuestionarioFinalRespostas.pdf",
+  //   },
 
 
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Relatório Levantamento Requisitos (Grupo)",
-    desc: "",
-    date: "2025-10-03",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-RelatorioRequisitos.pdf",
-  },
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Relatório Levantamento Requisitos (Grupo)",
+  //   desc: "",
+  //   date: "2025-10-03",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-RelatorioRequisitos.pdf",
+  // },
 
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Cenários Tarefas (Grupo)",
-    desc: "",
-    date: "2025-10-03",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-CenariosTarefas (5).pdf",
-  },
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Cenários Tarefas (Grupo)",
+  //   desc: "",
+  //   date: "2025-10-03",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-CenariosTarefas (5).pdf",
+  // },
 
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Apresentação sobre o Levantamento de Requisitos (Grupo)",
-    desc: "",
-    date: "2025-10-07",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-ApresentaçãoRequisitos.pptx",
-  },
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Apresentação sobre o Levantamento de Requisitos (Grupo)",
+  //   desc: "",
+  //   date: "2025-10-07",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-ApresentaçãoRequisitos.pptx",
+  // },
 
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Storyboards (Individual)",
-    desc: "",
-    date: "2025-10-19",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-64686-Storyboards (1).pdf",
-  },
-
-
-  {
-    category: "projetos",
-    course: "ic",
-    title: "PBFs (Individual)",
-    desc: "",
-    date: "2025-10-07",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-64686-PBF (2).pdf",
-  },
-
-    {
-    category: "projetos",
-    course: "ic",
-    title: "PBF Conjunto (Grupo)",
-    desc: "",
-    date: "2025-10-29",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-PBF-Conjunto (5).pdf",
-  },
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Storyboards (Individual)",
+  //   desc: "",
+  //   date: "2025-10-19",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-64686-Storyboards (1).pdf",
+  // },
 
 
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Relatório Avaliações Heurísticas ao PF1 (Individual)",
-    desc: "",
-    date: "2025-10-19",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-64686-Aval-Heuristica.pdf",
-  },
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "PBFs (Individual)",
+  //   desc: "",
+  //   date: "2025-10-07",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-64686-PBF (2).pdf",
+  // },
+
+  //   {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "PBF Conjunto (Grupo)",
+  //   desc: "",
+  //   date: "2025-10-29",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-PBF-Conjunto (5).pdf",
+  // },
 
 
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Relatório Consolidado Avaliações Heurísticas ao PF1 (Grupo)",
-    desc: "",
-    date: "2025-11-16",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-Gy19-RelatorioAH-Consolidado (1).pdf",
-  },
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Relatório Avaliações Heurísticas ao PF1 (Individual)",
+  //   desc: "",
+  //   date: "2025-10-19",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-64686-Aval-Heuristica.pdf",
+  // },
 
 
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Primeira versão do Guião Experimental (Grupo)",
-    desc: "",
-    date: "2025-11-16",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-GuiaoExperimental-Inicial.pdf",
-  },
-
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Versão Final do Guião Experimental (Grupo)",
-    desc: "",
-    date: "2025-11-16",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-GuiaoExperimental-Final.pdf",
-
-  },
-
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Protótipo Funcional (Grupo)",
-    desc: "Protótipo funcional navegável + ficheiros do projeto.",
-    date: "2025-11-16",
-    tags: ["protótipo", "grupo", "final"],
-    group: "Projeto Final",
-    open: "assets/projetos/IC/IC-T12-G19-PrototipoFuncional/IC-T12-G19-SMARTPLANTS/html/index.html",
-    download: "assets/projetos/IC/IC-T12-G19-PrototipoFuncional.zip",
-  },
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Relatório Consolidado Avaliações Heurísticas ao PF1 (Grupo)",
+  //   desc: "",
+  //   date: "2025-11-16",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-Gy19-RelatorioAH-Consolidado (1).pdf",
+  // },
 
 
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Apresentação Final (Grupo)",
-    desc: "",
-    date: "2025-11-16",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-ApresentaçãoFinal.pptx",
-  },
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Primeira versão do Guião Experimental (Grupo)",
+  //   desc: "",
+  //   date: "2025-11-16",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-GuiaoExperimental-Inicial.pdf",
+  // },
 
-  {
-    category: "projetos",
-    course: "ic",
-    title: "Relatório Consolidado das Avaliações com Utilizadores (Grupo)",
-    desc: "",
-    date: "2025-11-16",
-    tags: ["relatorio"],
-    file: "assets/projetos/IC/IC-T12-G19-RelatorioConsolidadoAvaliacoes (1).pdf",
-  },
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Versão Final do Guião Experimental (Grupo)",
+  //   desc: "",
+  //   date: "2025-11-16",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-GuiaoExperimental-Final.pdf",
 
-  //-----PCO
-  {
-    category: "projetos",
-    course: "pco",
-    title: "Enunciado do Projeto de PCO 25/26",
-    desc: "",
-    date: "2025-11-16",
-    tags: ["relatorio"],
-    group: "Projeto Final",
-    file: "assets/projetos/PCO/TrabPCO-Corrigido-13Nov.pdf",
-  },
+  // },
 
-  {
-    category: "projetos",
-    course: "pco",
-    title: "Ficheiros dado pela Professora",
-    desc: "",
-    date: "2025-11-16",
-    tags: ["Código", "java"],
-    file: "assets/projetos/PCO/ProjetoAlunos (4).zip",
-  },
-    {
-    category: "projetos",
-    course: "pco",
-    title: "Projeto final",
-    desc: "Ficheiros que eram para fazer de acordo com o enunciado (feito grupo de 2)",
-    date: "2025-11-16",
-    tags: ["Código","java"],
-    group: "Projeto Final",
-    file: "assets/projetos/PCO/PCO018.zip",
-  },
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Protótipo Funcional (Grupo)",
+  //   desc: "Protótipo funcional navegável + ficheiros do projeto.",
+  //   date: "2025-11-16",
+  //   tags: ["protótipo", "grupo", "final"],
+  //   group: "Projeto Final",
+  //   open: "assets/projetos/IC/IC-T12-G19-PrototipoFuncional/IC-T12-G19-SMARTPLANTS/html/index.html",
+  //   download: "assets/projetos/IC/IC-T12-G19-PrototipoFuncional.zip",
+  // },
+
+
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Apresentação Final (Grupo)",
+  //   desc: "",
+  //   date: "2025-11-16",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-ApresentaçãoFinal.pptx",
+  // },
+
+  // {
+  //   category: "projetos",
+  //   course: "ic",
+  //   title: "Relatório Consolidado das Avaliações com Utilizadores (Grupo)",
+  //   desc: "",
+  //   date: "2025-11-16",
+  //   tags: ["relatorio"],
+  //   file: "assets/projetos/IC/IC-T12-G19-RelatorioConsolidadoAvaliacoes (1).pdf",
+  // },
+
+  // //-----PCO
+  // {
+  //   category: "projetos",
+  //   course: "pco",
+  //   title: "Enunciado do Projeto de PCO 25/26",
+  //   desc: "",
+  //   date: "2025-11-16",
+  //   tags: ["relatorio"],
+  //   group: "Projeto Final",
+  //   file: "assets/projetos/PCO/TrabPCO-Corrigido-13Nov.pdf",
+  // },
+
+  // {
+  //   category: "projetos",
+  //   course: "pco",
+  //   title: "Ficheiros dado pela Professora",
+  //   desc: "",
+  //   date: "2025-11-16",
+  //   tags: ["Código", "java"],
+  //   file: "assets/projetos/PCO/ProjetoAlunos (4).zip",
+  // },
+  //   {
+  //   category: "projetos",
+  //   course: "pco",
+  //   title: "Projeto final",
+  //   desc: "Ficheiros que eram para fazer de acordo com o enunciado (feito grupo de 2)",
+  //   date: "2025-11-16",
+  //   tags: ["Código","java"],
+  //   group: "Projeto Final",
+  //   file: "assets/projetos/PCO/PCO018.zip",
+  // },
 
 
   //---FTV
@@ -377,7 +408,9 @@ const ITEMS = [
     desc: "",
     date: "2025-11-16",
     tags: ["relatório"],
-    file: "assets/projetos/FTV/proj_AutoCAD2526.pdf",
+    fileOpen: "https://drive.google.com/file/d/1n_76EAXVYSw3iv4R2lZqqVE6nc7AqqAX/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1n_76EAXVYSw3iv4R2lZqqVE6nc7AqqAX",
+
   },
 
   {
@@ -387,7 +420,9 @@ const ITEMS = [
     desc: "",
     date: "2025-11-16",
     tags: ["relatório"],
-    file: "assets/projetos/FTV/RELATORIO-FTV-GRUPO19.pdf",
+    fileOpen: "https://drive.google.com/file/d/1sbR_FYkLciOjE1dNoVFFaMhjFqGbshN-/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1sbR_FYkLciOjE1dNoVFFaMhjFqGbshN-",
+    
   },
 
     {
@@ -399,8 +434,9 @@ const ITEMS = [
     group: "Projeto Final",
     tags: ["zip"],
     group: "Projeto Final",
-
-    file: "assets/projetos/FTV/ftv.zip",
+    fileOpen: "https://drive.google.com/file/d/1iFj_pglAmW9EqG_c2O0BBM6MKb8SXpa2/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1iFj_pglAmW9EqG_c2O0BBM6MKb8SXpa2",
+    
   },
 
   {
@@ -410,7 +446,9 @@ const ITEMS = [
     desc: "",
     date: "2025-11-16",
     tags: ["relatório"],
-    file: "assets/projetos/FTV/proj_Paraview2526-v2.pdf",
+    fileOpen: "https://drive.google.com/file/d/1xdLY2H0QOFEHDYXZ7Rdl61lTFA4Hgiml/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1xdLY2H0QOFEHDYXZ7Rdl61lTFA4Hgiml",
+    
   },
 
   {
@@ -420,7 +458,9 @@ const ITEMS = [
     desc: "",
     date: "2025-11-16",
     tags: ["dados","vtk"],
-    file: "assets/projetos/FTV/ReflorAltitude.vtk",
+    fileOpen: "https://drive.google.com/file/d/10tPR6aQltfW4hwVKOCCyIF32i6YV7gue/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=10tPR6aQltfW4hwVKOCCyIF32i6YV7gue",
+    
   },
 
 
@@ -430,8 +470,10 @@ const ITEMS = [
     title: "Relatório - ParaView",
     desc: "",
     date: "2025-11-16",
-    tags: ["zip"],
-    file: "assets/projetos/FTV/Relatório FTV Paraview .pdf",
+    tags: ["pdf"],
+    fileOpen: "https://drive.google.com/file/d/1R9KuNZW4BcmpBHhyHGfS16jOByF6Gyzp/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1R9KuNZW4BcmpBHhyHGfS16jOByF6Gyzp",
+    
   },
 
 
@@ -443,7 +485,9 @@ const ITEMS = [
     date: "2025-11-16",
     tags: ["zip"],
     group: "Projeto Final",
-    file: "assets/projetos/FTV/FTV19.zip",
+    fileOpen: "https://drive.google.com/file/d/1s_h6z08Ei7xpgrVQ6XD_s4MtjSLLbhBA/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1s_h6z08Ei7xpgrVQ6XD_s4MtjSLLbhBA",
+    
   },
 
 
@@ -457,7 +501,9 @@ const ITEMS = [
     desc: "Enunciado dos Exercícios do Exame Modelo 2025/2026. O exame exato foi muito semelhante ao do modelo, mas com algumas pequenas alterações.",
     date: "2025-02-25",
     tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/Exame_Modelo_BD.pdf",
+    fileOpen: "https://drive.google.com/file/d/15lyXEJuPsS9BaTaUD274R-bYLNa3suQH/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=15lyXEJuPsS9BaTaUD274R-bYLNa3suQH",
+    
   },
 
   {
@@ -467,7 +513,8 @@ const ITEMS = [
     desc: "Resolução dos Exercícios do Exame Modelo 2025/2026",
     date: "2025-02-25",
     tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/Exame_Modelo_BD_Solucoes.pdf",
+    fileOpen: "https://drive.google.com/file/d/1m-xZynAXXTiNF6n7WMmjaqVPpvmWFKN_/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1m-xZynAXXTiNF6n7WMmjaqVPpvmWFKN_",
   },
 
   //------IC
@@ -478,7 +525,9 @@ const ITEMS = [
     desc: "Avaliação com Utilizadores, Princípios de design, Desenho de páginas Web, Avaliação Heurística, Desenho de Ecrãs",
     date: "2025-02-25",
     tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/exec-IC-2teste (1).pdf",
+    fileOpen: "https://drive.google.com/file/d/13bj-ferk3sWf_1DSf_Lhqe4zZRICF6yc/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=13bj-ferk3sWf_1DSf_Lhqe4zZRICF6yc",
+    
   },
 
 
@@ -491,7 +540,10 @@ const ITEMS = [
     desc: "Enunciado dos Exercícios de Exame / sem respodas",
     date: "2025-02-25",
     tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/ftv-docs.pdf",
+    fileOpen: "https://drive.google.com/file/d/1adg3hncBz1_-fkFG7NEwzELLhVXS5JOR/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1adg3hncBz1_-fkFG7NEwzELLhVXS5JOR",
+    
+
   },
 
   {
@@ -501,7 +553,9 @@ const ITEMS = [
     desc: "Resolução dos Exercícios de Exame (do enunciado/docs)",
     date: "2025-02-25",
     tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/ftv-exec-docs.pdf",
+    fileOpen: "https://drive.google.com/file/d/1PiEqoHpKt-9cDnu0nnS5MDPnJTTcmADl/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1PiEqoHpKt-9cDnu0nnS5MDPnJTTcmADl",
+
   },
 
   {
@@ -511,7 +565,9 @@ const ITEMS = [
     desc: "Resolução dos Exercícios de Exame (F/V) com explicação",
     date: "2025-02-25",
     tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/ftv-F ou V.pdf",
+    fileOpen: "https://drive.google.com/file/d/1Pv7_80Ux0HSp7EdDOFLmQX8duzf9rNO7/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1Pv7_80Ux0HSp7EdDOFLmQX8duzf9rNO7",
+    
   },
 
  //------SO
@@ -522,97 +578,13 @@ const ITEMS = [
     desc: "Resolução dos Exercícios Moodle anos anteriores",
     date: "2025-02-25",
     tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/SO-2teste-moodle.pdf",
+    fileOpen: "https://drive.google.com/file/d/1MhHfIry77UF1vRLvMjVesT7NzshLVkMr/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1MhHfIry77UF1vRLvMjVesT7NzshLVkMr",
+    
   },
 
  //------PCO
-  {
-    category: "exercicios",
-    course: "pco",
-    title: "Resolução dos Exercícios de Exame 1 fase 2019/2020",
-    desc: "Resolução dos Exercícios de Exame 1 fase 2019/2020",
-    date: "2025-02-25",
-    tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/PCO-exame (1) 2019_2020.pdf",
-  },
 
-  {
-    category: "exercicios",
-    course: "pco",
-    title: "Resolução dos Exercícios de Exame 2 fase 2019/2020",
-    desc: "Resolução dos Exercícios de Exame 2 fase 2019/2020",
-    date: "2025-02-25",
-    tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/PCO-exame (2) 2019_2020.pdf",
-  },
-
-  {
-    category: "exercicios",
-    course: "pco",
-    title: "Resolução dos Exercícios de Exame 1 fase 2020/2021",
-    desc: "Resolução dos Exercícios de Exame 1 fase 2020/2021",
-    date: "2025-02-25",
-    tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/PCO-exame (1) 2020_2021.pdf",
-  },
-  {
-    category: "exercicios",
-    course: "pco",
-    title: "Resolução dos Exercícios de Exame 2 fase 2020/2021",
-    desc: "Resolução dos Exercícios de Exame 2 fase 2020/2021",
-    date: "2025-02-25",
-    tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/PCO-exame (2) 2020_2021.pdf",
-  },
-
-  {
-    category: "exercicios",
-    course: "pco",
-    title: "Resolução dos Exercícios de Exame 1 fase 2021/2022",
-    desc: "Resolução dos Exercícios de Exame 1 fase 2021/2022",
-    date: "2025-02-25",
-    tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/PCO-exame (1) 2021_2022 (1).pdf",
-  },
-
-  {
-    category: "exercicios",
-    course: "pco",
-    title: "Resolução dos Exercícios de Exame 2 fase 2021/2022",
-    desc: "Resolução dos Exercícios de Exame 2 fase 2021/2022",
-    date: "2025-02-25",
-    tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/PCO-exame (2) 2021_2022.pdf",
-  },
-  {
-    category: "exercicios",
-    course: "pco",
-    title: "Resolução dos Exercícios de Exame 1 fase 2022/2023",
-    desc: "Resolução dos Exercícios de Exame 1 fase 2022/2023",
-    date: "2025-02-25",
-    tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/PCO-exame (1) 2022_2023.pdf",
-  },
-
-  {
-    category: "exercicios",
-    course: "pco",
-    title: "Resolução dos Exercícios de Exame 2 fase 2022/2023",
-    desc: "Resolução dos Exercícios de Exame 2 fase 2022/2023",
-    date: "2025-02-25",
-    tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/PCO-exame (2) 2022_2023.pdf",
-  },
-
-  {
-    category: "exercicios",
-    course: "pco",
-    title: "Resolução dos Exercícios de Exame 1 fase 2025/2026 Igual ao 2022/2023",
-    desc: "Resolução dos Exercícios de Exame 1 fase 2025/2026 Igual ao 2022/2023",
-    date: "2025-02-25",
-    tags: ["Exame","Exercicios"],
-    file: "assets/EXEC/PCO-exame (1) 2022_2023.pdf",
-  },
 
  //------SI
 
