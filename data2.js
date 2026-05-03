@@ -147,6 +147,32 @@ const ITEMS = [
     fileDownload: "https://drive.google.com/uc?export=download&id=10JJ0JTfVUrBMVSIHSfZa1jHB37OXGuXN",
   },
 
+  //------ASW
+  {
+    category: "resumos",
+    course: "asw",
+    title: "Resumo ASW - Aplicações e Serviços na Web",
+    desc: "Resumo completo sobre a World Wide Web, HTTP, REST, JSON, arquitetura MVC, persistência de dados, validação de APIs, OpenAPI/Swagger, autenticação (JWT, OAuth), segurança web (HTTPS, Bcrypt, OWASP) e implementação segura em Node.js.",
+    date: "2026-05-02",
+    tags: ["web", "rest api", "mvc", "segurança"],
+
+    fileOpen: "https://drive.google.com/file/d/1LJLZ3Tr18Eoj19NR04Hru-MV_pRREsLJ/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1LJLZ3Tr18Eoj19NR04Hru-MV_pRREsLJ",
+  },
+
+
+  //------ADS
+  {
+    category: "resumos",
+    course: "ads",
+    title: "Análise e Desenho de Software (ADS)- Dado pelo professor Carlos Lourenço",
+    desc: "Disciplina sobre análise de requisitos e desenho de software OO, usando UML, desenvolvimento iterativo (UP) e boas práticas para criar sistemas bem estruturados e organizados em camadas. ",
+    date: "2026-05-02",
+    tags: ["ads", "uml", "oop", "design", "arquitetura"],
+    fileOpen: "https://drive.google.com/file/d/1BTqdwb5x7T-UcWYvXsBPXG3KviPfTso4/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1BTqdwb5x7T-UcWYvXsBPXG3KviPfTso4",
+
+  },
 
 
   //-------------------------------------- PROJETOS----------------------------------
@@ -490,6 +516,19 @@ const ITEMS = [
     
   },
 
+
+
+  //---ASW
+  {
+    category: "projetos",
+    course: "asw",
+    title: "Enunciado - 1 Fase ",
+    desc: "Enunciado do projeto de ASW: desenvolvimento de uma aplicação web com backend em Node.js, API REST, persistência de dados, integração com frontend e serviços externos, incluindo requisitos, fases (checkpoints) e práticas de engenharia como autenticação, validação e documentação.",
+    date: "2025-11-16",
+    tags: ["pdf", "api", "nodejs", "web app"],
+    fileOpen: "https://drive.google.com/file/d/1_wIZOamH_q1aJ56O4E8jLCayBOR3b1uD/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1_wIZOamH_q1aJ56O4E8jLCayBOR3b1uD",
+  },
 
 
   // --------------------------EXERCÍCIOS-------------------------------------
