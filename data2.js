@@ -643,11 +643,12 @@ const ITEMS = [
   {
     category: "exercicios",
     course: "si",
-    title: "",
-    desc: "",
+    title: "Algoritmos de Procura: Procura não informada em árvore.",
+    desc: "Enunciado e Resolucao de alguns exercicos- ficha 2",
     date: "2025-02-25",
     tags: [],
-
+    fileOpen: "https://drive.google.com/drive/folders/1NLwkVxdRP27XQCD6GGYnlTs1rl9-L-61",
+    fileDownload: "https://drive.google.com/drive/folders/1NLwkVxdRP27XQCD6GGYnlTs1rl9-L-61",
     
     
   },
@@ -655,11 +656,12 @@ const ITEMS = [
   {
     category: "exercicios",
     course: "si",
-    title: "",
-    desc: "",
+    title: "Algoritmos de Procura: Procura não informada em grafo",
+    desc: "Enunciado e Resolucao de alguns exercicos- ficha 3",
     date: "2025-02-25",
     tags: [],
-
+    fileOpen: "https://drive.google.com/drive/folders/1pFn_33UWRp70m-V2msXcjtAUvFRFmdAZ",
+    fileDownload: "https://drive.google.com/drive/folders/1pFn_33UWRp70m-V2msXcjtAUvFRFmdAZ",
     
     
   },
@@ -667,26 +669,60 @@ const ITEMS = [
   {
     category: "exercicios",
     course: "si",
-    title: "",
-    desc: "",
+    title: "Algoritmos de Procura Informada: Greedy e A* em árvore e em grafo.",
+    desc: "Enunciado e Resolucao de alguns exercicos- ficha 4",
     date: "2025-02-25",
     tags: [],
+    fileOpen: "https://drive.google.com/drive/folders/1fz5ce2Lpf6F6cSHlFQTVSPlgKZfHXV6q",
+    fileDownload: "https://drive.google.com/drive/folders/1fz5ce2Lpf6F6cSHlFQTVSPlgKZfHXV6q",
 
-    
-    
   },
 
 
   {
     category: "exercicios",
     course: "si",
-    title: "",
-    desc: "",
+    title: "Exercícios de procura com adversário: algoritmos minimax e alfabeta",
+    desc: "Enunciado e Resolucao de alguns exercicos- ficha 5",
     date: "2025-02-25",
     tags: [],
+    fileOpen: "https://drive.google.com/drive/folders/1AEWiPHftUTuM5DWaNpadAHWMR_9MwXla",
+    fileDownload: "https://drive.google.com/drive/folders/1AEWiPHftUTuM5DWaNpadAHWMR_9MwXla",
+  },
 
-    
-    
+  {
+    category: "exercicios",
+    course: "si",
+    title: "Exercícios sobre algoritmos de Procura Local e Global",
+    desc: "Enunciado e Resolucao de alguns exercicos- ficha 6",
+    date: "2025-02-25",
+    tags: [],
+    fileOpen: "https://drive.google.com/drive/folders/1XuhK23Lg3JzNc513fA1LEiAFK-7rq8-8",
+    fileDownload: "https://drive.google.com/drive/folders/1XuhK23Lg3JzNc513fA1LEiAFK-7rq8-8",
+
+  },
+
+  {
+    category: "exercicios",
+    course: "si",
+    title: "Exercícios sobre formulação de Problemas de Satisfação de Restrições",
+    desc: "Enunciado e Resolucao de alguns exercicos- ficha 7",
+    date: "2025-02-25",
+    tags: [],
+    fileOpen: "https://drive.google.com/drive/folders/1HIMxG8ZX6RpS1WhqdlczzGTrycJtGYcX",
+    fileDownload: "https://drive.google.com/drive/folders/1HIMxG8ZX6RpS1WhqdlczzGTrycJtGYcX",
+  },
+
+  {
+    category: "exercicios",
+    course: "si",
+    title: "Exercícios de resolução de Problemas de Satisfação de Restrições",
+    desc: "Enunciado e Resolucao de alguns exercicos- ficha 8",
+    date: "2025-02-25",
+    tags: [],
+    fileOpen: "https://drive.google.com/drive/folders/1Azh-J5Ch5x_sTpBif3SmvjLHwE8dJqmv",
+    fileDownload: "https://drive.google.com/drive/folders/1Azh-J5Ch5x_sTpBif3SmvjLHwE8dJqmv",
+
   },
 
    //------AD
