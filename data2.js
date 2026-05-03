@@ -630,13 +630,63 @@ const ITEMS = [
   {
     category: "exercicios",
     course: "si",
-    title: "Resolução dos Exercícios Paradigma do Espaço de Estados ",
-    desc: "Resolução dos Exercícios - CADI (FCUL)",
+    title: "Paradigma do Espaço de Estados - Formulação de Problemas",
+    desc: "Enunciado e Resolucao de alguns exercicos- ficha 1",
     date: "2025-02-25",
-    tags: ["Ficha1","Exercicios"],
-    fileOpen: "https://drive.google.com/file/d/1B5_Jvv_QF2DdEtlpaD_-3ATX9qZ559e0/view",
-    fileDownload: "https://drive.google.com/uc?export=download&id=1B5_Jvv_QF2DdEtlpaD_-3ATX9qZ559e0",
+    tags: [],
+    fileOpen: "https://drive.google.com/drive/folders/19SEmwmu1lhv1zDjCqRGvW5lvBEteA1jb",
+    fileDownload: "https://drive.google.com/drive/folders/19SEmwmu1lhv1zDjCqRGvW5lvBEteA1jb",
+    
 
+  },
+
+  {
+    category: "exercicios",
+    course: "si",
+    title: "",
+    desc: "",
+    date: "2025-02-25",
+    tags: [],
+
+    
+    
+  },
+
+  {
+    category: "exercicios",
+    course: "si",
+    title: "",
+    desc: "",
+    date: "2025-02-25",
+    tags: [],
+
+    
+    
+  },
+
+  {
+    category: "exercicios",
+    course: "si",
+    title: "",
+    desc: "",
+    date: "2025-02-25",
+    tags: [],
+
+    
+    
+  },
+
+
+  {
+    category: "exercicios",
+    course: "si",
+    title: "",
+    desc: "",
+    date: "2025-02-25",
+    tags: [],
+
+    
+    
   },
 
    //------AD
