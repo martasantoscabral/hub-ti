@@ -139,13 +139,27 @@ const ITEMS = [
   {
     category: "resumos",
     course: "ad",
-    title: "resumos de Aplicações Distribuídas",
+    title: "Resumos de Aplicações Distribuídas Teoricas",
     desc: "resume imcopleto da matéria de Aplicações Distribuídas",
     date: "2025-02-25",
-    tags: ["Resumo"," "],
+    tags: ["Resumo","exame"],
+    fileOpen: "https://drive.google.com/file/d/15AXEn4HJcVUeemBH8ghb-_rKrRZYgDlB/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=15AXEn4HJcVUeemBH8ghb-_rKrRZYgDlB",
+  },
+
+  {
+    category: "resumos",
+    course: "ad",
+    title: "Resumos de Aplicações Distribuídas Teoricas-Praticas",
+    desc: "resume imcopleto da matéria de Aplicações Distribuídas",
+    date: "2025-02-25",
+    tags: ["Resumo","exame"],
     fileOpen: "https://drive.google.com/file/d/10JJ0JTfVUrBMVSIHSfZa1jHB37OXGuXN/view",
     fileDownload: "https://drive.google.com/uc?export=download&id=10JJ0JTfVUrBMVSIHSfZa1jHB37OXGuXN",
   },
+
+
+
 
   //------ASW
   {
@@ -531,6 +545,44 @@ const ITEMS = [
   },
 
 
+
+  //---AD
+  {
+    category: "projetos",
+    course: "ad",
+    title: "Enunciado - 1 Fase ",
+    desc: "Enunciado do projeto de AD ",
+    date: "2026-07-17",
+    tags: ["pdf"],
+    fileOpen: "https://drive.google.com/file/d/1_92v4nsKI6pNACbp38GE3V35j4HmZMXl/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1_92v4nsKI6pNACbp38GE3V35j4HmZMXl",
+  },
+ 
+  {
+    category: "projetos",
+    course: "ad",
+    title: "Enunciado - 2 Fase ",
+    desc: "Enunciado do projeto de AD ",
+    date: "2026-07-17",
+    tags: ["pdf"],
+    fileOpen: "https://drive.google.com/file/d/1W5-gZILGTr8NKsx_SwkkYKxXfDdaIzxe/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1W5-gZILGTr8NKsx_SwkkYKxXfDdaIzxe",
+  },
+
+
+  {
+    category: "projetos",
+    course: "ad",
+    title: "Enunciado - 3 Fase ",
+    desc: "Enunciado do projeto de AD ",
+    date: "2026-07-17",
+    tags: ["pdf"],
+    fileOpen: "https://drive.google.com/file/d/1_92v4nsKI6pNACbp38GE3V35j4HmZMXl/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1_92v4nsKI6pNACbp38GE3V35j4HmZMXl",
+  },
+
+
+
   // --------------------------EXERCÍCIOS-------------------------------------
   //------BD
   {
@@ -730,24 +782,24 @@ const ITEMS = [
   {
     category: "exercicios",
     course: "ad",
-    title: "Resolução Guiao da PL1",
-    desc: "",
-    date: "2025-02-25",
-    tags: ["Exame","Exercicios"],
-    fileOpen: "https://drive.google.com/file/d/1RcdoZ1PRhBHAKxiePfWrHB_FWob9bTXd/view",
-    fileDownload: "https://drive.google.com/uc?export=download&id=1RcdoZ1PRhBHAKxiePfWrHB_FWob9bTXd",
-
+    title: "Exercicios de Exame anos anteriores (importante)",
+    desc: "GUIA DA PL1 - Sockets TCP",
+    date: "2025-02-27",
+    tags: ["Exercicios"],
+    fileOpen: "https://drive.google.com/file/d/1K6hg3IlFPq46dS63MCQY1PObEYvb-00W/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1K6hg3IlFPq46dS63MCQY1PObEYvb-00W",
   },
+
 
   {
     category: "exercicios",
     course: "ad",
-    title: "Guiao da PL1-Sockets TCP",
+    title: "Exercicios de ad (aulas etc/quiz)",
     desc: "GUIA DA PL1 - Sockets TCP",
     date: "2025-02-27",
     tags: ["Exercicios"],
-    fileOpen: "https://drive.google.com/file/d/1y4kE-D0skdHLRuxAU2gKefHNleb0Kfj0/view",
-    fileDownload: "https://drive.google.com/uc?export=download&id=1y4kE-D0skdHLRuxAU2gKefHNleb0Kfj0",
+    fileOpen: "https://drive.google.com/file/d/1H79-uaRiSJOMo1AADcZUFeFBf-XywK4S/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1H79-uaRiSJOMo1AADcZUFeFBf-XywK4S",
   },
 
 
