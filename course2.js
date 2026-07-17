@@ -83,13 +83,6 @@ function fillSection(courseId, category, containerId, emptyId){
 }
 
 
-
-
-
-
-
-
-
 function setActiveSidebar(courseId){
   document.querySelectorAll(".sidebar a.navlink").forEach(a => {
     const href = a.getAttribute("href") || "";

@@ -166,13 +166,25 @@ const ITEMS = [
     category: "resumos",
     course: "asw",
     title: "Resumo ASW - Aplicações e Serviços na Web",
-    desc: "Resumo completo sobre a World Wide Web, HTTP, REST, JSON, arquitetura MVC, persistência de dados, validação de APIs, OpenAPI/Swagger, autenticação (JWT, OAuth), segurança web (HTTPS, Bcrypt, OWASP) e implementação segura em Node.js.",
+    desc: "Resumo completo sobre a Aplicações e Serviços na Web",
     date: "2026-05-02",
     tags: ["web", "rest api", "mvc", "segurança"],
-
     fileOpen: "https://drive.google.com/file/d/1LJLZ3Tr18Eoj19NR04Hru-MV_pRREsLJ/view",
     fileDownload: "https://drive.google.com/uc?export=download&id=1LJLZ3Tr18Eoj19NR04Hru-MV_pRREsLJ",
   },
+
+
+  {
+    category: "resumos",
+    course: "asw",
+    title: "Resumo ASW 2",
+    desc: "Resumo mais pequeno (geral) sobre a cadeira de asw",
+    date: "2026-07-17",
+    tags: ["web", "rest api", "mvc", "segurança"],
+    fileOpen: "https://drive.google.com/file/d/1k13wORZLOAmKrCnRmznsLsg4xhBKDo4Z/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1k13wORZLOAmKrCnRmznsLsg4xhBKDo4Z",
+  },
+
 
 
   //------ADS
@@ -187,6 +199,33 @@ const ITEMS = [
     fileDownload: "https://drive.google.com/uc?export=download&id=1BTqdwb5x7T-UcWYvXsBPXG3KviPfTso4",
 
   },
+
+  {
+    category: "resumos",
+    course: "ads",
+    title: "(ADS)- Resumo para exame",
+    desc: "Resumo do que pode sair no exame 2026",
+    date: "2026-05-02",
+    tags: ["ads", "uml", "oop", "design", "arquitetura"],
+    fileOpen: "https://drive.google.com/file/d/1Pro5yZpHOJssyF2nOzjyszafzqePbIaz/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1Pro5yZpHOJssyF2nOzjyszafzqePbIaz",
+
+  },
+
+
+  {
+    category: "resumos",
+    course: "ads",
+    title: "(ADS)- Resumo para o teste de projeto",
+    desc: "Resumo do que poderia sair no teste do projeto -> saber bem os relatorios",
+    date: "2026-05-02",
+    tags: ["ads", "uml", "oop", "design", "arquitetura"],
+    fileOpen: "https://drive.google.com/file/d/1RHt16q0cacRWvcduqeDghmhf4tlqdQEM/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1RHt16q0cacRWvcduqeDghmhf4tlqdQEM",
+
+  },
+
+
 
 
   //-------------------------------------- PROJETOS----------------------------------
@@ -827,4 +866,30 @@ const ITEMS = [
     fileDownload: "https://drive.google.com/uc?export=download&id=1kmHALFGFG6IAQrSoQkrhyUpMQ1NhGtoA",
   },
   
+
+
+  {
+    category: "exercicios",
+    course: "asw",
+    title: "Quiz de preparacao (aula)",
+    desc: "",
+    date: "2026-07-17",
+    tags: ["Exercicios",],
+    fileOpen: "https://drive.google.com/file/d/1WDWTeCGWyBrSPHgo9FwMzkWqeycdMDkP/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1WDWTeCGWyBrSPHgo9FwMzkWqeycdMDkP",
+  },
+
+  {
+    category: "exercicios",
+    course: "asw",
+    title: "Perguntas para exame",
+    desc: "",
+    date: "2026-07-17",
+    tags: ["Exercicios"],
+    fileOpen: "https://drive.google.com/file/d/19NwIEpjFke3dRy4pc2jpVNOkIqfQLD0H/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=19NwIEpjFke3dRy4pc2jpVNOkIqfQLD0H",
+  },
+
+
+
 ];
