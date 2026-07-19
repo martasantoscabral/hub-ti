@@ -64,14 +64,6 @@
   </main>
 </div>
 
-<script src="data2.js"></script>
-<script>
-  const counts = { resumos:0, projetos:0, exercicios:0 };
-  (window.ITEMS || []).forEach(it => { if (counts[it.category] != null) counts[it.category]++; });
-  document.querySelectorAll("[data-count]").forEach(el => {
-    el.textContent = counts[el.getAttribute("data-count")] ?? 0;
-  });
-</script>
 
 <script src="./js/config.js"></script>
 <script src="./js/api.js"></script>
