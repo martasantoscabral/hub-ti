@@ -314,6 +314,7 @@ ul.muted li strong { color: var(--ink); font-weight: 700; }
   font-size: 28px;
   letter-spacing: -.02em;
   margin-bottom: 6px;
+  color: #000;
 }
 .course-header p { font-size: 13.5px; opacity: .85; max-width: 560px; }
  
