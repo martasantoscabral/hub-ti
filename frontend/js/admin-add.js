@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const openUrlInput = document.getElementById("openUrl");
   const downloadUrlInput = document.getElementById("downloadUrl");
 
-
   try {
     const years = await getAcademicYears();
 
@@ -17,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         .map(
           year => `
             <option value="${year.number}">
-              ${year.title}
+              ${escapeHtml(year.title)}
             </option>
           `
         )
@@ -31,6 +30,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   yearSelect.addEventListener("change", async () => {
+    clearMessage();
+
     const yearNumber = Number(yearSelect.value);
 
     courseSelect.disabled = true;
@@ -52,11 +53,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       courseSelect.innerHTML = `
         <option value="">Escolher disciplina</option>
+
         ${courses
           .map(
             course => `
               <option value="${course.id}">
-                ${course.name}
+                ${escapeHtml(course.name)}
               </option>
             `
           )
@@ -76,7 +78,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  openUrlInput.addEventListener("blur", () => {
+  openUrlInput.addEventListener("paste", () => {
+    setTimeout(convertDriveLink, 0);
+  });
+
+  openUrlInput.addEventListener(
+    "blur",
+    convertDriveLink
+  );
+
+  function convertDriveLink() {
     const driveLinks = createGoogleDriveLinks(
       openUrlInput.value
     );
@@ -87,18 +98,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     openUrlInput.value = driveLinks.openUrl;
     downloadUrlInput.value = driveLinks.downloadUrl;
-  });
-
+  }
 
   form.addEventListener("submit", async event => {
     event.preventDefault();
 
     clearMessage();
 
-    const adminKey = document
-      .getElementById("adminKey")
-      .value
-      .trim();
+    convertDriveLink();
+
+    const adminKey =
+      sessionStorage.getItem("hubTiAdminKey");
 
     const title = document
       .getElementById("title")
@@ -113,11 +123,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const yearNumber = yearSelect.value;
 
     if (!adminKey) {
-      showMessage(
-        "Introduz a chave de administração.",
-        "error"
-      );
-
+      sessionStorage.removeItem("hubTiAdminKey");
+      window.location.replace("admin-login.html");
       return;
     }
 
@@ -127,6 +134,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         "error"
       );
 
+      yearSelect.focus();
       return;
     }
 
@@ -136,6 +144,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         "error"
       );
 
+      courseSelect.focus();
       return;
     }
 
@@ -145,6 +154,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         "error"
       );
 
+      document.getElementById("title").focus();
       return;
     }
 
@@ -173,16 +183,10 @@ document.addEventListener("DOMContentLoaded", async () => {
           .value || null,
 
       openUrl:
-        document
-          .getElementById("openUrl")
-          .value
-          .trim() || null,
+        openUrlInput.value.trim() || null,
 
       downloadUrl:
-        document
-          .getElementById("downloadUrl")
-          .value
-          .trim() || null,
+        downloadUrlInput.value.trim() || null,
 
       tags: document
         .getElementById("tags")
@@ -194,14 +198,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       courseId
     };
 
+    const submitButton = form.querySelector(
+      'button[type="submit"]'
+    );
+
+    const originalText = submitButton.textContent;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "A guardar...";
+
     try {
-      const submitButton = form.querySelector(
-        'button[type="submit"]'
-      );
-
-      submitButton.disabled = true;
-      submitButton.textContent = "A guardar...";
-
       const response = await fetch(
         `${window.APP_CONFIG.API_URL}/api/materials`,
         {
@@ -216,7 +222,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       );
 
-      const result = await response.json();
+      const result =
+        await readJsonResponse(response);
 
       if (!response.ok) {
         throw new Error(
@@ -231,7 +238,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       );
 
       form.reset();
-     
+
       courseSelect.disabled = true;
 
       courseSelect.innerHTML = `
@@ -239,22 +246,20 @@ document.addEventListener("DOMContentLoaded", async () => {
       `;
     } catch (error) {
       showMessage(
-        error.message,
+        error.message ||
+        "Não foi possível guardar o material.",
         "error"
       );
     } finally {
-      const submitButton = form.querySelector(
-        'button[type="submit"]'
-      );
-
       submitButton.disabled = false;
-      submitButton.textContent = "Guardar material";
+      submitButton.textContent = originalText;
     }
   });
 
   function showMessage(text, type) {
     message.textContent = text;
-    message.className = `admin-message ${type}`;
+    message.className =
+      `admin-message ${type}`;
   }
 
   function clearMessage() {
@@ -286,10 +291,9 @@ function slugify(value) {
     .replace(/^-+|-+$/g, "");
 }
 
-
-
 function createGoogleDriveLinks(value) {
-  const fileId = extractGoogleDriveFileId(value);
+  const fileId =
+    extractGoogleDriveFileId(value);
 
   if (!fileId) {
     return null;
@@ -326,4 +330,27 @@ function extractGoogleDriveFileId(value) {
   }
 
   return null;
+}
+
+async function readJsonResponse(response) {
+  const text = await response.text();
+
+  if (!text) {
+    return {};
+  }
+
+  try {
+    return JSON.parse(text);
+  } catch {
+    return {};
+  }
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
