@@ -321,8 +321,7 @@ function formatCategory(category) {
   const categories = {
     RESUMO: "Resumo",
     PROJETO: "Projeto",
-    EXERCICIO: "Exercício",
-    EXAME: "Exame"
+    EXERCICIO: "Exercício"
   };
 
   return categories[category] || escapeHtml(category);
