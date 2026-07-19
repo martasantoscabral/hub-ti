@@ -4,59 +4,70 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Admin — Hub TI</title>
+  <title>Administração — Hub TI</title>
 
   <link rel="stylesheet" href="./css/style.css">
 
   <style>
     .admin-container {
-      max-width: 760px;
-      margin: 40px auto;
+      max-width: 900px;
+      margin: 50px auto;
       padding: 0 20px;
     }
 
-    .admin-form {
-      display: grid;
-      gap: 16px;
+    .admin-header {
+      margin-bottom: 28px;
     }
 
-    .admin-form label {
-      display: grid;
-      gap: 6px;
+    .admin-header p {
+      color: var(--ink-2);
+      margin-top: 6px;
     }
 
-    .admin-form input,
-    .admin-form textarea,
-    .admin-form select {
-      width: 100%;
-      padding: 10px 12px;
+    .admin-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .admin-option {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 28px;
+      border-radius: 18px;
+      text-decoration: none;
+      background: var(--surface);
       border: 1.5px solid var(--border);
-      border-radius: 10px;
-      font: inherit;
+      color: var(--ink);
+      transition: transform .16s, box-shadow .16s;
     }
 
-    .admin-form textarea {
-      min-height: 110px;
-      resize: vertical;
+    .admin-option:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(124, 58, 237, .14);
     }
 
-    .admin-message {
-      margin-top: 16px;
-      padding: 12px;
-      border-radius: 10px;
-      display: none;
+    .admin-option-icon {
+      font-size: 34px;
     }
 
-    .admin-message.success {
-      display: block;
-      background: #DCFCE7;
-      color: #166534;
+    .admin-option-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 18px;
+      font-weight: 900;
     }
 
-    .admin-message.error {
-      display: block;
-      background: #FEE2E2;
-      color: #991B1B;
+    .admin-option-desc {
+      color: var(--ink-2);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 760px) {
+      .admin-options {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -75,101 +86,54 @@
 
 <main class="admin-container">
 
-  <div class="card">
-    <h3>Adicionar material</h3>
+  <div class="admin-header">
+    <h2>Painel de administração</h2>
 
-    <form id="materialForm" class="admin-form">
+    <p>
+      Escolhe a operação que pretendes realizar.
+    </p>
+  </div>
 
-      <label>
-        Chave de administração
-        <input
-          id="adminKey"
-          type="password"
-          required
-          autocomplete="current-password"
-          placeholder="Introduz a chave de administração"
-        >
-      </label>
+  <div class="admin-options">
 
-      <label>
-        Ano
-        <select id="year" required>
-          <option value="">Escolher ano</option>
-        </select>
-      </label>
+    <a class="admin-option" href="admin-add.html">
+      <span class="admin-option-icon">➕</span>
 
-      <label>
-        Disciplina
-        <select id="course" required disabled>
-          <option value="">Escolher disciplina</option>
-        </select>
-      </label>
+      <span class="admin-option-title">
+        Adicionar material
+      </span>
 
-      <label>
-        Título
-        <input id="title" type="text" required>
-      </label>
+      <span class="admin-option-desc">
+        Criar um novo resumo, projeto ou exercício.
+      </span>
+    </a>
 
-      <label>
-        Descrição
-        <textarea id="description"></textarea>
-      </label>
+    <a class="admin-option" href="admin-edit.html">
+      <span class="admin-option-icon">✏️</span>
 
-      <label>
-        Categoria
-        <select id="category" required>
-          <option value="RESUMO">Resumo</option>
-          <option value="PROJETO">Projeto</option>
-          <option value="EXERCICIO">Exercício</option>
-        </select>
-      </label>
+      <span class="admin-option-title">
+        Editar material
+      </span>
 
-      <label>
-        Data
-        <input id="materialDate" type="date">
-      </label>
+      <span class="admin-option-desc">
+        Alterar título, descrição, links, tags ou categoria.
+      </span>
+    </a>
 
-      <label>
-        Link para abrir
-        <input id="openUrl" type="url">
-      </label>
+    <a class="admin-option" href="admin-delete.html">
+      <span class="admin-option-icon">🗑️</span>
 
-      <label>
-        Link para download
-        <input id="downloadUrl" type="url">
-      </label>
+      <span class="admin-option-title">
+        Eliminar material
+      </span>
 
-      <label>
-        Tags, separadas por vírgulas
-        <input
-          id="tags"
-          type="text"
-          placeholder="exame, resolução, resumo"
-        >
-      </label>
+      <span class="admin-option-desc">
+        Remover um material existente da plataforma.
+      </span>
+    </a>
 
-      <button class="btn primary" type="submit">
-        Guardar material
-      </button>
-
-    </form>
-
-    <div id="message" class="admin-message"></div>
-    <div class="card" style="margin-top: 24px;">
-        <h3>Materiais existentes</h3>
-
-        <div id="adminMaterials">
-            <p>Escolhe um ano e uma disciplina.</p>
-        </div>
-    </div>
-    
   </div>
 
 </main>
-
-<script src="./js/config.js"></script>
-<script src="./js/api.js"></script>
-<script src="./js/admin.js"></script>
-
 </body>
 </html>

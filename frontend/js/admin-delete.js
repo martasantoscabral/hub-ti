@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  const adminKeyInput = document.getElementById("adminKey");
   const yearSelect = document.getElementById("year");
   const courseSelect = document.getElementById("course");
-  const form = document.getElementById("materialForm");
+  const materialsList = document.getElementById("materialsList");
   const message = document.getElementById("message");
-  const materialsContainer = document.getElementById("adminMaterials");
 
   let selectedCourseCode = "";
 
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         .map(
           year => `
             <option value="${year.number}">
-              ${year.title}
+              ${escapeHtml(year.title)}
             </option>
           `
         )
@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   yearSelect.addEventListener("change", async () => {
+    clearMessage();
+
     const yearNumber = Number(yearSelect.value);
 
     selectedCourseCode = "";
@@ -39,8 +41,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       <option value="">A carregar...</option>
     `;
 
-    materialsContainer.innerHTML = `
-      <p>Escolhe uma disciplina.</p>
+    materialsList.innerHTML = `
+      <p class="empty-message">
+        Escolhe uma disciplina.
+      </p>
     `;
 
     if (!yearNumber) {
@@ -61,9 +65,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             course => `
               <option
                 value="${course.id}"
-                data-code="${course.code}"
+                data-code="${escapeHtml(course.code)}"
               >
-                ${course.name}
+                ${escapeHtml(course.name)}
               </option>
             `
           )
@@ -84,6 +88,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   courseSelect.addEventListener("change", async () => {
+    clearMessage();
+
     const selectedOption =
       courseSelect.options[courseSelect.selectedIndex];
 
@@ -91,8 +97,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       selectedOption?.dataset?.code || "";
 
     if (!selectedCourseCode) {
-      materialsContainer.innerHTML = `
-        <p>Escolhe uma disciplina.</p>
+      materialsList.innerHTML = `
+        <p class="empty-message">
+          Escolhe uma disciplina.
+        </p>
       `;
 
       return;
@@ -101,126 +109,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadMaterials();
   });
 
-  form.addEventListener("submit", async event => {
-    event.preventDefault();
-
-    message.className = "admin-message";
-    message.textContent = "";
-
-    const adminKey = document
-      .getElementById("adminKey")
-      .value
-      .trim();
-
-    const title = document
-      .getElementById("title")
-      .value
-      .trim();
-
-    const category = document
-      .getElementById("category")
-      .value;
-
-    const courseId = Number(courseSelect.value);
-
-    const sourceKey = createSourceKey(
-      yearSelect.value,
-      courseId,
-      category,
-      title
-    );
-
-    const body = {
-      sourceKey,
-      title,
-
-      description:
-        document
-          .getElementById("description")
-          .value
-          .trim() || null,
-
-      category,
-
-      materialDate:
-        document
-          .getElementById("materialDate")
-          .value || null,
-
-      openUrl:
-        document
-          .getElementById("openUrl")
-          .value
-          .trim() || null,
-
-      downloadUrl:
-        document
-          .getElementById("downloadUrl")
-          .value
-          .trim() || null,
-
-      tags: document
-        .getElementById("tags")
-        .value
-        .split(",")
-        .map(tag => tag.trim())
-        .filter(Boolean),
-
-      courseId
-    };
-
-    try {
-      const response = await fetch(
-        `${window.APP_CONFIG.API_URL}/api/materials`,
-        {
-          method: "POST",
-
-          headers: {
-            "Content-Type": "application/json",
-            "x-admin-key": adminKey
-          },
-
-          body: JSON.stringify(body)
-        }
-      );
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(
-          result.error ||
-          "Não foi possível guardar o material."
-        );
-      }
-
-      showMessage(
-        "Material guardado com sucesso.",
-        "success"
-      );
-
-      const savedAdminKey = adminKey;
-      const savedYear = yearSelect.value;
-      const savedCourse = courseSelect.value;
-      const savedCourseCode = selectedCourseCode;
-
-      form.reset();
-
-      document.getElementById("adminKey").value =
-        savedAdminKey;
-
-      yearSelect.value = savedYear;
-      courseSelect.value = savedCourse;
-      selectedCourseCode = savedCourseCode;
-
-      await loadMaterials();
-    } catch (error) {
-      showMessage(error.message, "error");
-    }
-  });
-
   async function loadMaterials() {
-    materialsContainer.innerHTML = `
-      <p>A carregar materiais...</p>
+    materialsList.innerHTML = `
+      <p class="empty-message">
+        A carregar materiais...
+      </p>
     `;
 
     try {
@@ -228,24 +121,37 @@ document.addEventListener("DOMContentLoaded", async () => {
         await getMaterialsByCourse(selectedCourseCode);
 
       if (!materials.length) {
-        materialsContainer.innerHTML = `
-          <p>Esta disciplina ainda não tem materiais.</p>
+        materialsList.innerHTML = `
+          <p class="empty-message">
+            Esta disciplina ainda não tem materiais.
+          </p>
         `;
 
         return;
       }
 
-      materialsContainer.innerHTML = materials
+      materialsList.innerHTML = materials
         .map(
           material => `
-            <div class="item" style="margin-bottom: 12px;">
+            <article class="material-item">
               <h4>${escapeHtml(material.title)}</h4>
 
-              <div class="meta">
-                ${escapeHtml(material.category)}
+              <div class="material-meta">
+                ${formatCategory(material.category)}
+                ${formatDate(material.materialDate)}
               </div>
 
-              <div class="actions">
+              ${
+                material.description
+                  ? `
+                    <p>
+                      ${escapeHtml(material.description)}
+                    </p>
+                  `
+                  : ""
+              }
+
+              <div class="material-actions">
                 ${
                   material.openUrl
                     ? `
@@ -253,7 +159,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         class="btn"
                         href="${escapeHtml(material.openUrl)}"
                         target="_blank"
-                        rel="noopener"
+                        rel="noopener noreferrer"
                       >
                         Abrir
                       </a>
@@ -263,39 +169,58 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 <button
                   type="button"
-                  class="btn"
+                  class="btn delete-btn"
                   data-delete-id="${material.id}"
+                  data-delete-title="${escapeHtml(material.title)}"
                 >
                   Eliminar
                 </button>
               </div>
-            </div>
+            </article>
           `
         )
         .join("");
 
-      materialsContainer
+      materialsList
         .querySelectorAll("[data-delete-id]")
         .forEach(button => {
           button.addEventListener("click", async () => {
             const materialId =
               Number(button.dataset.deleteId);
 
-            await deleteMaterial(materialId);
+            const materialTitle =
+              button.dataset.deleteTitle || "este material";
+
+            await deleteMaterial(
+              materialId,
+              materialTitle,
+              button
+            );
           });
         });
     } catch (error) {
-      materialsContainer.innerHTML = `
-        <p>Não foi possível carregar os materiais.</p>
+      materialsList.innerHTML = `
+        <p class="empty-message">
+          Não foi possível carregar os materiais.
+        </p>
       `;
+
+      showMessage(
+        error.message ||
+        "Não foi possível carregar os materiais.",
+        "error"
+      );
     }
   }
 
-  async function deleteMaterial(materialId) {
-    const adminKey = document
-      .getElementById("adminKey")
-      .value
-      .trim();
+  async function deleteMaterial(
+    materialId,
+    materialTitle,
+    button
+  ) {
+    clearMessage();
+
+    const adminKey = adminKeyInput.value.trim();
 
     if (!adminKey) {
       showMessage(
@@ -303,30 +228,44 @@ document.addEventListener("DOMContentLoaded", async () => {
         "error"
       );
 
+      adminKeyInput.focus();
+      return;
+    }
+
+    if (!Number.isInteger(materialId) || materialId <= 0) {
+      showMessage(
+        "O identificador do material não é válido.",
+        "error"
+      );
+
       return;
     }
 
     const confirmed = window.confirm(
-      "Tens a certeza de que queres eliminar este material?"
+      `Tens a certeza de que queres eliminar "${materialTitle}"?`
     );
 
     if (!confirmed) {
       return;
     }
 
+    const originalText = button.textContent;
+
+    button.disabled = true;
+    button.textContent = "A eliminar...";
+
     try {
       const response = await fetch(
         `${window.APP_CONFIG.API_URL}/api/materials/${materialId}`,
         {
           method: "DELETE",
-
           headers: {
             "x-admin-key": adminKey
           }
         }
       );
 
-      const result = await response.json();
+      const result = await readJsonResponse(response);
 
       if (!response.ok) {
         throw new Error(
@@ -342,7 +281,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       await loadMaterials();
     } catch (error) {
-      showMessage(error.message, "error");
+      showMessage(
+        error.message ||
+        "Não foi possível eliminar o material.",
+        "error"
+      );
+
+      button.disabled = false;
+      button.textContent = originalText;
     }
   }
 
@@ -350,29 +296,50 @@ document.addEventListener("DOMContentLoaded", async () => {
     message.textContent = text;
     message.className = `admin-message ${type}`;
   }
+
+  function clearMessage() {
+    message.textContent = "";
+    message.className = "admin-message";
+  }
 });
 
-function createSourceKey(
-  year,
-  courseId,
-  category,
-  title
-) {
-  return [
-    year,
-    courseId,
-    category,
-    slugify(title)
-  ].join("-");
+async function readJsonResponse(response) {
+  const text = await response.text();
+
+  if (!text) {
+    return {};
+  }
+
+  try {
+    return JSON.parse(text);
+  } catch {
+    return {};
+  }
 }
 
-function slugify(value) {
-  return String(value)
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+function formatCategory(category) {
+  const categories = {
+    RESUMO: "Resumo",
+    PROJETO: "Projeto",
+    EXERCICIO: "Exercício",
+    EXAME: "Exame"
+  };
+
+  return categories[category] || escapeHtml(category);
+}
+
+function formatDate(value) {
+  if (!value) {
+    return "";
+  }
+
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return "";
+  }
+
+  return ` · ${date.toLocaleDateString("pt-PT")}`;
 }
 
 function escapeHtml(value) {

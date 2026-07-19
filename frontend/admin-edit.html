@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Editar material — Hub TI</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <style>
+    .admin-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .admin-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .admin-form label {
+      display: grid;
+      gap: 6px;
+      font-weight: 700;
+    }
+
+    .admin-form input,
+    .admin-form textarea,
+    .admin-form select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font: inherit;
+      background: white;
+    }
+
+    .admin-form textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .admin-message {
+      margin-bottom: 18px;
+      padding: 12px;
+      border-radius: 10px;
+      display: none;
+    }
+
+    .admin-message.success {
+      display: block;
+      background: #DCFCE7;
+      color: #166534;
+    }
+
+    .admin-message.error {
+      display: block;
+      background: #FEE2E2;
+      color: #991B1B;
+    }
+
+    .admin-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .admin-actions .btn {
+      border: none;
+      cursor: pointer;
+    }
+
+    .edit-form-card {
+      margin-top: 24px;
+      display: none;
+    }
+
+    .edit-form-card.visible {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .admin-actions {
+        flex-direction: column;
+      }
+
+      .admin-actions .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1>✏️ Editar material</h1>
+
+    <a href="admin.html" class="home-btn">
+      ↩ Painel
+    </a>
+  </div>
+</header>
+
+<main class="admin-container">
+
+  <div id="message" class="admin-message"></div>
+
+  <div class="card">
+
+    <h3>Escolher material</h3>
+
+    <div class="admin-form">
+
+      <label>
+        Chave de administração
+
+        <input
+          id="adminKey"
+          type="password"
+          autocomplete="current-password"
+          placeholder="Introduz a chave de administração"
+        >
+      </label>
+
+      <label>
+        Ano
+
+        <select id="year">
+          <option value="">Escolher ano</option>
+        </select>
+      </label>
+
+      <label>
+        Disciplina
+
+        <select id="course" disabled>
+          <option value="">Escolher disciplina</option>
+        </select>
+      </label>
+
+      <label>
+        Material
+
+        <select id="material" disabled>
+          <option value="">Escolher material</option>
+        </select>
+      </label>
+
+    </div>
+
+  </div>
+
+  <div id="editFormCard" class="card edit-form-card">
+
+    <h3>Alterar material</h3>
+
+    <form id="editMaterialForm" class="admin-form">
+
+      <label>
+        Título
+
+        <input
+          id="title"
+          type="text"
+          required
+        >
+      </label>
+
+      <label>
+        Descrição
+
+        <textarea id="description"></textarea>
+      </label>
+
+      <label>
+        Categoria
+
+        <select id="category" required>
+          <option value="RESUMO">Resumo</option>
+          <option value="PROJETO">Projeto</option>
+          <option value="EXERCICIO">Exercício</option>
+        </select>
+      </label>
+
+      <label>
+        Data
+
+        <input
+          id="materialDate"
+          type="date"
+        >
+      </label>
+
+      <label>
+        Link para abrir
+
+        <input
+          id="openUrl"
+          type="url"
+          placeholder="https://..."
+        >
+      </label>
+
+      <label>
+        Link para download
+
+        <input
+          id="downloadUrl"
+          type="url"
+          placeholder="https://..."
+        >
+      </label>
+
+      <label>
+        Tags, separadas por vírgulas
+
+        <input
+          id="tags"
+          type="text"
+          placeholder="exame, resolução, resumo"
+        >
+      </label>
+
+      <div class="admin-actions">
+        <button class="btn primary" type="submit">
+          Guardar alterações
+        </button>
+
+        <a class="btn" href="admin.html">
+          Cancelar
+        </a>
+      </div>
+
+    </form>
+
+  </div>
+
+</main>
+
+<script src="./js/config.js"></script>
+<script src="./js/api.js"></script>
+<script src="./js/admin-edit.js"></script>
+
+</body>
+</html>
