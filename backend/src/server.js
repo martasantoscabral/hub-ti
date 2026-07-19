@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
-
+const adminRoutes = require("./routes/admin.routes");
 const materialsRoutes = require("./routes/materials.routes");
 const yearsRoutes = require("./routes/years.routes");
 const coursesRoutes = require("./routes/courses.routes");
@@ -22,6 +22,8 @@ app.get("/", (req, res) => {
 app.use("/api/years", yearsRoutes);
 app.use("/api/courses", coursesRoutes);
 app.use("/api/materials", materialsRoutes);
+app.use("/api/admin", adminRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Servidor a correr em http://localhost:${PORT}`);
