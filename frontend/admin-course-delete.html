@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="./js/config.js"></script>
+  <script src="./js/admin-auth.js"></script>
+
+  <title>Eliminar disciplina — Hub TI</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <style>
+    .admin-container {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .admin-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .admin-form label {
+      display: grid;
+      gap: 6px;
+      font-weight: 700;
+    }
+
+    .admin-form select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font: inherit;
+      background: white;
+    }
+
+    .course-card {
+      display: none;
+      margin-top: 24px;
+    }
+
+    .course-card.visible {
+      display: block;
+    }
+
+    .course-details {
+      margin: 16px 0;
+      padding: 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      background: white;
+    }
+
+    .course-details h4 {
+      margin: 0 0 8px;
+    }
+
+    .course-details p {
+      margin: 6px 0;
+      color: var(--ink-2);
+    }
+
+    .delete-btn {
+      border: none;
+      cursor: pointer;
+      background: #DC2626;
+      color: white;
+    }
+
+    .delete-btn:hover {
+      background: #B91C1C;
+    }
+
+    .delete-btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .admin-message {
+      margin-bottom: 18px;
+      padding: 12px;
+      border-radius: 10px;
+      display: none;
+    }
+
+    .admin-message.success {
+      display: block;
+      background: #DCFCE7;
+      color: #166534;
+    }
+
+    .admin-message.error {
+      display: block;
+      background: #FEE2E2;
+      color: #991B1B;
+    }
+
+    .warning {
+      padding: 12px;
+      border-radius: 10px;
+      background: #FEF3C7;
+      color: #92400E;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1>🗑️ Eliminar disciplina</h1>
+
+    <a href="admin.html" class="home-btn">
+      ↩ Painel
+    </a>
+  </div>
+</header>
+
+<main class="admin-container">
+
+  <div id="message" class="admin-message"></div>
+
+  <div class="card">
+    <h3>Escolher disciplina</h3>
+
+    <div class="admin-form">
+
+      <label>
+        Ano
+
+        <select id="academicYear">
+          <option value="">Escolher ano</option>
+        </select>
+      </label>
+
+      <label>
+        Disciplina
+
+        <select id="course" disabled>
+          <option value="">Escolher disciplina</option>
+        </select>
+      </label>
+
+    </div>
+  </div>
+
+  <div id="courseCard" class="card course-card">
+
+    <h3>Confirmar eliminação</h3>
+
+    <div class="warning">
+      A disciplina só pode ser eliminada se não tiver materiais associados.
+    </div>
+
+    <div id="courseDetails" class="course-details"></div>
+
+    <button
+      id="deleteCourseButton"
+      class="btn delete-btn"
+      type="button"
+    >
+      Eliminar disciplina
+    </button>
+
+  </div>
+
+</main>
+
+<script src="./js/api.js"></script>
+<script src="./js/admin-course-delete.js"></script>
+
+</body>
+</html>
