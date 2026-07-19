@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <script src="./js/admin-auth.js"></script>
   <title>Administração — Hub TI</title>
 
   <link rel="stylesheet" href="./css/style.css">
@@ -78,11 +78,18 @@
   <div class="topbar-inner">
     <h1>⚙️ Administração — Hub TI</h1>
 
-    <a href="index.html" class="home-btn">
-      ↩ Início
-    </a>
+    <div style="display: flex; gap: 10px;">
+      <a href="index.html" class="home-btn">
+        ↩ Início
+      </a>
+
+      <button id="logoutButton" class="home-btn" type="button">
+        Terminar sessão
+      </button>
+    </div>
   </div>
 </header>
+
 
 <main class="admin-container">
 
@@ -135,5 +142,7 @@
   </div>
 
 </main>
+
+<script src="./js/admin-panel.js"></script>
 </body>
 </html>

@@ -212,13 +212,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         "success"
       );
 
-      const savedAdminKey = adminKey;
-
       form.reset();
-
-      document.getElementById("adminKey").value =
-        savedAdminKey;
-
+     
       courseSelect.disabled = true;
 
       courseSelect.innerHTML = `

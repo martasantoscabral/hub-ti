@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const adminKeyInput = document.getElementById("adminKey");
   const yearSelect = document.getElementById("year");
   const courseSelect = document.getElementById("course");
   const materialSelect = document.getElementById("material");
@@ -134,17 +133,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     event.preventDefault();
     clearMessage();
 
-    const adminKey = adminKeyInput.value.trim();
+    const adminKey = sessionStorage.getItem("hubTiAdminKey");
 
-    if (!adminKey) {
-      showMessage(
-        "Introduz primeiro a chave de administração.",
-        "error"
-      );
-
-      adminKeyInput.focus();
-      return;
-    }
 
     if (!selectedMaterial) {
       showMessage(
