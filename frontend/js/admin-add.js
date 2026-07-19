@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const form = document.getElementById("materialForm");
   const message = document.getElementById("message");
 
+  const openUrlInput = document.getElementById("openUrl");
+  const downloadUrlInput = document.getElementById("downloadUrl");
+
+
   try {
     const years = await getAcademicYears();
 
@@ -71,6 +75,20 @@ document.addEventListener("DOMContentLoaded", async () => {
       );
     }
   });
+
+  openUrlInput.addEventListener("blur", () => {
+    const driveLinks = createGoogleDriveLinks(
+      openUrlInput.value
+    );
+
+    if (!driveLinks) {
+      return;
+    }
+
+    openUrlInput.value = driveLinks.openUrl;
+    downloadUrlInput.value = driveLinks.downloadUrl;
+  });
+
 
   form.addEventListener("submit", async event => {
     event.preventDefault();
@@ -266,4 +284,46 @@ function slugify(value) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
+}
+
+
+
+function createGoogleDriveLinks(value) {
+  const fileId = extractGoogleDriveFileId(value);
+
+  if (!fileId) {
+    return null;
+  }
+
+  return {
+    openUrl:
+      `https://drive.google.com/file/d/${fileId}/view`,
+
+    downloadUrl:
+      `https://drive.google.com/uc?export=download&id=${fileId}`
+  };
+}
+
+function extractGoogleDriveFileId(value) {
+  const url = String(value || "").trim();
+
+  if (!url) {
+    return null;
+  }
+
+  const patterns = [
+    /drive\.google\.com\/file\/d\/([^/?#]+)/i,
+    /drive\.google\.com\/open\?id=([^&#]+)/i,
+    /drive\.google\.com\/uc\?.*?[?&]id=([^&#]+)/i
+  ];
+
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+
+    if (match?.[1]) {
+      return match[1];
+    }
+  }
+
+  return null;
 }
