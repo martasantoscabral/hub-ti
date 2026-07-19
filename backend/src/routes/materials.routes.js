@@ -1,5 +1,6 @@
 const express = require("express");
 const prisma = require("../lib/prisma");
+const requireAdmin = require("../middleware/admin.middleware");
 
 const router = express.Router();
 
@@ -10,7 +11,7 @@ const VALID_CATEGORIES = [
   "EXAME"
 ];
 
-router.post("/", async (req, res) => {
+router.post("/", requireAdmin, async (req, res) => {
   try {
     const {
       sourceKey,

@@ -10,11 +10,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     yearSelect.innerHTML = `
       <option value="">Escolher ano</option>
       ${years
-        .map(year => `
-          <option value="${year.number}">
-            ${year.title}
-          </option>
-        `)
+        .map(
+          year => `
+            <option value="${year.number}">
+              ${year.title}
+            </option>
+          `
+        )
         .join("")}
     `;
   } catch (error) {
@@ -45,11 +47,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       courseSelect.innerHTML = `
         <option value="">Escolher disciplina</option>
         ${courses
-          .map(course => `
-            <option value="${course.id}">
-              ${course.name}
-            </option>
-          `)
+          .map(
+            course => `
+              <option value="${course.id}">
+                ${course.name}
+              </option>
+            `
+          )
           .join("")}
       `;
 
@@ -72,8 +76,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     message.className = "admin-message";
     message.textContent = "";
 
-    const title = document.getElementById("title").value.trim();
-    const category = document.getElementById("category").value;
+    const adminKey = document
+      .getElementById("adminKey")
+      .value
+      .trim();
+
+    const title = document
+      .getElementById("title")
+      .value
+      .trim();
+
+    const category = document
+      .getElementById("category")
+      .value;
+
     const courseId = Number(courseSelect.value);
 
     const sourceKey = createSourceKey(
@@ -86,21 +102,39 @@ document.addEventListener("DOMContentLoaded", async () => {
     const body = {
       sourceKey,
       title,
+
       description:
-        document.getElementById("description").value.trim() || null,
+        document
+          .getElementById("description")
+          .value
+          .trim() || null,
+
       category,
+
       materialDate:
-        document.getElementById("materialDate").value || null,
+        document
+          .getElementById("materialDate")
+          .value || null,
+
       openUrl:
-        document.getElementById("openUrl").value.trim() || null,
+        document
+          .getElementById("openUrl")
+          .value
+          .trim() || null,
+
       downloadUrl:
-        document.getElementById("downloadUrl").value.trim() || null,
+        document
+          .getElementById("downloadUrl")
+          .value
+          .trim() || null,
+
       tags: document
         .getElementById("tags")
         .value
         .split(",")
         .map(tag => tag.trim())
         .filter(Boolean),
+
       courseId
     };
 
@@ -109,9 +143,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         `${window.APP_CONFIG.API_URL}/api/materials`,
         {
           method: "POST",
+
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "x-admin-key": adminKey
           },
+
           body: JSON.stringify(body)
         }
       );
@@ -120,7 +157,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       if (!response.ok) {
         throw new Error(
-          result.error || "Não foi possível guardar o material."
+          result.error ||
+          "Não foi possível guardar o material."
         );
       }
 
@@ -129,9 +167,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         "success"
       );
 
+      const savedAdminKey = adminKey;
+
       form.reset();
 
+      document.getElementById("adminKey").value =
+        savedAdminKey;
+
       courseSelect.disabled = true;
+
       courseSelect.innerHTML = `
         <option value="">Escolher disciplina</option>
       `;
@@ -146,7 +190,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-function createSourceKey(year, courseId, category, title) {
+function createSourceKey(
+  year,
+  courseId,
+  category,
+  title
+) {
   return [
     year,
     courseId,
