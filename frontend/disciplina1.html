@@ -43,20 +43,10 @@
 <div class="layout">
   <aside class="sidebar">
     <h3>Disciplinas</h3>
-    <a class="navlink" href="home1.html">🏠 Visão Geral</a>
 
-    <span class="navlink1">1.º Semestre</span>
-    <a class="navlink" href="disciplina1.html?course=cc">Controvérsias Científicas</a>
-    <a class="navlink" href="disciplina1.html?course=em1">Elementos de Matemática I</a>
-    <a class="navlink" href="disciplina1.html?course=prog1">Programação I</a>
-    <a class="navlink" href="disciplina1.html?course=ac">Arquiteturas de Computadores</a>
-
-    <span class="navlink1">2.º Semestre</span>
-    <a class="navlink" href="disciplina1.html?course=ipe">Probabilidades e Estatística</a>
-    <a class="navlink" href="disciplina1.html?course=em2">Elementos de Matemática II</a>
-    <a class="navlink" href="disciplina1.html?course=prog2">Programação II</a>
-    <a class="navlink" href="disciplina1.html?course=rc">Redes de Computadores</a>
-    <a class="navlink" href="disciplina1.html?course=itw">Tecnologias Web</a>
+    <nav id="coursesSidebar">
+      <p>A carregar disciplinas...</p>
+    </nav>
   </aside>
 
   <main class="content" id="main-content">
@@ -100,17 +90,6 @@
 
 <!-- Aplica apenas o tema de cor – não interfere com os dados -->
 <script>
-  const COURSE_THEME = {
-    cc:    { abbr:'CC',     desc:'Análise crítica de debates científicos e metodologia de argumentação.', cls:'course-cc',    color:'#7C3AED' },
-    em1:   { abbr:'EMI',   desc:'Fundamentos de álgebra, funções e cálculo diferencial.',                cls:'course-em1',   color:'#D97706' },
-    prog1: { abbr:'PROGI', desc:'Introdução à programação imperativa, algoritmos e estruturas de controlo.', cls:'course-prog1', color:'#0D9488' },
-    ac:    { abbr:'AC',    desc:'Organização do hardware, representação binária e assembly.',            cls:'course-ac',    color:'#2563EB' },
-    ipe:   { abbr:'IPE',   desc:'Teoria da probabilidade, distribuições e inferência estatística.',      cls:'course-ipe',   color:'#16A34A' },
-    em2:   { abbr:'EMII',  desc:'Álgebra linear, matrizes e equações diferenciais.',                    cls:'course-em2',   color:'#EC4899' },
-    prog2: { abbr:'PROGII',desc:'Estruturas de dados, recursividade e orientação a objetos.',            cls:'course-prog2', color:'#EA580C' },
-    rc:    { abbr:'RC',    desc:'Modelos OSI/TCP-IP, protocolos e configuração de redes.',              cls:'course-rc',    color:'#DC2626' },
-    itw:   { abbr:'ITW',   desc:'HTML, CSS, JavaScript e fundamentos do desenvolvimento web.',          cls:'course-itw',   color:'#0284C7' },
-  };
 
   document.addEventListener("DOMContentLoaded", () => {
     const key = new URLSearchParams(location.search).get("course") || "cc";

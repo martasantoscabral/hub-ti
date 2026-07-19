@@ -1,165 +1,393 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
-  const courseCode = params.get("course") || "so";
+  const courseCode = params.get("course");
 
-  try {
-    const courses = await getCoursesByYear(1);
-    const course = courses.find(item => item.code === courseCode);
+  const courseTitle = document.getElementById("courseTitle");
+  const courseDescription = document.getElementById("course-desc");
+  const coursePill = document.getElementById("course-pill");
+  const mainContent = document.getElementById("main-content");
 
-    if (!course) {
-      showPageError("A disciplina não foi encontrada.");
-      return;
-    }
+  const resumosContainer = document.getElementById("resumos");
+  const projetosContainer = document.getElementById("projetos");
+  const exerciciosContainer = document.getElementById("exercicios");
 
-    document.getElementById("courseTitle").textContent = course.name;
-    document.getElementById("course-desc").textContent =
-      course.description || "";
+  const resumosEmpty = document.getElementById("resumosEmpty");
+  const projetosEmpty = document.getElementById("projetosEmpty");
+  const exerciciosEmpty = document.getElementById("exerciciosEmpty");
 
-    setActiveSidebar(courseCode);
-
-    const materials = await getMaterialsByCourse(courseCode);
-
-    fillSection(
-      materials,
-      "RESUMO",
-      "resumos",
-      "resumosEmpty"
-    );
-
-    fillSection(
-      materials,
-      "PROJETO",
-      "projetos",
-      "projetosEmpty"
-    );
-
-    fillSection(
-      materials,
-      "EXERCICIO",
-      "exercicios",
-      "exerciciosEmpty"
-    );
-  } catch (error) {
-    console.error("Erro ao carregar a disciplina:", error);
-    showPageError("Não foi possível carregar a disciplina.");
-  }
-});
-
-function fillSection(materials, category, containerId, emptyId) {
-  const container = document.getElementById(containerId);
-  const empty = document.getElementById(emptyId);
-
-  const filtered = materials.filter(
-    material => material.category === category
-  );
-
-  if (!filtered.length) {
-    container.innerHTML = "";
-    empty.style.display = "block";
+  if (!courseCode) {
+    showCourseError("Não foi indicada nenhuma disciplina.");
     return;
   }
 
-  empty.style.display = "none";
-  container.innerHTML = filtered.map(renderMaterialCard).join("");
-}
+  try {
+    const courses = await getCoursesByYear(1);
 
-function renderMaterialCard(material) {
-  const tags = (material.tags || [])
-    .filter(Boolean)
-    .map(tag => `<span class="tag">${escapeHtml(tag)}</span>`)
-    .join("");
+    renderSidebar(courses, courseCode);
 
-  return `
-    <div class="item">
-      <h4>${escapeHtml(material.title)}</h4>
+    const course = courses.find(
+      item =>
+        String(item.code).toLowerCase() ===
+        String(courseCode).toLowerCase()
+    );
 
-      <div class="meta">
-        ${
-          material.materialDate
-            ? formatDate(material.materialDate)
-            : ""
-        }
-      </div>
+    if (!course) {
+      showCourseError("A disciplina não foi encontrada.");
+      return;
+    }
 
-      ${
-        material.description
-          ? `<div class="muted">${escapeHtml(material.description)}</div>`
-          : ""
-      }
+    applyCourseInformation(course);
 
-      ${tags ? `<div class="tags">${tags}</div>` : ""}
+    const materials = await getMaterialsByCourse(course.code);
 
-      <div class="actions">
-        ${
-          material.openUrl
-            ? `
-              <a
-                class="btn primary"
-                href="${escapeAttribute(material.openUrl)}"
-                target="_blank"
-                rel="noopener"
-              >
-                Abrir
-              </a>
-            `
-            : ""
-        }
+    const resumos = materials.filter(
+      material => material.category === "RESUMO"
+    );
 
-        ${
-          material.downloadUrl
-            ? `
-              <a
-                class="btn"
-                href="${escapeAttribute(material.downloadUrl)}"
-                target="_blank"
-                rel="noopener"
-              >
-                Download
-              </a>
-            `
-            : ""
-        }
-      </div>
-    </div>
+    const projetos = materials.filter(
+      material => material.category === "PROJETO"
+    );
+
+    const exercicios = materials.filter(
+      material =>
+        material.category === "EXERCICIO" ||
+        material.category === "EXAME"
+    );
+
+    renderMaterials(
+      resumos,
+      resumosContainer,
+      resumosEmpty
+    );
+
+    renderMaterials(
+      projetos,
+      projetosContainer,
+      projetosEmpty
+    );
+
+    renderMaterials(
+      exercicios,
+      exerciciosContainer,
+      exerciciosEmpty
+    );
+  } catch (error) {
+    console.error(
+      "Erro ao carregar a disciplina:",
+      error
+    );
+
+    showCourseError(
+      "Não foi possível carregar esta disciplina."
+    );
+  }
+
+  function applyCourseInformation(course) {
+    const color = course.color || "#7C3AED";
+
+    if (courseTitle) {
+      courseTitle.textContent = course.name;
+    }
+
+    if (courseDescription) {
+      courseDescription.textContent =
+        course.description || "";
+    }
+
+    if (coursePill) {
+      coursePill.textContent =
+        String(course.code).toUpperCase();
+
+      coursePill.style.background = color;
+    }
+
+    if (mainContent) {
+      mainContent.style.setProperty(
+        "--course-color",
+        color
+      );
+    }
+
+    const header =
+      document.getElementById("course-header");
+
+    if (header) {
+      header.style.background = createTransparentColor(
+        color,
+        "18"
+      );
+
+      header.style.borderColor = createTransparentColor(
+        color,
+        "55"
+      );
+    }
+
+    document.title =
+      `${course.name} — Hub TI 1.º Ano`;
+  }
+});
+
+function renderSidebar(courses, currentCourseCode) {
+  const sidebar =
+    document.getElementById("coursesSidebar");
+
+  if (!sidebar) {
+    return;
+  }
+
+  const semester1 = courses.filter(
+    course => Number(course.semester) === 1
+  );
+
+  const semester2 = courses.filter(
+    course => Number(course.semester) === 2
+  );
+
+  sidebar.innerHTML = `
+    <a class="navlink" href="home1.html">
+      🏠 Visão Geral
+    </a>
+
+    <span class="navlink1">
+      1.º Semestre
+    </span>
+
+    ${semester1
+      .map(course =>
+        createSidebarLink(
+          course,
+          currentCourseCode
+        )
+      )
+      .join("")}
+
+    <span class="navlink1">
+      2.º Semestre
+    </span>
+
+    ${semester2
+      .map(course =>
+        createSidebarLink(
+          course,
+          currentCourseCode
+        )
+      )
+      .join("")}
   `;
 }
 
-function setActiveSidebar(courseCode) {
-  document.querySelectorAll(".sidebar .navlink").forEach(link => {
-    const href = link.getAttribute("href") || "";
+function createSidebarLink(
+  course,
+  currentCourseCode
+) {
+  const isActive =
+    String(course.code).toLowerCase() ===
+    String(currentCourseCode).toLowerCase();
 
-    link.classList.toggle(
-      "active",
-      href.includes(`course=${courseCode}`)
-    );
-  });
+  const activeStyle = isActive
+    ? `
+      font-weight: 700;
+      background: #EDE9FF;
+      color: #7C3AED;
+    `
+    : "";
+
+  return `
+    <a
+      class="navlink"
+      href="disciplina1.html?course=${encodeURIComponent(
+        course.code
+      )}"
+      style="${activeStyle}"
+    >
+      ${escapeHtml(course.name)}
+    </a>
+  `;
+}
+
+function renderMaterials(
+  materials,
+  container,
+  emptyMessage
+) {
+  if (!container || !emptyMessage) {
+    return;
+  }
+
+  if (!materials.length) {
+    container.innerHTML = "";
+    emptyMessage.style.display = "block";
+    return;
+  }
+
+  emptyMessage.style.display = "none";
+
+  container.innerHTML = materials
+    .map(renderMaterialCard)
+    .join("");
+}
+
+function renderMaterialCard(material) {
+  const tags = Array.isArray(material.tags)
+    ? material.tags
+    : [];
+
+  const hasOpenUrl = Boolean(material.openUrl);
+  const hasDownloadUrl = Boolean(
+    material.downloadUrl
+  );
+
+  return `
+    <article class="item">
+
+      <h4>
+        ${escapeHtml(material.title)}
+      </h4>
+
+      ${
+        material.materialDate
+          ? `
+            <div class="meta">
+              ${formatDate(material.materialDate)}
+            </div>
+          `
+          : ""
+      }
+
+      ${
+        material.description
+          ? `
+            <p>
+              ${escapeHtml(material.description)}
+            </p>
+          `
+          : ""
+      }
+
+      ${
+        tags.length
+          ? `
+            <div class="tags">
+              ${tags
+                .map(
+                  tag => `
+                    <span class="tag">
+                      ${escapeHtml(tag)}
+                    </span>
+                  `
+                )
+                .join("")}
+            </div>
+          `
+          : ""
+      }
+
+      ${
+        hasOpenUrl || hasDownloadUrl
+          ? `
+            <div class="actions">
+
+              ${
+                hasOpenUrl
+                  ? `
+                    <a
+                      class="btn primary"
+                      href="${escapeHtml(
+                        material.openUrl
+                      )}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Abrir
+                    </a>
+                  `
+                  : ""
+              }
+
+              ${
+                hasDownloadUrl
+                  ? `
+                    <a
+                      class="btn"
+                      href="${escapeHtml(
+                        material.downloadUrl
+                      )}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Download
+                    </a>
+                  `
+                  : ""
+              }
+
+            </div>
+          `
+          : ""
+      }
+
+    </article>
+  `;
 }
 
 function formatDate(value) {
-  return new Date(value).toLocaleDateString("pt-PT");
+  if (!value) {
+    return "";
+  }
+
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return "";
+  }
+
+  return date.toLocaleDateString("pt-PT");
 }
 
-function showPageError(message) {
-  const content = document.querySelector("main.content");
+function createTransparentColor(
+  color,
+  opacity
+) {
+  const normalizedColor =
+    String(color || "").trim();
 
-  if (content) {
-    content.innerHTML = `
-      <div class="card">
-        <p>${escapeHtml(message)}</p>
-      </div>
-    `;
+  if (/^#[0-9A-Fa-f]{6}$/.test(normalizedColor)) {
+    return `${normalizedColor}${opacity}`;
+  }
+
+  return normalizedColor || "#7C3AED";
+}
+
+function showCourseError(message) {
+  const title =
+    document.getElementById("courseTitle");
+
+  const description =
+    document.getElementById("course-desc");
+
+  const pill =
+    document.getElementById("course-pill");
+
+  if (title) {
+    title.textContent = "Erro";
+  }
+
+  if (description) {
+    description.textContent = message;
+  }
+
+  if (pill) {
+    pill.textContent = "!";
+    pill.style.background = "#DC2626";
   }
 }
 
 function escapeHtml(value) {
-  return String(value)
+  return String(value ?? "")
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
-}
-
-function escapeAttribute(value) {
-  return escapeHtml(value);
 }
