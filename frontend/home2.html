@@ -77,78 +77,9 @@
     <div class="card">
       <h3>🎨 Escolhe uma disciplina</h3>
       <div class="subjects-grid">
-
-        <div class="sem-divider">
-          <span class="sem-label">1.º Semestre</span>
-          <div class="sem-line"></div>
-        </div>
-
-        <a class="subject-card sc-so" href="disciplina2.html?course=so">
-          <span class="sc-abbr">SO</span>
-          <span class="sc-name">Sistema Operativo</span>
-          <span class="sc-desc">Processos, threads, escalonamento e memória.</span>
-        </a>
-
-        <a class="subject-card sc-ic" href="disciplina2.html?course=ic">
-          <span class="sc-abbr">IC</span>
-          <span class="sc-name">Interação com Computadores</span>
-          <span class="sc-desc">UX, usabilidade e prototipagem.</span>
-        </a>
-
-        <a class="subject-card sc-pco" href="disciplina2.html?course=pco">
-          <span class="sc-abbr">PCO</span>
-          <span class="sc-name">Prog. Centrada a Objetos</span>
-          <span class="sc-desc">OOP, padrões e boas práticas.</span>
-        </a>
-
-        <a class="subject-card sc-ftv" href="disciplina2.html?course=ftv">
-          <span class="sc-abbr">FTV</span>
-          <span class="sc-name">Fund. Técnicas de Visualização</span>
-          <span class="sc-desc">Visualização e design de informação.</span>
-        </a>
-
-        <a class="subject-card sc-bd" href="disciplina2.html?course=bd">
-          <span class="sc-abbr">BD</span>
-          <span class="sc-name">Bases de Dados</span>
-          <span class="sc-desc">Modelação relacional, normalização e SQL.</span>
-        </a>
-
-        <div class="sem-divider">
-          <span class="sem-label">2.º Semestre</span>
-          <div class="sem-line"></div>
-        </div>
-
-        <a class="subject-card sc-adas" href="disciplina2.html?course=adas">
-          <span class="sc-abbr">ADAS</span>
-          <span class="sc-name">Análise e Desenho (ADAS)</span>
-          <span class="sc-desc">Requisitos, modelação e desenho de sistemas.</span>
-        </a>
-
-        <a class="subject-card sc-si" href="disciplina2.html?course=si">
-          <span class="sc-abbr">SI</span>
-          <span class="sc-name">Sistemas Inteligentes</span>
-          <span class="sc-desc">IA, machine learning e sistemas adaptativos.</span>
-        </a>
-
-        <a class="subject-card sc-asw" href="disciplina2.html?course=asw">
-          <span class="sc-abbr">ASW</span>
-          <span class="sc-name">Aplicações e Serviços Web</span>
-          <span class="sc-desc">Desenvolvimento web, APIs e serviços.</span>
-        </a>
-
-        <a class="subject-card sc-ads" href="disciplina2.html?course=ads">
-          <span class="sc-abbr">ADS</span>
-          <span class="sc-name">Análise e Desenho de Software</span>
-          <span class="sc-desc">Padrões de projeto e arquitetura.</span>
-        </a>
-
-        <a class="subject-card sc-ad" href="disciplina2.html?course=ad">
-          <span class="sc-abbr">AD</span>
-          <span class="sc-name">Aplicações Distribuídas</span>
-          <span class="sc-desc">Sistemas distribuídos e sincronização.</span>
-        </a>
-
+        <p>A carregar disciplinas...</p>
       </div>
+
     </div>
 
   </main>
@@ -162,5 +93,10 @@
     el.textContent = counts[el.getAttribute("data-count")] ?? 0;
   });
 </script>
+
+<script src="./js/config.js"></script>
+<script src="./js/api.js"></script>
+<script src="./js/home2-api.js"></script>
+
 </body>
 </html>

@@ -1,1 +1,25 @@
-assets/EXEC/EM1-resolucao.pdf
+# Dependências
+node_modules/
+backend/node_modules/
+
+# Variáveis privadas
+.env
+backend/.env
+frontend/.env
+
+# Prisma
+backend/prisma/dev.db
+backend/prisma/dev.db-journal
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+

@@ -150,3 +150,11 @@ const ITEMS = [
   },
 
 ];
+
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = {
+    COURSES,
+    ITEMS
+  };
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Teste da API</title>
+</head>
+
+<body>
+  <h1>Teste da API do Hub TI</h1>
+
+  <button id="loadYears">
+    Carregar anos
+  </button>
+
+  <pre id="result"></pre>
+
+  <script src="./js/api.js"></script>
+
+  <script>
+    const button = document.getElementById("loadYears");
+    const result = document.getElementById("result");
+
+    button.addEventListener("click", async () => {
+      result.textContent = "A carregar...";
+
+      try {
+        const years = await getAcademicYears();
+
+        result.textContent = JSON.stringify(
+          years,
+          null,
+          2
+        );
+      } catch (error) {
+        result.textContent = error.message;
+      }
+    });
+  </script>
+</body>
+</html>

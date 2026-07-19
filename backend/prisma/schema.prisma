@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+}
+
+enum MaterialCategory {
+  RESUMO
+  PROJETO
+  EXERCICIO
+  EXAME
+}
+
+model AcademicYear {
+  id          Int      @id @default(autoincrement())
+  number      Int      @unique
+  title       String
+  description String?
+  published   Boolean  @default(true)
+
+  courses Course[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Course {
+  id          Int     @id @default(autoincrement())
+  code        String
+  name        String
+  description String?
+  semester    Int
+  color       String?
+
+  academicYearId Int
+  academicYear   AcademicYear @relation(fields: [academicYearId], references: [id], onDelete: Cascade)
+
+  materials Material[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([code, academicYearId])
+}
+
+model Material {
+  id           Int              @id @default(autoincrement())
+  sourceKey    String           @unique
+  title        String
+  description  String?
+  category     MaterialCategory
+  materialDate DateTime?
+  openUrl      String?
+  downloadUrl  String?
+  tags         String[]
+
+  courseId Int
+  course   Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
