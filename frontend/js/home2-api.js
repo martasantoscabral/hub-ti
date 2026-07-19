@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const semester1 = courses.filter(
-      course => course.semester === 1
+      course => Number(course.semester) === 1
     );
 
     const semester2 = courses.filter(
-      course => course.semester === 2
+      course => Number(course.semester) === 2
     );
 
     grid.innerHTML = `
@@ -24,7 +24,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       ${renderSemester("2.º Semestre", semester2)}
     `;
   } catch (error) {
-    console.error("Erro ao carregar disciplinas:", error);
+    console.error(
+      "Erro ao carregar disciplinas:",
+      error
+    );
 
     if (grid) {
       grid.innerHTML = `
@@ -64,7 +67,9 @@ function renderCourseCard(course) {
       "
     >
       <span class="sc-abbr">
-        ${escapeHtml(course.code.toUpperCase())}
+        ${escapeHtml(
+          String(course.code).toUpperCase()
+        )}
       </span>
 
       <span class="sc-name">
@@ -79,36 +84,45 @@ function renderCourseCard(course) {
 }
 
 function renderSidebar(courses) {
-  const sidebar = document.getElementById("coursesSidebar");
+  const sidebar =
+    document.getElementById("coursesSidebar");
 
   if (!sidebar) {
     return;
   }
 
   const semester1 = courses.filter(
-    course => course.semester === 1
+    course => Number(course.semester) === 1
   );
 
   const semester2 = courses.filter(
-    course => course.semester === 2
+    course => Number(course.semester) === 2
   );
 
   sidebar.innerHTML = `
-    <a href="home2.html" class="sidebar-link active">
+    <a
+      class="navlink"
+      style="
+        font-weight: 700;
+        background: #EDE9FF;
+        color: #7C3AED;
+      "
+      href="home2.html"
+    >
       🏠 Visão Geral
     </a>
 
-    <p class="sidebar-section-title">
-      1.º SEMESTRE
-    </p>
+    <span class="navlink1">
+      1.º Semestre
+    </span>
 
     ${semester1
       .map(course => createSidebarLink(course))
       .join("")}
 
-    <p class="sidebar-section-title">
-      2.º SEMESTRE
-    </p>
+    <span class="navlink1">
+      2.º Semestre
+    </span>
 
     ${semester2
       .map(course => createSidebarLink(course))
@@ -119,10 +133,10 @@ function renderSidebar(courses) {
 function createSidebarLink(course) {
   return `
     <a
+      class="navlink"
       href="disciplina2.html?course=${encodeURIComponent(
         course.code
       )}"
-      class="sidebar-link"
     >
       ${escapeHtml(course.name)}
     </a>
@@ -138,25 +152,25 @@ function renderCourseSummary(courses) {
   }
 
   const semester1 = courses.filter(
-    course => course.semester === 1
+    course => Number(course.semester) === 1
   );
 
   const semester2 = courses.filter(
-    course => course.semester === 2
+    course => Number(course.semester) === 2
   );
 
   container.innerHTML = `
-    <p class="summary-semester">
-      1.º SEMESTRE
-    </p>
+    <span class="disc-sem">
+      1.º Semestre
+    </span>
 
     ${semester1
       .map(course => createSummaryItem(course))
       .join("")}
 
-    <p class="summary-semester">
-      2.º SEMESTRE
-    </p>
+    <span class="disc-sem">
+      2.º Semestre
+    </span>
 
     ${semester2
       .map(course => createSummaryItem(course))
@@ -168,15 +182,17 @@ function createSummaryItem(course) {
   const color = course.color || "#7C3AED";
 
   return `
-    <div class="summary-course">
+    <li>
       <span
-        class="summary-dot"
-        style="background: ${color}"
+        class="dot"
+        style="background: ${escapeHtml(color)}"
       ></span>
 
       ${escapeHtml(course.name)}
-      (${escapeHtml(course.code.toUpperCase())})
-    </div>
+      (${escapeHtml(
+        String(course.code).toUpperCase()
+      )})
+    </li>
   `;
 }
 
