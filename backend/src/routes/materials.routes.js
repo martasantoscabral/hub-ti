@@ -91,4 +91,48 @@ router.post("/", requireAdmin, async (req, res) => {
   }
 });
 
+
+
+
+router.delete("/:id", requireAdmin, async (req, res) => {
+  try {
+    const materialId = Number(req.params.id);
+
+    if (!Number.isInteger(materialId) || materialId <= 0) {
+      return res.status(400).json({
+        error: "O identificador do material não é válido."
+      });
+    }
+
+    const material = await prisma.material.findUnique({
+      where: {
+        id: materialId
+      }
+    });
+
+    if (!material) {
+      return res.status(404).json({
+        error: "O material não foi encontrado."
+      });
+    }
+
+    await prisma.material.delete({
+      where: {
+        id: materialId
+      }
+    });
+
+    res.json({
+      message: "Material eliminado com sucesso."
+    });
+  } catch (error) {
+    console.error("Erro ao eliminar material:", error);
+
+    res.status(500).json({
+      error: "Não foi possível eliminar o material."
+    });
+  }
+});
+
+
 module.exports = router;
