@@ -126,13 +126,12 @@ const ITEMS = [
   {
     category: "resumos",
     course: "si",
-    title: "Resumo 1 Paradigma do Espaço de Estados ",
-    desc: "Paradigma do Espaço de Estados",
-    date: "2025-02-25",
-    tags: ["Resumo","Espaço de estados ","Agentes","Estado inicial","Ações"],
-    fileOpen: "https://drive.google.com/file/d/12CFFwJbcpZbRLeLmI_L1aDdkPG0XTl1k/view",
-    fileDownload: "https://drive.google.com/uc?export=download&id=12CFFwJbcpZbRLeLmI_L1aDdkPG0XTl1k",
-
+    title: "Resumo Sistemas Inteligentes ",
+    desc: "",
+    date: "2026-07-17",
+    tags: ["Resumo"],
+    fileOpen: "https://drive.google.com/file/d/1-oGc4Is2ZdqRe0xauLT6gXZA0js-hSsd/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1-oGc4Is2ZdqRe0xauLT6gXZA0js-hSsd",
   },
 
   //------AD
@@ -727,8 +726,6 @@ const ITEMS = [
     tags: [],
     fileOpen: "https://drive.google.com/drive/folders/19SEmwmu1lhv1zDjCqRGvW5lvBEteA1jb",
     fileDownload: "https://drive.google.com/drive/folders/19SEmwmu1lhv1zDjCqRGvW5lvBEteA1jb",
-    
-
   },
 
   {
@@ -740,8 +737,6 @@ const ITEMS = [
     tags: [],
     fileOpen: "https://drive.google.com/drive/folders/1NLwkVxdRP27XQCD6GGYnlTs1rl9-L-61",
     fileDownload: "https://drive.google.com/drive/folders/1NLwkVxdRP27XQCD6GGYnlTs1rl9-L-61",
-    
-    
   },
 
   {
@@ -753,8 +748,6 @@ const ITEMS = [
     tags: [],
     fileOpen: "https://drive.google.com/drive/folders/1pFn_33UWRp70m-V2msXcjtAUvFRFmdAZ",
     fileDownload: "https://drive.google.com/drive/folders/1pFn_33UWRp70m-V2msXcjtAUvFRFmdAZ",
-    
-    
   },
 
   {
@@ -766,7 +759,6 @@ const ITEMS = [
     tags: [],
     fileOpen: "https://drive.google.com/drive/folders/1fz5ce2Lpf6F6cSHlFQTVSPlgKZfHXV6q",
     fileDownload: "https://drive.google.com/drive/folders/1fz5ce2Lpf6F6cSHlFQTVSPlgKZfHXV6q",
-
   },
 
 
@@ -816,7 +808,56 @@ const ITEMS = [
 
   },
 
-   //------AD
+
+  {
+    category: "exercicios",
+    course: "si",
+    title: "Exame 1 epoca 24/25",
+    desc: "",
+    date: "2026-07-19",
+    tags: [],
+    fileOpen: "https://drive.google.com/file/d/1Pftrm8NrYKz7WayzOrgKwNp3TjOxgEM9/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1Pftrm8NrYKz7WayzOrgKwNp3TjOxgEM9",
+  },
+
+
+  {
+    category: "exercicios",
+    course: "si",
+    title: "Exame 2 epoca 24/25",
+    desc: "",
+    date: "2026-07-19",
+    tags: [],
+    fileOpen: "https://drive.google.com/file/d/1fFajOrMJlyI47Frwo3O8DDIF7pwjQ6PU/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1fFajOrMJlyI47Frwo3O8DDIF7pwjQ6PU",
+  },
+
+
+  {
+    category: "exercicios",
+    course: "si",
+    title: "Exame 1 epoca 25/26",
+    desc: "",
+    date: "2026-07-19",
+    tags: [],
+    fileOpen: "https://drive.google.com/file/d/1QkLxAOv3zQC5Vu1jHlkkDbX5ri5nZa5v/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1QkLxAOv3zQC5Vu1jHlkkDbX5ri5nZa5v",
+  },
+
+
+  {
+    category: "exercicios",
+    course: "si",
+    title: "Exame 2 epoca 25/26",
+    desc: "",
+    date: "2026-07-19",
+    tags: [],
+    fileOpen: "https://drive.google.com/file/d/1hJfg6fUVi6OTxNQEWRbSBbmU3lagJg1C/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1hJfg6fUVi6OTxNQEWRbSBbmU3lagJg1C",
+  },
+
+
+  //------AD
 
   {
     category: "exercicios",
@@ -890,6 +931,52 @@ const ITEMS = [
     fileDownload: "https://drive.google.com/uc?export=download&id=19NwIEpjFke3dRy4pc2jpVNOkIqfQLD0H",
   },
 
+  //------ADS
+  {
+    category: "exercicios",
+    course: "ads",
+    title: "Exame tipo 25/26",
+    desc: "",
+    date: "2026-07-17",
+    tags: ["Exame","tipo"],
+    fileOpen: "https://drive.google.com/file/d/1YTmtRbPbnwRBbxTYZEjWdp6Rlay3WwNN/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1YTmtRbPbnwRBbxTYZEjWdp6Rlay3WwNN",
+  },
+
+
+  {
+    category: "exercicios",
+    course: "ads",
+    title: "Resolucao do exame tipo (feito pelo professor) 25/26",
+    desc: "",
+    date: "2026-07-17",
+    tags: ["Exame","tipo","resolucao"],
+    fileOpen: "https://drive.google.com/file/d/1yiEt2XKibsP69u5Rb2-vnShmYlSYqca5/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1yiEt2XKibsP69u5Rb2-vnShmYlSYqca5",
+  },
+
+
+  {
+    category: "exercicios",
+    course: "ads",
+    title: "Exame 1 epoca 25/26",
+    desc: "",
+    date: "2026-07-17",
+    tags: ["Exame", "1poca"],
+    fileOpen: "https://drive.google.com/file/d/1TBGhprCKO4zA7eW9x_9t7KhQOu3ZVjDC/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1TBGhprCKO4zA7eW9x_9t7KhQOu3ZVjDC",
+  },
+
+  {
+    category: "exercicios",
+    course: "ads",
+    title: "Exame 2 epoca 25/26",
+    desc: "",
+    date: "2026-07-17",
+    tags: ["Exame", "2epoca"],
+    fileOpen: "https://drive.google.com/file/d/1GO8NomPr9zuzHiw0H1PKGucWJlMsmwh_/view",
+    fileDownload: "https://drive.google.com/uc?export=download&id=1GO8NomPr9zuzHiw0H1PKGucWJlMsmwh_",
+  },
 
 
 ];
