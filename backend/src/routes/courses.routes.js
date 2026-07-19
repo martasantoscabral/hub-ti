@@ -279,4 +279,60 @@ router.patch("/:id", requireAdmin, async (req, res) => {
 });
 
 
+
+
+
+
+router.delete("/:id", requireAdmin, async (req, res) => {
+  try {
+    const courseId = Number(req.params.id);
+
+    if (!Number.isInteger(courseId) || courseId <= 0) {
+      return res.status(400).json({
+        error: "O identificador da disciplina não é válido."
+      });
+    }
+
+    const course = await prisma.course.findUnique({
+      where: {
+        id: courseId
+      },
+      include: {
+        materials: true
+      }
+    });
+
+    if (!course) {
+      return res.status(404).json({
+        error: "A disciplina não foi encontrada."
+      });
+    }
+
+    if (course.materials.length > 0) {
+      return res.status(409).json({
+        error:
+          "Não podes eliminar esta disciplina porque ainda tem materiais. Elimina primeiro os materiais."
+      });
+    }
+
+    await prisma.course.delete({
+      where: {
+        id: courseId
+      }
+    });
+
+    return res.json({
+      message: "Disciplina eliminada com sucesso."
+    });
+  } catch (error) {
+    console.error("Erro ao eliminar disciplina:", error);
+
+    return res.status(500).json({
+      error: "Não foi possível eliminar a disciplina."
+    });
+  }
+});
+
+
+
 module.exports = router;
