@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <script src="./js/config.js"></script>
   <script src="./js/admin-auth.js"></script>
 
-  <title>Adicionar material — Hub TI</title>
+  <title>Adicionar disciplina — Hub TI</title>
 
   <link rel="stylesheet" href="./css/style.css">
 
@@ -73,17 +74,6 @@
       border: none;
       cursor: pointer;
     }
-
-    @media (max-width: 600px) {
-      .admin-actions {
-        flex-direction: column;
-      }
-
-      .admin-actions .btn {
-        width: 100%;
-        text-align: center;
-      }
-    }
   </style>
 </head>
 
@@ -91,7 +81,7 @@
 
 <header class="topbar">
   <div class="topbar-inner">
-    <h1>➕ Adicionar material</h1>
+    <h1>➕ Adicionar disciplina</h1>
 
     <a href="admin.html" class="home-btn">
       ↩ Painel
@@ -102,97 +92,66 @@
 <main class="admin-container">
 
   <div class="card">
-    <h3>Novo material</h3>
+    <h3>Nova disciplina</h3>
 
-    <form id="materialForm" class="admin-form">
+    <form id="courseForm" class="admin-form">
+
       <label>
         Ano
-
-        <select id="year" required>
+        <select id="academicYear" required>
           <option value="">Escolher ano</option>
         </select>
       </label>
 
       <label>
-        Disciplina
-
-        <select id="course" required disabled>
-          <option value="">Escolher disciplina</option>
+        Semestre
+        <select id="semester" required>
+          <option value="">Escolher semestre</option>
+          <option value="1">1.º semestre</option>
+          <option value="2">2.º semestre</option>
         </select>
       </label>
 
       <label>
-        Título
-
+        Código
         <input
-          id="title"
+          id="code"
           type="text"
           required
-          placeholder="Ex.: Resumo de Segurança Informática"
+          placeholder="Ex.: si"
+        >
+      </label>
+
+      <label>
+        Nome
+        <input
+          id="name"
+          type="text"
+          required
+          placeholder="Ex.: Segurança Informática"
         >
       </label>
 
       <label>
         Descrição
-
         <textarea
           id="description"
-          placeholder="Descrição opcional do material"
+          placeholder="Descrição opcional"
         ></textarea>
       </label>
 
       <label>
-        Categoria
-
-        <select id="category" required>
-          <option value="RESUMO">Resumo</option>
-          <option value="PROJETO">Projeto</option>
-          <option value="EXERCICIO">Exercício</option>
-        </select>
-      </label>
-
-      <label>
-        Data
-
+        Cor
         <input
-          id="materialDate"
-          type="date"
-        >
-      </label>
-
-      <label>
-        Link para abrir
-
-        <input
-          id="openUrl"
-          type="url"
-          placeholder="https://..."
-        >
-      </label>
-
-      <label>
-        Link para download
-
-        <input
-          id="downloadUrl"
-          type="url"
-          placeholder="https://..."
-        >
-      </label>
-
-      <label>
-        Tags, separadas por vírgulas
-
-        <input
-          id="tags"
+          id="color"
           type="text"
-          placeholder="exame, resolução, resumo"
+          placeholder="Ex.: #7C3AED"
         >
       </label>
 
       <div class="admin-actions">
         <button class="btn primary" type="submit">
-          Guardar material
+          Guardar disciplina
         </button>
 
         <a class="btn" href="admin.html">
@@ -208,7 +167,7 @@
 </main>
 
 <script src="./js/api.js"></script>
-<script src="./js/admin-add.js"></script>
+<script src="./js/admin-course-add.js"></script>
 
 </body>
 </html>
