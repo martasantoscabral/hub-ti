@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="./js/config.js"></script>
+  <script src="./js/admin-auth.js"></script>
+
+  <title>Editar disciplina — Hub TI</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <style>
+    .admin-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .admin-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .admin-form label {
+      display: grid;
+      gap: 6px;
+      font-weight: 700;
+    }
+
+    .admin-form input,
+    .admin-form textarea,
+    .admin-form select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font: inherit;
+      background: white;
+    }
+
+    .admin-form textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .edit-card {
+      display: none;
+      margin-top: 24px;
+    }
+
+    .edit-card.visible {
+      display: block;
+    }
+
+    .admin-message {
+      margin-bottom: 18px;
+      padding: 12px;
+      border-radius: 10px;
+      display: none;
+    }
+
+    .admin-message.success {
+      display: block;
+      background: #DCFCE7;
+      color: #166534;
+    }
+
+    .admin-message.error {
+      display: block;
+      background: #FEE2E2;
+      color: #991B1B;
+    }
+
+    .admin-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .admin-actions .btn {
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1>✏️ Editar disciplina</h1>
+
+    <a href="admin.html" class="home-btn">
+      ↩ Painel
+    </a>
+  </div>
+</header>
+
+<main class="admin-container">
+
+  <div id="message" class="admin-message"></div>
+
+  <div class="card">
+    <h3>Escolher disciplina</h3>
+
+    <div class="admin-form">
+
+      <label>
+        Ano
+
+        <select id="academicYear">
+          <option value="">Escolher ano</option>
+        </select>
+      </label>
+
+      <label>
+        Disciplina
+
+        <select id="course" disabled>
+          <option value="">Escolher disciplina</option>
+        </select>
+      </label>
+
+    </div>
+  </div>
+
+  <div id="editCard" class="card edit-card">
+    <h3>Alterar disciplina</h3>
+
+    <form id="editCourseForm" class="admin-form">
+
+      <label>
+        Ano
+
+        <select id="editAcademicYear" required>
+          <option value="">Escolher ano</option>
+        </select>
+      </label>
+
+      <label>
+        Semestre
+
+        <select id="semester" required>
+          <option value="">Escolher semestre</option>
+          <option value="1">1.º semestre</option>
+          <option value="2">2.º semestre</option>
+        </select>
+      </label>
+
+      <label>
+        Código
+
+        <input
+          id="code"
+          type="text"
+          required
+        >
+      </label>
+
+      <label>
+        Nome
+
+        <input
+          id="name"
+          type="text"
+          required
+        >
+      </label>
+
+      <label>
+        Descrição
+
+        <textarea id="description"></textarea>
+      </label>
+
+      <label>
+        Cor
+
+        <input
+          id="color"
+          type="text"
+          placeholder="#7C3AED"
+        >
+      </label>
+
+      <div class="admin-actions">
+        <button class="btn primary" type="submit">
+          Guardar alterações
+        </button>
+
+        <a class="btn" href="admin.html">
+          Cancelar
+        </a>
+      </div>
+
+    </form>
+  </div>
+
+</main>
+
+<script src="./js/api.js"></script>
+<script src="./js/admin-course-edit.js"></script>
+
+</body>
+</html>
