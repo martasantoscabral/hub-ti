@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const existingAdminKey =
+    sessionStorage.getItem("hubTiAdminKey");
+
+  if (existingAdminKey) {
+    window.location.replace("admin.html");
+    return;
+  }
+
   const form = document.getElementById("loginForm");
   const adminKeyInput = document.getElementById("adminKey");
   const message = document.getElementById("message");
