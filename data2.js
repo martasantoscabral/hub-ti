@@ -190,7 +190,7 @@ const ITEMS = [
   {
     category: "resumos",
     course: "ads",
-    title: "Análise e Desenho de Software (ADS)- Dado pelo professor Carlos Lourenço",
+    title: "Resumo/Slides (ADS)- Dado pelo professor Carlos Lourenço",
     desc: "Disciplina sobre análise de requisitos e desenho de software OO, usando UML, desenvolvimento iterativo (UP) e boas práticas para criar sistemas bem estruturados e organizados em camadas. ",
     date: "2026-05-02",
     tags: ["ads", "uml", "oop", "design", "arquitetura"],
@@ -205,7 +205,7 @@ const ITEMS = [
     title: "(ADS)- Resumo para exame",
     desc: "Resumo do que pode sair no exame 2026",
     date: "2026-05-02",
-    tags: ["ads", "uml", "oop", "design", "arquitetura"],
+    tags: ["ads", "Resumo","Exame"],
     fileOpen: "https://drive.google.com/file/d/1Pro5yZpHOJssyF2nOzjyszafzqePbIaz/view",
     fileDownload: "https://drive.google.com/uc?export=download&id=1Pro5yZpHOJssyF2nOzjyszafzqePbIaz",
 
@@ -218,7 +218,7 @@ const ITEMS = [
     title: "(ADS)- Resumo para o teste de projeto",
     desc: "Resumo do que poderia sair no teste do projeto -> saber bem os relatorios",
     date: "2026-05-02",
-    tags: ["ads", "uml", "oop", "design", "arquitetura"],
+    tags: ["ads", "Resumo", "Teste",],
     fileOpen: "https://drive.google.com/file/d/1RHt16q0cacRWvcduqeDghmhf4tlqdQEM/view",
     fileDownload: "https://drive.google.com/uc?export=download&id=1RHt16q0cacRWvcduqeDghmhf4tlqdQEM",
 
@@ -589,7 +589,7 @@ const ITEMS = [
     category: "projetos",
     course: "ad",
     title: "Enunciado - 1 Fase ",
-    desc: "Enunciado do projeto de AD ",
+    desc: "Enunciado do projeto de AD 1 ",
     date: "2026-07-17",
     tags: ["pdf"],
     fileOpen: "https://drive.google.com/file/d/1_92v4nsKI6pNACbp38GE3V35j4HmZMXl/view",
@@ -600,7 +600,7 @@ const ITEMS = [
     category: "projetos",
     course: "ad",
     title: "Enunciado - 2 Fase ",
-    desc: "Enunciado do projeto de AD ",
+    desc: "Enunciado do projeto de AD 2",
     date: "2026-07-17",
     tags: ["pdf"],
     fileOpen: "https://drive.google.com/file/d/1W5-gZILGTr8NKsx_SwkkYKxXfDdaIzxe/view",
@@ -612,7 +612,7 @@ const ITEMS = [
     category: "projetos",
     course: "ad",
     title: "Enunciado - 3 Fase ",
-    desc: "Enunciado do projeto de AD ",
+    desc: "Enunciado do projeto de AD 3",
     date: "2026-07-17",
     tags: ["pdf"],
     fileOpen: "https://drive.google.com/file/d/1_92v4nsKI6pNACbp38GE3V35j4HmZMXl/view",
@@ -863,9 +863,9 @@ const ITEMS = [
     category: "exercicios",
     course: "ad",
     title: "Exercicios de Exame anos anteriores (importante)",
-    desc: "GUIA DA PL1 - Sockets TCP",
+    desc: "exercicios que apareceram nos exames, importante pois sao sempre iguais/parecidos",
     date: "2025-02-27",
-    tags: ["Exercicios"],
+    tags: ["Exercicios","Exame"],
     fileOpen: "https://drive.google.com/file/d/1K6hg3IlFPq46dS63MCQY1PObEYvb-00W/view",
     fileDownload: "https://drive.google.com/uc?export=download&id=1K6hg3IlFPq46dS63MCQY1PObEYvb-00W",
   },
@@ -875,38 +875,15 @@ const ITEMS = [
     category: "exercicios",
     course: "ad",
     title: "Exercicios de ad (aulas etc/quiz)",
-    desc: "GUIA DA PL1 - Sockets TCP",
+    desc: "Exercicios feitos nas aulas",
     date: "2025-02-27",
-    tags: ["Exercicios"],
+    tags: ["Exercicios", "Aulas"],
     fileOpen: "https://drive.google.com/file/d/1H79-uaRiSJOMo1AADcZUFeFBf-XywK4S/view",
     fileDownload: "https://drive.google.com/uc?export=download&id=1H79-uaRiSJOMo1AADcZUFeFBf-XywK4S",
   },
 
 
   //------ASW
-
-  {
-    category: "exercicios",
-    course: "asw",
-    title: "Resolução Guiao da TP2",
-    desc: "Iniciação ao Desenvolvimento em Node.js e TypeScript",
-    date: "2025-02-25",
-    tags: ["Exercicios"],
-    fileOpen: "https://drive.google.com/file/d/16xJSnmpEKdW6uoyrp36N-sguo6rJkn66/view",
-    fileDownload: "https://drive.google.com/uc?export=download&id=16xJSnmpEKdW6uoyrp36N-sguo6rJkn66",
-  },
-
-  {
-    category: "exercicios",
-    course: "asw",
-    title: "Guiao da TP2",
-    desc: "Iniciação ao Desenvolvimento em Node.js e TypeScript",
-    date: "2025-02-25",
-    tags: ["Guiao","Exercicios"],
-    fileOpen: "https://drive.google.com/file/d/1kmHALFGFG6IAQrSoQkrhyUpMQ1NhGtoA/view",
-    fileDownload: "https://drive.google.com/uc?export=download&id=1kmHALFGFG6IAQrSoQkrhyUpMQ1NhGtoA",
-  },
-  
 
 
   {
