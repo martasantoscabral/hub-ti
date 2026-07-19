@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="./assets/icon.svg" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hub TI — 3º Ano</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/stylehome2.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1>📚 Hub Académico — 3.º Ano · TI</h1>
+      <a href="index.html" class="home-btn">↩ Início</a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Disciplinas</h3>
+
+      <nav id="coursesSidebar">
+        <p>A carregar disciplinas...</p>
+      </nav>
+    </aside>
+
+
+  <main class="content">
+
+    <!-- Hero -->
+    <div class="home-hero">
+      <div class="hero-left">
+        <div class="hero-year-badge">🚀 3.º Ano · TI</div>
+        <h2>Olá, estudante!<br><span class="grad">Bons estudos 💪</span></h2>
+        <p>
+          Um <strong>hub académico pessoal</strong> com resumos, projetos e exercícios
+          da <strong>Licenciatura em Tecnologias de Informação</strong>.
+        </p>
+        <p>Clica numa disciplina abaixo ou usa o menu lateral para ver os materiais.</p>
+      </div>
+
+      <div class="hero-right">
+        <div class="mini-card">
+          <div class="mini-card-title">📋 Cadeiras</div>
+          <ul id="courseSummary" class="disc-list">
+            <li>A carregar disciplinas...</li>
+          </ul>      
+        </div>
+      </div>
+    </div>
+
+    <!-- Subject cards -->
+    <div class="card">
+      <h3>🎨 Escolhe uma disciplina</h3>
+      <div class="subjects-grid">
+        <p>A carregar disciplinas...</p>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<script src="data3.js"></script>
+<script>
+  const counts = { resumos:0, projetos:0, exercicios:0 };
+  (window.ITEMS || []).forEach(it => { if (counts[it.category] != null) counts[it.category]++; });
+  document.querySelectorAll("[data-count]").forEach(el => {
+    el.textContent = counts[el.getAttribute("data-count")] ?? 0;
+  });
+</script>
+
+<script src="./js/config.js"></script>
+<script src="./js/api.js"></script>
+<script src="./js/home3-api.js"></script>
+
+</body>
+</html>

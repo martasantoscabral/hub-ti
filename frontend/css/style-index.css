@@ -206,11 +206,11 @@
     .card-2:hover { box-shadow: 0 20px 50px rgba(13,148,136,.25); }
 
     .card-3 {
-      background: linear-gradient(145deg, #F3F4F6 0%, #E5E7EB 100%);
+      background: linear-gradient(145deg, #ffcef8 0%, #f188ec 100%);
       border-color: #D1D5DB;
       box-shadow: 0 8px 20px rgba(0,0,0,.06);
-      opacity: .65;
-      pointer-events: none;
+   
+      
     }
 
     /* Big emoji */
@@ -222,7 +222,7 @@
       animation: wiggle 3s ease-in-out infinite;
     }
     .card-2 .card-emoji { animation-delay: .6s; }
-    .card-3 .card-emoji { animation: none; }
+    .card-3 .card-emoji { animation-delay: .6s; }
 
     @keyframes wiggle {
       0%,100% { transform: rotate(-3deg); }
@@ -265,7 +265,7 @@
     }
     .card-1 .chip { background: rgba(124,58,237,.15); color: #5B21B6; }
     .card-2 .chip { background: rgba(13,148,136,.15); color: #0F766E; }
-    .card-3 .chip { background: rgba(0,0,0,.08); color: #6B7280; }
+    .card-3 .chip { background: rgba(221, 92, 215, 0.08); color: #6B7280; }
 
     /* Lock badge */
     .lock-badge {
@@ -298,7 +298,7 @@
     }
     .card-1 .card-cta { background: #7C3AED; color: #fff; }
     .card-2 .card-cta { background: #0D9488; color: #fff; }
-    .card-3 .card-cta { background: #D1D5DB; color: #9CA3AF; }
+    .card-3 .card-cta { background: #c215a5; color: #feffff; }
     .year-card:hover .card-cta { transform: translate(3px, -3px) scale(1.08); }
 
     /* ── Footer ── */
