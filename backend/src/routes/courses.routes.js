@@ -160,4 +160,123 @@ router.post("/", requireAdmin, async (req, res) => {
 });
 
 
+
+
+
+
+router.patch("/:id", requireAdmin, async (req, res) => {
+  try {
+    const courseId = Number(req.params.id);
+
+    if (!Number.isInteger(courseId) || courseId <= 0) {
+      return res.status(400).json({
+        error: "O identificador da disciplina não é válido."
+      });
+    }
+
+    const existingCourse = await prisma.course.findUnique({
+      where: {
+        id: courseId
+      }
+    });
+
+    if (!existingCourse) {
+      return res.status(404).json({
+        error: "A disciplina não foi encontrada."
+      });
+    }
+
+    const {
+      code,
+      name,
+      description,
+      semester,
+      color,
+      academicYearId
+    } = req.body;
+
+    const parsedSemester = Number(semester);
+    const parsedAcademicYearId = Number(academicYearId);
+
+    if (!code || !String(code).trim()) {
+      return res.status(400).json({
+        error: "O código da disciplina é obrigatório."
+      });
+    }
+
+    if (!name || !String(name).trim()) {
+      return res.status(400).json({
+        error: "O nome da disciplina é obrigatório."
+      });
+    }
+
+    if (![1, 2].includes(parsedSemester)) {
+      return res.status(400).json({
+        error: "O semestre deve ser 1 ou 2."
+      });
+    }
+
+    if (
+      !Number.isInteger(parsedAcademicYearId) ||
+      parsedAcademicYearId <= 0
+    ) {
+      return res.status(400).json({
+        error: "O ano académico selecionado não é válido."
+      });
+    }
+
+    const academicYear =
+      await prisma.academicYear.findUnique({
+        where: {
+          id: parsedAcademicYearId
+        }
+      });
+
+    if (!academicYear) {
+      return res.status(404).json({
+        error: "O ano académico não foi encontrado."
+      });
+    }
+
+    const updatedCourse = await prisma.course.update({
+      where: {
+        id: courseId
+      },
+
+      data: {
+        code: String(code).trim().toLowerCase(),
+        name: String(name).trim(),
+
+        description: description
+          ? String(description).trim()
+          : null,
+
+        semester: parsedSemester,
+
+        color: color
+          ? String(color).trim()
+          : null,
+
+        academicYearId: parsedAcademicYearId
+      }
+    });
+
+    return res.json(updatedCourse);
+  } catch (error) {
+    console.error("Erro ao editar disciplina:", error);
+
+    if (error.code === "P2002") {
+      return res.status(409).json({
+        error:
+          "Já existe uma disciplina com esse código nesse ano."
+      });
+    }
+
+    return res.status(500).json({
+      error: "Não foi possível editar a disciplina."
+    });
+  }
+});
+
+
 module.exports = router;
