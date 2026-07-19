@@ -316,7 +316,7 @@ ul.muted li strong { color: var(--ink); font-weight: 700; }
   margin-bottom: 6px;
   color: #000;
 }
-.course-header p { font-size: 13.5px; opacity: .85; max-width: 560px; color: #000000c4; }
+.course-header p { font-size: 13.5px; opacity: .85; max-width: 560px; color: #000000e5!important; }
  
 /* ── Grid (item cards) ──────────────────────── */
 .grid {
