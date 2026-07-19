@@ -34,7 +34,18 @@
 <body>
 
 <header class="topbar">
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
   <div class="topbar-inner">
+    <button
+      id="mobileMenuButton"
+      class="mobile-menu-button"
+      type="button"
+      aria-label="Abrir menu de disciplinas"
+      aria-expanded="false"
+    > ☰
+    </button>
+
+
     <h1>📚 Hub Académico — 3.º Ano · TI</h1>
     <a href="index.html" class="home-btn">↩ Início</a>
   </div>
@@ -89,10 +100,10 @@
 <script src="./js/config.js"></script>
 <script src="./js/api.js"></script>
 <script src="./js/disciplina3-api.js"></script>
+<script src="./js/mobile-menu.js"></script>
 
 
 
-<!-- Aplica apenas o tema de cor – não interfere com os dados -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const key = new URLSearchParams(location.search).get("course") || "so";

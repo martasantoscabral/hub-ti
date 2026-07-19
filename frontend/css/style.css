@@ -465,3 +465,195 @@ input[type="search"] { min-width: 220px; }
  
 .quick-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
  
+
+
+
+
+.mobile-menu-button {
+  display: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 8px 11px;
+  font: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .topbar-inner {
+    gap: 10px;
+  }
+
+  .topbar h1 {
+    flex: 1;
+    font-size: 13px;
+  }
+
+  .mobile-menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .layout {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1001;
+
+    width: min(82vw, 320px);
+    padding-top: 80px;
+
+    overflow-y: auto;
+    background: white;
+
+    transform: translateX(-105%);
+    transition: transform 0.22s ease;
+
+    box-shadow:
+      10px 0 30px rgba(15, 23, 42, 0.18);
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+
+    background: rgba(15, 23, 42, 0.5);
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease;
+  }
+
+  .sidebar-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .content {
+    width: 100%;
+    padding: 18px 14px;
+  }
+
+  .home-hero {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+  }
+
+  .hero-right {
+    display: none;
+  }
+
+  .subjects-grid,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subject-card,
+  .item {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .home-btn {
+    white-space: nowrap;
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+  .course-header h2{
+    font-size: 15px;
+  }
+
+  .course-header{
+    padding: 17px 20px;
+  }
+
+
+
+}
+
+
+@media (max-width: 800px) {
+  .layout {
+    display: block !important;
+    min-height: 0 !important;
+  }
+
+  .sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+
+    width: min(82vw, 320px) !important;
+    height: 100dvh !important;
+
+    margin: 0 !important;
+    padding-top: 70px !important;
+
+    overflow-y: auto;
+    z-index: 1001;
+
+    transform: translateX(-105%);
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .content {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 14px !important;
+  }
+
+  .home-hero {
+    margin-top: 12px !important;
+  }
+
+  .hero-left h2{
+    font-size: 24px;
+  }
+  .hero-year-badge{
+    font-size: 8px;
+  }
+  .btn{
+    padding: 5px 10px;
+
+  }
+  
+  p {
+    font-size: 10px;
+  }
+}

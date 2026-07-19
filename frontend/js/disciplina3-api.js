@@ -237,15 +237,6 @@ function renderMaterialCard(material) {
         ${escapeHtml(material.title)}
       </h4>
 
-      ${
-        material.materialDate
-          ? `
-            <div class="meta">
-              ${formatDate(material.materialDate)}
-            </div>
-          `
-          : ""
-      }
 
       ${
         material.description

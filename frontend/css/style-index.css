@@ -127,7 +127,7 @@
 
     .hero h2 {
       font-family: 'Nunito', sans-serif;
-      font-size: 52px;
+      font-size: 30px;
       font-weight: 900;
       line-height: 1.05;
       letter-spacing: -.04em;
@@ -321,3 +321,126 @@
       font-weight: 800;
     }
 
+
+
+.home-btn {
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  background: linear-gradient(90deg, #7C3AED, #9333EA);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+
+
+
+@media (max-width: 800px) {
+  header {
+    height: auto;
+    min-height: 62px;
+    padding: 10px 14px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .header-logo {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .logo-mark {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  header h1 {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  header .home-btn {
+    order: 3;
+    width: 20%;
+    text-align: center;
+    padding: 9px 12px;
+  }
+
+  .header-pills {
+    flex-shrink: 0;
+  }
+
+  .pill {
+    padding: 4px 8px;
+    font-size: 9px;
+  }
+
+  main {
+    align-items: flex-start;
+    padding: 32px 16px 10px;
+  }
+
+  .hero {
+    margin-bottom: 32px;
+  }
+
+  .hero-badge {
+    max-width: 100%;
+    padding: 7px 12px;
+    font-size: 9px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    padding: 0 6px;
+  }
+
+  .years-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .year-card {
+    padding: 24px 22px;
+    border-radius: 20px;
+  }
+
+  .card-emoji {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+
+  .card-label {
+    font-size: 20px;
+  }
+
+  .card-sub {
+    margin-bottom: 20px;
+  }
+
+  .card-cta {
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .deco {
+    display: none;
+  }
+
+  footer {
+    padding: 16px 12px;
+  }
+}
