@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Login de administração — Hub TI</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <style>
+    .login-container {
+      max-width: 520px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .login-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .login-form label {
+      display: grid;
+      gap: 6px;
+      font-weight: 700;
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font: inherit;
+    }
+
+    .login-message {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 10px;
+      display: none;
+    }
+
+    .login-message.error {
+      display: block;
+      background: #FEE2E2;
+      color: #991B1B;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1>🔐 Administração — Hub TI</h1>
+
+    <a href="index.html" class="home-btn">
+      ↩ Início
+    </a>
+  </div>
+</header>
+
+<main class="login-container">
+
+  <div class="card">
+    <h3>Entrar no painel</h3>
+
+    <form id="loginForm" class="login-form">
+
+      <label>
+        Chave de administração
+
+        <input
+          id="adminKey"
+          type="password"
+          required
+          autocomplete="current-password"
+          placeholder="Introduz a chave de administração"
+        >
+      </label>
+
+      <button class="btn primary" type="submit">
+        Entrar
+      </button>
+
+    </form>
+
+    <div id="message" class="login-message"></div>
+  </div>
+
+</main>
+
+<script src="./js/config.js"></script>
+<script src="./js/admin-login.js"></script>
+
+</body>
+</html>
