@@ -14,8 +14,7 @@ router.get("/:courseCode/materials", async (req, res) => {
     const validCategories = [
       "RESUMO",
       "PROJETO",
-      "EXERCICIO",
-      "EXAME"
+      "EXERCICIO"
     ];
 
     if (

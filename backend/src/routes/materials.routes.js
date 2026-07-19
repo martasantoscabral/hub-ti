@@ -7,8 +7,7 @@ const router = express.Router();
 const VALID_CATEGORIES = [
   "RESUMO",
   "PROJETO",
-  "EXERCICIO",
-  "EXAME"
+  "EXERCICIO"
 ];
 
 router.post("/", requireAdmin, async (req, res) => {
@@ -35,7 +34,7 @@ router.post("/", requireAdmin, async (req, res) => {
     if (!VALID_CATEGORIES.includes(category)) {
       return res.status(400).json({
         error:
-          "A categoria deve ser RESUMO, PROJETO, EXERCICIO ou EXAME."
+          "A categoria deve ser RESUMO, PROJETO ou EXERCICIO."
       });
     }
 
