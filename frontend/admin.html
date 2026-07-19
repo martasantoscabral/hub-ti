@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <script src="./js/config.js"></script>
-  <script src="./js/admin-auth.js"></script>  
+  <script src="./js/admin-auth.js"></script>
+
   <title>Administração — Hub TI</title>
 
   <link rel="stylesheet" href="./css/style.css">
@@ -23,6 +25,11 @@
     .admin-header p {
       color: var(--ink-2);
       margin-top: 6px;
+    }
+
+    .admin-section-title {
+      margin: 30px 0 16px;
+      font-size: 20px;
     }
 
     .admin-options {
@@ -84,13 +91,16 @@
         ↩ Início
       </a>
 
-      <button id="logoutButton" class="home-btn" type="button">
+      <button
+        id="logoutButton"
+        class="home-btn"
+        type="button"
+      >
         Terminar sessão
       </button>
     </div>
   </div>
 </header>
-
 
 <main class="admin-container">
 
@@ -101,6 +111,10 @@
       Escolhe a operação que pretendes realizar.
     </p>
   </div>
+
+  <h3 class="admin-section-title">
+    📄 Gestão de materiais
+  </h3>
 
   <div class="admin-options">
 
@@ -142,8 +156,62 @@
 
   </div>
 
+  <h3 class="admin-section-title">
+    📚 Gestão de disciplinas
+  </h3>
+
+  <div class="admin-options">
+
+    <a
+      class="admin-option"
+      href="admin-course-add.html"
+    >
+      <span class="admin-option-icon">➕</span>
+
+      <span class="admin-option-title">
+        Adicionar disciplina
+      </span>
+
+      <span class="admin-option-desc">
+        Criar uma nova disciplina num dos três anos.
+      </span>
+    </a>
+
+    <a
+      class="admin-option"
+      href="admin-course-edit.html"
+    >
+      <span class="admin-option-icon">✏️</span>
+
+      <span class="admin-option-title">
+        Editar disciplina
+      </span>
+
+      <span class="admin-option-desc">
+        Alterar nome, código, semestre, descrição ou cor.
+      </span>
+    </a>
+
+    <a
+      class="admin-option"
+      href="admin-course-delete.html"
+    >
+      <span class="admin-option-icon">🗑️</span>
+
+      <span class="admin-option-title">
+        Eliminar disciplina
+      </span>
+
+      <span class="admin-option-desc">
+        Remover uma disciplina que não tenha materiais associados.
+      </span>
+    </a>
+
+  </div>
+
 </main>
 
 <script src="./js/admin-panel.js"></script>
+
 </body>
 </html>
