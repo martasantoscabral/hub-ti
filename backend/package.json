@@ -8,6 +8,9 @@
     "seed": "node prisma/seed.js",
     "import:materials": "node prisma/import-materials.js"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
